@@ -12,7 +12,7 @@ def home(request):
 
     finishbtn=request.session.get('finishbtn')
     
-    return render(request,'stamp.html', {'quests':quests,
+    return render(request,'stamp.html', {
                                                 'photo':photo,
                                                 'game':game,
                                                 'bangbang':bangbang,
