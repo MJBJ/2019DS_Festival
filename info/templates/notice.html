@@ -1,1 +1,61 @@
-<h1>총학 공지게시판</h1>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:
+normal; font-style: normal; }
+body {background-color: #f5f5f5;}
+div#back {
+    padding:5%;
+    background-color: #ffffff;
+    margin:1%;
+    box-shadow: 2px 2px 5px grey;
+}
+h5 {font-family:'S-CoreDream-3Light'; text-align:center;font-style:bold;}
+table#tel {
+    margin-top:5%;
+    font-size: 1.2em;
+    font-family: 'S-CoreDream-3Light';
+    padding-left:10%; padding-right:auto;
+}
+img#f {width:90%; height:60%;}
+img#s {width:90%; height:40%;}
+
+</style>
+
+
+<div id="back">
+    <table id="tel" class="table striped">
+        <thead>
+            <tr>
+            <th colspan="4">백일화 총학생회 비상연락망</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>총학생회장 박시은</td>
+            <td>010-8771-3931</td>
+            <td>사무국장 이은아</td>
+            <td>010-6409-5827</td>
+        </tr>
+        <tr>
+            <td>부총학생회장 서수연</td>
+            <td>010-5025-5260</td>
+            <td>소통국장 김주혜</td>
+            <td>010-8791-3896</td>
+        </tr>
+        <tr>
+            <td>기획국장 최미정</td>
+            <td>010-4112-1905</td>
+            <td>재무국장 박수영</td>
+            <td>010-5306-4478</td>
+        </tr>
+        <tr>
+            <td>복지국장 김민지</td>
+            <td>010-2557-1817</td>
+            <td>홍보국장 김혜린</td>
+            <td>010-6264-1889</td>
+        </tr>
+    </table>
+    <img id="f" src="{% static 'img/smoking.jpg' %}"> <br>
+</div>
+{% endblock %}
