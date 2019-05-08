@@ -33,17 +33,27 @@ def home(request):
                                                 'pwd5':olist[4],
                                                 'finishbtn':finishbtn,
                                                 })
-def quest(request,quest_id):
-    quest_id=get_object_or_404(Quest,pk=quest_id)
-    return render(request,'q.html',{'quest':quest_id}) 
+def quest1(request):
+    #quest_id=get_object_or_404(Quest,pk=quest_id)
+    return render(request,'q1.html') 
+def quest2(request):
+    #quest_id=get_object_or_404(Quest,pk=quest_id)
+    return render(request,'q2.html') 
+def quest3(request):
+    #quest_id=get_object_or_404(Quest,pk=quest_id)
+    return render(request,'q3.html') 
+def quest4(request):
+    #quest_id=get_object_or_404(Quest,pk=quest_id)
+    return render(request,'q4.html') 
+def quest5(request):
+    #quest_id=get_object_or_404(Quest,pk=quest_id)
+    return render(request,'q5.html')     
 
 def clear(request):
     finishbtn=request.GET['goinit']
     if finishbtn=="goinit":
         request.session['finishbtn']="goinit"
     return redirect('/stamp')
-
-    
 
     return redirect('/stamp')
 # 비밀번호가 맞는 지 처리하고 세션 설정을 할 함수
