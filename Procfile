@@ -1,0 +1,1 @@
+web: gunicorn ds_operator.wsgi --log-file -

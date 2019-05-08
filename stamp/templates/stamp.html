@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+    
+</head>
+
+<body>
+  <div class="eventbg">
+<!-- 지연 : hidden 속성으로 바꿀 예정 -->
+<input type="hidden" value={{photo}} id="st1">
+<input type="hidden" value={{game}} id="st2">
+<input type="hidden" value={{bangbang}} id="st3">
+<input type="hidden" value={{viking}} id="st4">
+<input type="hidden" value={{popcorn}} id="st5">
+<!-- 지연 : 이미지 눌렀을 때 자바스크립트 시도-->
+
+<div>
+  <a href="{%url 'quest' pwd1.id%}" id="pwd{{pwd1.id}}">{{pwd1.title}}</a><br />
+  <img id="st1_img" src="{% static 'st1r.png'%}" alt="스탬프 찍기전1">
+</div>
+<div>
+  <a href="{%url 'quest' pwd2.id%}" id="pwd{{pwd2.id}}">{{pwd2.title}}</a><br />
+  <img id="st2_img" src="{% static 'st2r.png'%}" alt="스탬프 찍기전2">
+</div>
+<br/>
+<div>
+  <a href="{%url 'quest' pwd3.id%}" id="pwd{{pwd3.id}}">{{pwd3.title}}</a><br />
+  <img id="st3_img" src="{% static 'st3r.png'%}" alt="스탬프 찍기전3">
+</div>
+<div>
+  <a href="{%url 'quest' pwd4.id%}" id="pwd{{pwd4.id}}">{{pwd4.title}}</a><br />
+  <img id="st4_img" src="{% static 'st4r.png'%}" alt="스탬프 찍기전4">
+</div>
+<div>
+  <a href="{%url 'quest' pwd5.id%}" id="pwd{{pwd5.id}}">{{pwd5.title}}</a><br />
+  <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
+</div>
+
+<form id="fform" action="{%url 'clear' %}">
+    <input type="text" id="goinit" value={{finishbtn}} name="goinit"/>
+    <input type="submit" id="fbtn" onclick="finish();"/>
+</form>
+<!-- 지연 : 세션이 저장되어 있나 확인 한다. hidden 입력 태그의 value값으로 -->
+</div>
+  <script>
+    function finish(){
+
+// 미션버튼도 세션에 저장되어 있나 확인한다.
+      //var finishbtn=document.getElementById('goinit').getAttribute('value');
+      var st1=document.getElementById('st1').getAttribute('value');
+      var st2=document.getElementById('st2').getAttribute('value');
+      var st3=document.getElementById('st3').getAttribute('value');
+      var st4=document.getElementById('st4').getAttribute('value');
+      var st5=document.getElementById('st5').getAttribute('value');
+      // 완료 버튼을 누르면 
+      // 그제서야 세션을 만든다.
+      if(st1=="1"&&st2=="2"&&st3=="3"&&st4=="4"&&st5=="5"){ 
+        alert("hellp")
+        document.getElementById('goinit').setAttribute('value',"goinit");
+
+    }
+    
+    }
+    // 지연 : 페이지가 로드 될때마다 
+    window.onload=function(){
+    
+      // 지연 : st1 = 인풋1의 value 속성값을 받아옴
+      var st1=document.getElementById('st1').getAttribute('value');
+      var st2=document.getElementById('st2').getAttribute('value');
+      var st3=document.getElementById('st3').getAttribute('value');
+      var st4=document.getElementById('st4').getAttribute('value');
+      var st5=document.getElementById('st5').getAttribute('value');
+      var goinit=document.getElementById('goinit').getAttribute('value');
+      var btn = document.getElementById('fbtn'); 
+      // 페이지가 로드 될떄마다 완료버튼의 세션값을 확인한다.
+      // 만약 세션이 저장되어 있으면 완료라고 써놓고
+      if(goinit=="goinit"){
+        btn.setAttribute('value',"완료");
+        btn.disabled = 'disabled';
+      }
+      // 안 저장되어 있으면 그대로 유지시킨다.
+      var parent = document.getElementById('fform');
+      var child = document.getElementById("fbtn");
+        //parent.removeChild(child);
+   
+    
+      if(st1=="1"){
+        document.getElementById('st1_img').setAttribute('src',"{% static 'ste1r.png'%}");
+      }
+      // 이미지 바꿔야함
+      if(st2=="2"){
+        document.getElementById('st2_img').setAttribute('src',"{% static 'ste2r.png'%}");
+      }
+      if(st3=="3"){
+        document.getElementById('st3_img').setAttribute('src',"{% static 'ste3r.png'%}");
+      }
+      if(st4=="4"){
+        document.getElementById('st4_img').setAttribute('src',"{% static 'ste4r.png'%}");
+      }
+      if(st5=="5"){
+        document.getElementById('st5_img').setAttribute('src',"{% static 'ste5r.png'%}");
+      }
+      
+       
+    }
+      
+    </script>
+    </body>

@@ -1,0 +1,13 @@
+
+body{
+    
+}
+.eventbg{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-image:url("../eventbg.png");
+    background-repeat:no-repeat;
+    min-width:100%;
+    width: 100vw;
+}

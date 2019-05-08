@@ -1,0 +1,81 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+<title>백일화</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script language="JavaScript"> 
+    $(document).ready(function() {
+        var $banner = $(".banner").find("ul");
+
+        var $bannerWidth = $banner.children().outerWidth();//이미지의 폭
+        var $bannerHeight = $banner.children().outerHeight(); // 높이
+        var $length = $banner.children().length;//이미지의 갯수
+        var rollingId;
+
+        //정해진 초마다 함수 실행
+        rollingId = setInterval(function() { rollingStart(); }, 3000);//다음 이미지로 롤링 애니메이션 할 시간차
+
+        function rollingStart() {
+            $banner.css("width", $bannerWidth * $length + "px");
+            $banner.css("height", $bannerHeight + "px");
+            //alert(bannerHeight);
+            //배너의 좌측 위치를 옮겨 준다.
+            $banner.animate({left: - $bannerWidth + "px"}, 1500, function() { //숫자는 롤링 진행되는 시간이다.
+                //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+                $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+                //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+                $(this).find("li:first").remove();
+                //다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+                $(this).css("left", 0);
+                //이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+            });
+        }
+    });
+</script>
+<script>
+    var countDownDate = new Date("May 15, 2019 12:00:00").getTime(); 
+    var x = setInterval(function() { 
+    var now = new Date().getTime(); 
+    var distance = countDownDate - now; 
+    var d = Math.floor(distance / (1000 * 60 * 60 * 24)); var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); var s = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("d-day").innerHTML = "백일화 축제 서비스 배포까지 "+"<br>"+d +"일 " + h + "시간 " + m + "분 " + s + "초 남았습니다."; });
+</script>
+<style type="text/css">
+	@font-face { font-family: 'S-CoreDream-8Heavy'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff'); font-weight: normal; font-style: normal; }
+    @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+    body {background-color: black; height: 70em;}
+    
+	h1 { color: white; text-align: center; font-size: 3em;}
+    * {font-family: 'S-CoreDream-8Heavy'}
+    h2{color: white; text-align: center; font-size: 2em;
+       font-family:  'S-CoreDream-3Light'}
+    /* banner */
+    .banner {position: relative; width: 50em; height: 60em; top: 200px;  margin:0 auto; padding:0; overflow: hidden;}
+    .banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+    .banner ul li {float: left; width: 50em; height: 60em; margin:0; padding:0;}
+    .container {width:60em; height:30em; top: 70em;}
+</style>
+
+</head>
+<body>
+<div class="banner">
+    <h1 id="d-day"></h1>
+    <ul>
+        <li><img src="{% static 's1.png' %}" width="100%" height="80%"></li>
+        <li><img src="{% static 's2.png' %}" width="100%" height="80%"></li>
+        <li><img src="{% static 's3.png' %}" width="100%" height="80%"></li>
+        <li><img src="{% static 's4.png' %}" width="100%" height="80%"></li>
+    </ul>
+    
+</div>
+</body>
+<div class="container">
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <h2>
+        developed by 전유현 민주희 조혜영 백지연 이민지
+    </h2>
+    <h2></h2>
+</div>
+</html>

@@ -1,0 +1,38 @@
+<!-- 글 전체 보기 -->
+<head>
+    <style>
+        .container{
+            background-color: #FFFFFF;
+            box-shadow: 2px 2px 3px gray ;
+            margin-left: 5%; margin-right: 5%;
+        }
+        img{
+            padding-left: 75%;
+            padding-top: 3%;
+        }
+        .big{display:inline;}
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <h4><a href="{% url 'post' %}">글쓰기</a></h4>
+        {%for board in boards.all%}
+        <div class="container">
+            <div class="big">
+                <div class="title">{{board.title}}</div>
+                <div class="i">
+                <a href="{% url 'detail' board.id %}">
+                    {% if board.file %}
+                    <img style="width:12em; height:11em;" src="{{board.file.url}}" alt="">
+                    {% endif %}
+                </a>
+                </div>
+            </div>
+            <small class="text-muted">{{board.pub_date}}</small>
+        </div>
+        {%endfor%}
+    
+    </div>
+</body>
+    
+    

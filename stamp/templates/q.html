@@ -1,0 +1,6 @@
+{{quest.title}} 번 장소 : 비번 입력
+<form action="{%url 'check' %}">
+<input type="text" name="pwd"/>
+<input type="hidden" name="spot_num" value="{{quest.id}}"/>
+<input type="submit" value="제출" />
+</form>
