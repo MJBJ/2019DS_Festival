@@ -6,82 +6,11 @@
     <link rel="stylesheet" href="//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
     <!--CSS only-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <!--JS, Popper.js, and jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <style>
-        html, body{ margin:0; padding: 0; height:100%; width: 100%;}
-        @font-face { 
-                    font-family: 'HSBombaram'; 
-                    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff'); 
-                    font-weight: normal; 
-                    font-style: normal;
-                    }
-        @font-face { 
-                    font-family: 'S-CoreDream-3Light'; 
-                    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); 
-                    font-weight:normal; 
-                    font-style: normal; 
-                    }
-        #header{
-                margin-bottom: 1em;
-                position: sticky;
-                padding-top: 3em;
-        }
-       .hundred{
-                color: #ff3300;
-                font-family: 'HSBombaram';
-                text-align: center;
-                margin-bottom: 0;
-       } 
-       .hundred#flower{
-                        font-size: 4em; 
-                        margin: auto;
-                        border-top: 1em;
-       }
-       .hundred#since2019{
-                        font-size: 1em; 
-       }
-       a.navbar-custom{
-                        font-family: 'S-CoreDream-3Light';
-                        color: #362f2d;         
-                        font-size: 1.6em;
-       }
-       a:hover{
-                font-family: 'S-CoreDream-3Light';
-                color: #ff3300;
-                text-decoration-line: underline;
-                text-decoration-color: #ff3300;
-       }
-       div#footer{
-                            background-color: #323232;
-                            color: #ffffff;
-                            font-family: 'Nanum Square';
-                            text-align: left;
-                            padding: 1.5em;
-                            position: absolute;
-                            width: 100%
-
-                            }
-        h3.title_m{  font-weight: 700; font-size: 1.5em; margin-right: 1.5em; }
-        h4.title_s{  font-weight: 400; font-size: 1em;  margin: 0.4em; margin-left:0;}
-        h5.content{  font-weight: 100; font-size: 0.7em; margin-top: auto; margin-bottom: auto;}
-        .logo{     font-weight: 900;  }
-        #footer>.row{    margin: 1em;  }
-        .side{ padding: 0;}
-        div.row{ margin: 0em;}
-        .box{ padding: 1em;}
-        .box#logo{ padding: 0;vertical-align: middle; }
-        .row#logo{ padding:0; margin-top: 1em; margin-left: 1.5em; align-items: center; width: 30em;}
-        .logo{ height: 1em; font-size: 3em;}
-        H1.logo{ font-size: 1.6em; margin: 0;}
-        #logo>h5.content{ font-size: 0.6em;}
-        #rightside{vertical-align: center;}
-        /*footer 하단 고정*/
-        div.contents{ min-height: 80%;}
-    </style>
 </head>
 
 <!--header-->
