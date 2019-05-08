@@ -49,11 +49,10 @@ html, body{ margin:0; padding: 0; height:100%; width: 100;}
     a:hover{
             font-family: 'S-CoreDream-3Light';
             color: #ff3300;
-            text-decoration-line: underline;
-            text-decoration-color: #ff3300;
+
     }
 /* 내용 */
-div.contents{   
+div#contents{   
                 position: absolute;
                 height: 80%;
                 padding-bottom: 166em;

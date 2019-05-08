@@ -16,23 +16,24 @@
 <!--header-->
 <div id="header">
     <!--title-->
-    <h1 class="hundred" id="flower">백일화</h1>
-    <h2 class="hundred" id="since2019">since 2019</h2>
+    <a href="{% url 'main' %}"><h1 class="hundred" id="flower">백일화</h1></a>
+    <a href="{% url 'main' %}"><h2 class="hundred" id="since2019">since 2019</h2></a>
+    
     <!--menubar-->
     <ul class="nav justify-content-center">
         <div class="row">
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#">공지사항</a></li>
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#">타임테이블</a></li>
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#">지도</a></li>
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#" >게시판</a></li>
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#" >이벤트</a></li>
-            <li class="nav-item"><a class="nav-link navbar-custom" href="#" >갤러리</a></li>
+            <a class="nav-link navbar-custom" href="{% url 'notice' %}"><li class="nav-item">공지사항</li></a>
+            <a class="nav-link navbar-custom" href="{% url 'timetable' %}"><li class="nav-item">타임테이블</li></a>
+            <a class="nav-link navbar-custom" href="{% url 'map' %}"><li class="nav-item">지도</li></a>
+            <a class="nav-link navbar-custom" href="{% url 'show' %}" ><li class="nav-item">게시판</li></a>
+            <a class="nav-link navbar-custom" href="{% url 'stamp' %}" ><li class="nav-item">이벤트</li></a>
+            <a class="nav-link navbar-custom" href="#" ><li class="nav-item">갤러리</li></a>
         </div>
     </ul>
 </div>
 
 <!--contents-->
-<div class="contents">
+<div id="contents">
     {% block content %}
     {% endblock %}
 </div>
