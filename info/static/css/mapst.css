@@ -1,0 +1,59 @@
+/*배경 : 362f2d
+메뉴바 : F5F5F5
+폰트 : 에스코어드림Light */
+
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+body {background-color: #FFFFFF; box-shadow: 2px 2px 3px gray ;}
+a:link,a:visited,a.active,a.hover { text-decoration: none; color:#362f2d;font-size:1.5em;}
+
+div#tab div {
+    padding: 1%;
+    margin-left:1%;
+    border-radius: 15% 15% 0 0;
+    background-color: #fc6b58;
+    display: inline-block;
+    font-family: 'S-CoreDream-3Light';
+}
+
+div#tab div a {color: #FFFFFF;}
+
+span{
+    font-size:1em;
+    padding: 12px 18px;
+    background-color: #f5f5f5;
+    border-radius: 5%;
+}
+
+ul {
+    padding-left:5%;
+}
+
+.row{margin-top:2%;}
+
+li {
+    font-family: 'S-CoreDream-3Light';
+    list-style:none;
+    padding-left: 4em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-repeat: no-repeat;
+	background-position: left;
+    background-size: 4em;
+}
+
+li.truck {background-image: url("../img/truck.png");}
+li.flea {background-image: url("../img/flea.png"); }
+li.booth{background-image: url("../img/booth.png");}
+
+.list{
+    margin:2%;
+    width:30%;
+    height:20%;
+    padding:0;
+    display:inline-block;
+}
+
+div img {
+    width:95%;
+    height:55%;
+}
