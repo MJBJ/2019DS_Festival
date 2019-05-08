@@ -1,11 +1,15 @@
 {% load staticfiles %}
 <head>
-    <link rel="stylesheet" href="{% static 'css/event.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css2/event.css' %}">
+    <style>
+    body{
+      background-color:red;
+    }
+    </style>
 </head>
 
 <body>
-  <div class="eventbg">
+<div class="eventbg">
 <!-- 지연 : hidden 속성으로 바꿀 예정 -->
 <input type="hidden" value={{photo}} id="st1">
 <input type="hidden" value={{game}} id="st2">

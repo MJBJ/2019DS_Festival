@@ -2,15 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect # 404, redirect
 from .models import Quest # Quest모델 import
 # stamp 판이 나오는 페이지
 def home(request):
-    quests=Quest.objects
-        # 지연 : stamp.html에서 배치를 위해 객체 인스턴스를 일일이 보냄
-    olist=[0,0,0,0,0]
-    i=0
-    for quest in quests.all():
-        olist[i]=quest
-        print(olist[i])
-        print(type(olist[i]))
-        i=i+1    
+    
     #혜영: 확인용
     photo=request.session.get('photo')
     game=request.session.get('game')
@@ -26,11 +18,7 @@ def home(request):
                                                 'bangbang':bangbang,
                                                 'viking':viking,
                                                 'popcorn':popcorn, 
-                                                'pwd1':olist[0],
-                                                'pwd2':olist[1],
-                                                'pwd3':olist[2],
-                                                'pwd4':olist[3],
-                                                'pwd5':olist[4],
+                                                
                                                 'finishbtn':finishbtn,
                                                 })
 def quest1(request):
