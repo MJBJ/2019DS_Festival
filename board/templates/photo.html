@@ -1,14 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
 <head>
-    <style>
-        .container{width:90%; height:45%;
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 5%;}
-        body{  background-color: #FFFFFF;
-            box-shadow: 2px 2px 3px gray ;}
-    </style>
+<style>
+    .container{width:90%; height:45%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;}
+    body{  background-color: #FFFFFF;
+        box-shadow: 2px 2px 3px gray ;}
+</style>
 </head>
-
 {%for board in boards.all%}
 <div class="container">
     {% if board.file %}
@@ -16,3 +18,4 @@
     {% endif %}
 </div>
 {%endfor%}
+{%endblock%}

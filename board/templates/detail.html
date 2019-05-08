@@ -1,4 +1,7 @@
 <!-- 한 페이지 상세내용 -->
+{% extends 'base.html' %}
+{% load static %}
+{%block contents%}
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,3 +40,4 @@ body{  background-color: #FFFFFF;
     <a id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드</a>
 </div>
 </body>
+{%endblock%}

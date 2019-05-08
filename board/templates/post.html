@@ -1,4 +1,6 @@
- <div class="container">
+{% extends 'base.html' %}
+{%block content%}
+<div class="container">
     <form method="post"  enctype="multipart/form-data">
     {% csrf_token %} 
     <table>
@@ -8,3 +10,4 @@
         <input class="btn btn-dark" type="submit" value="제출하기">
     </form>
 </div>
+{%endblock%}
