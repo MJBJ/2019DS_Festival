@@ -1,8 +1,12 @@
 .eventbg {
-	position: absolute;
-    width: 100%;
-    left: 0;
-    background-image: url('../static/eventbg.png');
+    width:60%;
+    height:70%;
+    background-repeat: none;
+    background-image: url('../eventbg.png');
+
 }
 
-#st1_img, #st2_img, #st3_img, #st4_img, #st5_img {}
+#st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
+    width: 4em; height:4em;
+    transform:rotate(-20deg);
+}
