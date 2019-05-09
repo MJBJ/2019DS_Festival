@@ -24,7 +24,7 @@ div#header{
             left : 0;
             width: 100%;
             z-index: 1;
-            height: 20em;
+            max-width: 100%;
             }
         /* 타이틀 */
         .title{
