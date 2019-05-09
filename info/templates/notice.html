@@ -15,12 +15,12 @@ span {background-color: lightgrey;}
 .ntxt {font-family:'S-CoreDream-3Light'; text-align:center; font-style:bold;}
 table#tel {
     margin-top:5%;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-family: 'S-CoreDream-3Light';
     padding-left:10%; padding-right:auto;
 }
-img#f {width: 80%; height:50em;}
-img#s {width: 80%; height:50em; margin-left:10%;}
+img#f {width: 80%; height:50em;margin-left:10%;}
+img#s {width: 80%; height:55em; margin-left:10%;}
 
 /*밑면 맞추기*/
 div#container{
@@ -34,7 +34,7 @@ div#container{
     <div id="contactNumber">
         <table id="tel" class="table striped">
             <thead><tr>
-                <th colspan="4">백일화 총학생회 비상연락망</th>
+                <th colspan="4" class="table-danger">백일화 총학생회 비상연락망</th>
             </tr></thead>
             <tr>
                 <td><span>총학생회장</span> 박시은</td>
@@ -66,15 +66,15 @@ div#container{
     <br><hr>
 
     <div id="smoke">
-        <h3>* 흡연구역 안내</h3>
-        <p>반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
+        <h3 class="ntxt">* 흡연구역 안내</h3>
+        <p class="ntxt">반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
         <img id="f" src="{% static 'img/smoking.jpg' %}"> <br><hr>
     </div>
 
     <div id="revenue">
-        <h3>* 수익사업 안내</h3><br>
-        <p>수익사업과 관련된 규칙입니다.</p>
-        <img id="s" src="{% static 'img/rule.jpg' %}">
+        <h3 class="ntxt">* 수익사업 안내</h3>
+        <p class="ntxt">수익사업과 관련된 규칙입니다.</p>
+        <img id="s" src="{% static 'img/rule.jpg' %}"><br><br>
     </div>
 </div>
 {% endblock %}
