@@ -13,11 +13,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
- 
+   @font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+   @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+   @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+
   .stamp_a:hover {text-decoration:none; color:black;}
   
 .stamp_a{
-  font-size:1.7em;color:black;
+  font-size:1.7em;color:#362f2d;
+  font-family: 'S-CoreDream-5Medium';
 }
 .col{
   text-align:center;
@@ -33,7 +37,7 @@
     background-repeat: no-repeat;
     background-image: url('../static/eventbg.png');
     background-size:100%;
-    padding-top:10em;
+    padding-top:8em;
 
     
    
@@ -70,14 +74,25 @@
 .stamp_title{
   margin-bottom:15em;
 }
-
+.h1style{
+  font-size:4.3em;
+ font-family: 'S-CoreDream-5Medium';
+  text-align:center;
+color:#ff3300;
+}
+.h3style{
+  font-family:'S-CoreDream-3Light';
+  text-align:center;
+color:#362f2d;
+font-size:2.1em;
+}
 
 </style>
 
 <div class="eventbg">
     <div class="stamp_title">
-        <h1>백일화 100배 즐기기!</h1>
-        <h3>숨겨진 다섯개의 스탬프 찾고 선물받자!</h3>
+        <h1 class="h1style">백일화 100배 즐기기!</h1>
+        <h3 class="h3style">숨겨진 다섯개의 스탬프 찾고 선물받자!</h3>
       </div>
     <!-- 지연 : hidden 속성으로 바꿀 예정 -->
     <input type="hidden" value={{photo}} id="st1">
@@ -91,27 +106,27 @@
       <div class="container" >
         <div class="row" >
             <div class="col">
-              <a href="{%url 'quest1' %}" class="stamp_a">STEP1 사진찍기</a><br/>
+              <a href="{%url 'quest1' %}" class="stamp_a" >STEP1 사진찍기</a><br/><br/>
               <img id="st1_img" src="{% static 'st1r.png'%}" alt="스탬프 찍기전1">
             </div>
             
             <div class="col">
-              <a href="{%url 'quest2' %}" class="stamp_a">STEP2 오락기</a><br/>
+              <a href="{%url 'quest2' %}" class="stamp_a">STEP2 오락기</a><br/><br/>
               <img id="st2_img" src="{% static 'st2r.png'%}" alt="스탬프 찍기전2">
             </div>
             <div class="col">
-              <a href="{%url 'quest3' %}" class="stamp_a">STEP3 트램펄린</a><br/>
+              <a href="{%url 'quest3' %}" class="stamp_a">STEP3 트램펄린</a><br/><br/>
               <img id="st3_img" src="{% static 'st3r.png'%}" alt="스탬프 찍기전3">
             </div>
         </div>	
         <br/><br/><br/>
         <div class="row">
           <div class="col">
-            <a href="{%url 'quest4' %}" class="stamp_a">STEP4 바이킹</a><br/>
+            <a href="{%url 'quest4' %}" class="stamp_a">STEP4 바이킹</a><br/><br/>
             <img id="st4_img" src="{% static 'st4r.png'%}" alt="스탬프 찍기전4">
           </div>
           <div class="col">
-            <a href="{%url 'quest5' %}" class="stamp_a">STEP5 팝콘</a><br/>
+            <a href="{%url 'quest5' %}" class="stamp_a">STEP5 팝콘</a><br/><br/>
             <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
           </div>
         </div>
