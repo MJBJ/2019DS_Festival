@@ -8,7 +8,7 @@ class Board(models.Model):
     비밀번호 = models.CharField(max_length=10, null=False, default="0000") # 비밀번호
 
     def __str__(self):
-        return self.title
+        return self.제목
 
     def summary(self):
         return self.제목[:15]
