@@ -1,46 +1,122 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <style>
+.nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+  body{background-color: #f5f5f5;}
+  div#back {
+    width:60em;
+    padding: 1%;
+    background-color: #ffffff;
+    margin-top:3em;
+    margin-left:0.5em;
+    margin-right:0.5em;
+    box-shadow: 2px 2px 5px grey;
+}
+  a:link,a:visited,a.active,a.hover { text-decoration: none; color:#362f2d;font-size:1.5em;}
+  
+  /* tab */
   div#tab div{
+    margin-top: 5%;
+    margin-left:3%;
     background-color: #fc6b58;
     border-radius: 15% 15% 0 0;
     display: inline-block;
   }
-  .maplink, .maplink:link, .maplink:visited, .maplink.active, .maplink.hover
-  { text-decoration:none; 
-    font-family: 'S-CoreDream-3Light';
+
+  /* tab */
+  div#tab div>a {
+    color: white;
+    padding-left: 2em;
+    padding-right: 0.5em;
+    font-family:'NanumSquare';
   }
+
+  /* 지도 메뉴 */
+  .maplink {font-family: 'S-CoreDream-3Light';}
+
+  .maplist {
+    width:18em;
+    display: inline-block;
+    list-style:none;} 
+
+  li.truck {
+    padding-left: 4em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-image: url("../static/img/truck.png"); 
+    background-repeat: no-repeat;
+	  background-position: left;
+    background-size: 3em;}
+
+  li.flea  {
+    padding-left: 4em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-image: url("../static/img/flea.png"); 
+    background-repeat: no-repeat;
+	  background-position: left;
+    background-size: 3em;
+  }
+  li.booth {
+    padding-left: 4em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-image: url("../static/img/booth.png");
+    background-repeat: no-repeat;
+	  background-position: left;
+    background-size: 3em;
+  }
+
+  .mapspan {
+    padding:5%;
+    border-radius: 1%;
+    background-color: #f5f5f5;
+  }
+  /* 지도 이미지 */
+  #mapimg > img {
+    margin-left:3%;
+    width: 55em;
+    height: 40em;
+  }
+
 </style>
 
-<div id="tab">
-    <div><a class="maplink" href="#">영근터</a></div>
-    <div><a class="maplink" href="#">소영근터</a></div>
-    <div><a class="maplink" href="#">학관</a></div>
-    <div><a class="maplink"href="#">민주동산</a></div>
+<div id="back">
+  <div id="tab">
+      <div><a class="maplink" href="#">영근터</a></div>
+      <div><a class="maplink" href="#">소영근터</a></div>
+      <div><a class="maplink" href="#">학관</a></div>
+      <div><a class="maplink"href="#">민주동산</a></div>
+  </div>
+
+  <div id="mapimg">
+    <img src="{% static 'img/test.jpg' %}">
+  </div>
+
+  <div id="mapdiv">
+  <ul class="maplist">
+    <li class="truck"><span class="mapspan"><a class="maplink" href="#">두끼떡볶이</a></span></li>
+    <li class="truck"><span class="mapspan"><a class="maplink" href="#">타코야끼</a></span></li>
+    <li class="truck"><span class="mapspan"><a class="maplink" href="#">녹차호떡</a></span></li>
+    <li class="truck"><span class="mapspan"><a class="maplink" href="#">야채곱창</a></span></li>
+  </ul>
+
+  <ul class="maplist">
+    <li class="flea"><span class="mapspan"><a class="maplink" href="#">동화플리마켓</a></span></li>
+    <li class="flea"><span class="mapspan"><a class="maplink" href="#">멋사플리마켓</a></span></li>
+    <li class="flea"><span class="mapspan"><a class="maplink" href="#">덕성플리마켓</a></span></li>
+    <li class="flea"><span class="mapspan"><a class="maplink" href="#">도봉플리마켓</a></span></li>
+  </ul>
+
+  <ul class="maplist">
+    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">유교과</a></span></li>
+    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">철학과</a></span></li>
+    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">회계학과</a></span></li>
+    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">컴퓨터학과</a></span></li>
+  </ul>
+  </div>
 </div>
-
-<ul class="maplist">
-  <li><a class="maplink" href="#">두끼떡볶이</a></li>
-  <li><a class="maplink" href="#">타코야끼</a></li>
-  <li><a class="maplink" href="#">녹차호떡</a></li>
-  <li><a class="maplink" href="#">야채곱창</a></li>
-</ul>
-
-<ul class="maplist">
-  <li><a class="maplink" href="#">동화플리마켓</a></li>
-  <li><a class="maplink" href="#">멋사플리마켓</a></li>
-  <li><a class="maplink" href="#">덕성플리마켓</a></li>
-  <li><a class="maplink" href="#">도봉플리마켓</a></li>
-</ul>
-
-<ul class="maplist">
-  <li><a href="#">유교과</a></li>
-  <li><a href="#">철학과</a></li>
-  <li><a href="#">회계학과</a></li>
-  <li><a href="#">컴퓨터학과</a></li>
-</ul>
-
 {% endblock %}
