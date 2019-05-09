@@ -20,11 +20,11 @@
 </div>
 
 <div class="menuButton">
-    <a href="#"><img src="{% static 'notice.png' %}" alt="notice" class="img_button"></a>
-    <a href="#"><img src="{% static 'event.png' %}" alt="event" class="img_button"></a>
-    <a href="#"><img src="{% static 'timetable.png' %}" alt="timetable" class="img_button"></a>
-    <a href="#"><img src="{% static 'map.png' %}" alt="map" class="img_button"></a>
-    <a href="#"><img src="{% static 'board.png' %}" alt="board" class="img_button"></a>
+    <a href="{% url 'notice' %}"><img src="{% static 'notice.png' %}" alt="notice" class="img_button"></a>
+    <a href="{% url 'stamp' %}"><img src="{% static 'event.png' %}" alt="event" class="img_button"></a>
+    <a href="{% url 'timetable' %}"><img src="{% static 'timetable.png' %}" alt="timetable" class="img_button"></a>
+    <a href="{% url 'map' %}"><img src="{% static 'map.png' %}" alt="map" class="img_button"></a>
+    <a href="{% url 'show' %}"><img src="{% static 'board.png' %}" alt="board" class="img_button"></a>
     <a href="#"><img src="{% static 'gallery.png' %}" alt="gallery" class="img_button"></a>
 </div>
 
