@@ -22,47 +22,59 @@ table#tel {
 img#f {width: 80%; height:50em;}
 img#s {width: 80%; height: 50em; margin-left:10%;}
 
+/*밑면 맞추기*/
+div#container{
+    position: absolute;
+    padding-top: 14em;
+}
 </style>
 
 
 <div id="back">
-    <table id="tel" class="table striped">
-        <thead>
+    <div id="contactNumber">
+        <table id="tel" class="table striped">
+            <thead><tr>
+                <th colspan="4">백일화 총학생회 비상연락망</th>
+            </tr></thead>
             <tr>
-            <th colspan="4">백일화 총학생회 비상연락망</th>
+                <td><span>총학생회장</span> 박시은</td>
+                <td>010-8771-3931</td>
+                <td>사무국장 이은아</td>
+                <td>010-6409-5827</td>
             </tr>
-        </thead>
-        <tr>
-            <td><span>총학생회장</span> 박시은</td>
-            <td>010-8771-3931</td>
-            <td>사무국장 이은아</td>
-            <td>010-6409-5827</td>
-        </tr>
-        <tr>
-            <td><span>부총학생회장</span> 서수연</td>
-            <td>010-5025-5260</td>
-            <td>소통국장 김주혜</td>
-            <td>010-8791-3896</td>
-        </tr>
-        <tr>
-            <td>기획국장 최미정</td>
-            <td>010-4112-1905</td>
-            <td>재무국장 박수영</td>
-            <td>010-5306-4478</td>
-        </tr>
-        <tr>
-            <td>복지국장 김민지</td>
-            <td>010-2557-1817</td>
-            <td>홍보국장 김혜린</td>
-            <td>010-6264-1889</td>
-        </tr>
-    </table>
+            <tr>
+                <td><span>부총학생회장</span> 서수연</td>
+                <td>010-5025-5260</td>
+                <td>소통국장 김주혜</td>
+                <td>010-8791-3896</td>
+            </tr>
+            <tr>
+                <td>기획국장 최미정</td>
+                <td>010-4112-1905</td>
+                <td>재무국장 박수영</td>
+                <td>010-5306-4478</td>
+            </tr>
+            <tr>
+                <td>복지국장 김민지</td>
+                <td>010-2557-1817</td>
+                <td>홍보국장 김혜린</td>
+                <td>010-6264-1889</td>
+            </tr>
+        </table>
+    </div>
+
     <br><hr>
-    <h3>* 흡연구역 안내</h3>
-    <p>반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
-    <img id="f" src="{% static 'img/smoking.jpg' %}"> <br><hr>
-    <h3>* 수익사업 안내</h3><br>
-    <p>수익사업과 관련된 규칙입니다.</p>
-    <img id="s" src="{% static 'img/rule.jpg' %}">
+
+    <div id="smoke">
+        <h3>* 흡연구역 안내</h3>
+        <p>반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
+        <img id="f" src="{% static 'img/smoking.jpg' %}"> <br><hr>
+    </div>
+
+    <div id="revenue">
+        <h3>* 수익사업 안내</h3><br>
+        <p>수익사업과 관련된 규칙입니다.</p>
+        <img id="s" src="{% static 'img/rule.jpg' %}">
+    </div>
 </div>
 {% endblock %}
