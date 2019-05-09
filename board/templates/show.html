@@ -4,18 +4,24 @@
 {%block content%}
 <head>
 <style>
+    .container1{background-color: F5f5f5;}
     .container{
         background-color: #FFFFFF;
-        box-shadow: 2px 2px 3px gray ;
-        margin-bottom: 2em;
-        margin-left: auto;
-
+        box-shadow: 2px 2px 3px gray;
+        width: 100%;
+        height: 18em;
+        margin: 2em auto;
     }
     img{
-        padding-left: 75%;
-        padding-top: 3%;
+        width:10em;
+        height:10em;
+        margin-left: 75%;
+        float: left;
     }
-    .big{display:inline;}
+    .title{
+        width:50%;
+        font-size: 2em;
+    }
 </style>
 </head>
 <body>
@@ -24,17 +30,21 @@
     <h4><a href="{% url 'post' %}">글쓰기</a></h4>
     {%for board in boards.all%}
     <div class="container">
-        <div class="big">
-            <div class="title">{{board.title}}</div>
-            <div class="i">
-            <a href="{% url 'detail' board.id %}">
-                {% if board.file %}
-                <img style="width:12em; height:11em;" src="{{board.file.url}}" alt="">
-                {% endif %}
-            </a>
+        <div class="row">
+            <div class="col-md-4">{{board.title}}</div>
+            <div class="col-md-3 col-md-offset-3">{{board.pub_date}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">{{board.body}}</div>
+            <div class="col-md-7 col-md-offset-7">
+                <a href="{% url 'detail' board.id %}">
+                    {% if board.file %}
+                    <img src="{{board.file.url}}" alt="">
+                    {% endif %}
+                </a>
             </div>
         </div>
-        <small class="text-muted">{{board.pub_date}}</small>
+        
     </div>
     {%endfor%}
 </div>

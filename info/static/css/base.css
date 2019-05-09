@@ -60,7 +60,9 @@ div.contents{
                 padding-top: 14em;
                }
                 
-               
+.contents{
+    width: 100%;
+}
         
 /* 푸터 */
     div#footer{
