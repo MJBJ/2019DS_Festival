@@ -13,9 +13,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
-  a:hover {text-decoration:none;}
+ 
+  .stamp_a:hover {text-decoration:none; color:black;}
   
-
+.stamp_a{
+  font-size:1.7em;color:black;
+}
+.col{
+  text-align:center;
+}
 .eventbg {
     
     
@@ -27,17 +33,22 @@
     background-repeat: no-repeat;
     background-image: url('../static/eventbg.png');
     background-size:100%;
-    padding-top:35em;
+    padding-top:10em;
+
     
    
 }
-#stamp_box{
+
+.container{
   border:2px solid red;
+  min-width:62em;
+  height:60em;
+  margin-left:4em;
+  margin-right:auto;
+  padding:2em;
   
-  background-color:red;
-  margin-left:0px;
-  margin-right:0px;
-  width:60em;
+  
+  
 }
 .sline1{
   
@@ -46,12 +57,28 @@
 }
 
 #st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
-    width: 9em; height:9em;
+    width: 15em; height:15em;
     transform:rotate(-20deg);
 }
- 
+.subbtn{
+  background-image: url('../static/mclear.png');
+  background-size:100%;
+  width:20em;
+  height:6em;
+  background-repeat: no-repeat;
+}
+.stamp_title{
+  margin-bottom:15em;
+}
+
+
 </style>
+
 <div class="eventbg">
+    <div class="stamp_title">
+        <h1>백일화 100배 즐기기!</h1>
+        <h3>숨겨진 다섯개의 스탬프 찾고 선물받자!</h3>
+      </div>
     <!-- 지연 : hidden 속성으로 바꿀 예정 -->
     <input type="hidden" value={{photo}} id="st1">
     <input type="hidden" value={{game}} id="st2">
@@ -61,36 +88,41 @@
     <!-- 지연 : 이미지 눌렀을 때 자바스크립트 시도-->
 
    
-      <div class="container" id="stamp_box">
-        <div class="row">
+      <div class="container" >
+        <div class="row" >
             <div class="col">
-              <a href="{%url 'quest1' %}" >STEP1 사진찍기</a><br/>
+              <a href="{%url 'quest1' %}" class="stamp_a">STEP1 사진찍기</a><br/>
               <img id="st1_img" src="{% static 'st1r.png'%}" alt="스탬프 찍기전1">
             </div>
+            
             <div class="col">
-              <a href="{%url 'quest2' %}">STEP2 오락기</a><br/>
+              <a href="{%url 'quest2' %}" class="stamp_a">STEP2 오락기</a><br/>
               <img id="st2_img" src="{% static 'st2r.png'%}" alt="스탬프 찍기전2">
             </div>
             <div class="col">
-              <a href="{%url 'quest3' %}">STEP3 트램펄린</a><br/>
+              <a href="{%url 'quest3' %}" class="stamp_a">STEP3 트램펄린</a><br/>
               <img id="st3_img" src="{% static 'st3r.png'%}" alt="스탬프 찍기전3">
             </div>
         </div>	
+        <br/><br/><br/>
         <div class="row">
           <div class="col">
-            <a href="{%url 'quest4' %}">STEP4 바이킹</a><br/>
+            <a href="{%url 'quest4' %}" class="stamp_a">STEP4 바이킹</a><br/>
             <img id="st4_img" src="{% static 'st4r.png'%}" alt="스탬프 찍기전4">
           </div>
           <div class="col">
-            <a href="{%url 'quest5' %}">STEP5 팝콘</a><br/>
+            <a href="{%url 'quest5' %}" class="stamp_a">STEP5 팝콘</a><br/>
             <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
           </div>
         </div>
-        <div class="row">          
+        <br/><br/><br/>
+        <div class="row" >   
+          <div class="col">      
           <form id="fform" action="{%url 'clear' %}">
-            <input type="text" id="goinit" value={{finishbtn}} name="goinit"/>
-            <input type="submit" id="fbtn" onclick="finish();"/>
+            <input type="hidden" id="goinit" value={{finishbtn}} name="goinit"/>
+            <input class="subbtn" type="submit" id="fbtn" onclick="finish();"/>
           </form>
+        </div> 
         </div>
       </div>
     
