@@ -12,7 +12,45 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<style>
+  a:hover {text-decoration:none;}
+  
 
+.eventbg {
+    
+    
+    width:70em;
+    height:110em;
+    margin-top:0px; 
+    margin-left:0px;
+    margin-right:auto;
+    background-repeat: no-repeat;
+    background-image: url('../static/eventbg.png');
+    background-size:100%;
+    padding-top:35em;
+    
+   
+}
+#stamp_box{
+  border:2px solid red;
+  
+  background-color:red;
+  margin-left:0px;
+  margin-right:0px;
+  width:60em;
+}
+.sline1{
+  
+    display:inline;
+    
+}
+
+#st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
+    width: 9em; height:9em;
+    transform:rotate(-20deg);
+}
+ 
+</style>
 <div class="eventbg">
     <!-- 지연 : hidden 속성으로 바꿀 예정 -->
     <input type="hidden" value={{photo}} id="st1">
@@ -23,39 +61,40 @@
     <!-- 지연 : 이미지 눌렀을 때 자바스크립트 시도-->
 
    
-      <div class="container" class="stamp_box">
+      <div class="container" id="stamp_box">
         <div class="row">
             <div class="col">
-              <a href="{%url 'quest1' %}">STEP1 사진찍기</a><br/>
+              <a href="{%url 'quest1' %}" >STEP1 사진찍기</a><br/>
               <img id="st1_img" src="{% static 'st1r.png'%}" alt="스탬프 찍기전1">
             </div>
             <div class="col">
-              <a href="{%url 'quest2' %}">STEP2 사진찍기</a><br/>
+              <a href="{%url 'quest2' %}">STEP2 오락기</a><br/>
               <img id="st2_img" src="{% static 'st2r.png'%}" alt="스탬프 찍기전2">
             </div>
             <div class="col">
-              <a href="{%url 'quest3' %}">STEP3 사진찍기</a><br/>
+              <a href="{%url 'quest3' %}">STEP3 트램펄린</a><br/>
               <img id="st3_img" src="{% static 'st3r.png'%}" alt="스탬프 찍기전3">
             </div>
         </div>	
         <div class="row">
           <div class="col">
-            <a href="{%url 'quest4' %}">STEP4 사진찍기</a><br/>
+            <a href="{%url 'quest4' %}">STEP4 바이킹</a><br/>
             <img id="st4_img" src="{% static 'st4r.png'%}" alt="스탬프 찍기전4">
           </div>
           <div class="col">
-            <a href="{%url 'quest5' %}">STEP5 사진찍기</a><br/>
+            <a href="{%url 'quest5' %}">STEP5 팝콘</a><br/>
             <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
           </div>
         </div>
-          
+        <div class="row">          
+          <form id="fform" action="{%url 'clear' %}">
+            <input type="text" id="goinit" value={{finishbtn}} name="goinit"/>
+            <input type="submit" id="fbtn" onclick="finish();"/>
+          </form>
+        </div>
       </div>
     
  
-<form id="fform" action="{%url 'clear' %}">
-  <input type="text" id="goinit" value={{finishbtn}} name="goinit"/>
-  <input type="submit" id="fbtn" onclick="finish();"/>
-</form>
 </div>
 
 
