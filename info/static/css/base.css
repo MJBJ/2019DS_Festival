@@ -15,7 +15,7 @@
 html, body{ margin:0; padding: 0; height:100%; width: 100;}
     
 /*헤더*/
-    #header{
+div#header{
             margin-bottom: 1em;
             padding-top: 3em;
             background-color: #ffffff;
@@ -25,52 +25,56 @@ html, body{ margin:0; padding: 0; height:100%; width: 100;}
             width: 100%;
             z-index: 1;
             }
-    /* 로고 */
-    .hundred{
-            color: #ff3300;
-            font-family: 'HSBombaram';
-            text-align: center;
-            margin-bottom: 0;
-        } 
-    .hundred#flower{
-                    font-size: 4em; 
-                    margin: auto;
-                    border-top: 1em;
-    }
-    .hundred#since2019{
-                        font-size: 1em; 
-    }
-    /* navbar */
-    a.navbar-custom{
-                    font-family: 'S-CoreDream-3Light';
-                    color: #362f2d;         
-                    font-size: 1.6em;
-    }
-    a:hover{
-            font-family: 'S-CoreDream-3Light';
-            color: #ff3300;
-            text-decoration-line: underline;
-            text-decoration-color: #ff3300;
+        /* 타이틀 */
+        .title{
+                color: #ff3300;
+                font-family: 'HSBombaram';
+                text-align: center;
+                margin-bottom: 0;
+                }       
+        .title#flower{
+                        font-size: 4em; 
+                        margin: auto;
+                        border-top: 1.6em;
+        }
+        .title#since2019{
+                                font-size: 1.3em; 
+        }
+        .title:hover{text-decoration: none;} 
+        /* navbar */
+        a.navbar-custom{
+                        font-family: 'S-CoreDream-3Light';
+                        color: #362f2d;         
+                        font-size: 2em;
+                        
+        }
+        a.navbar-custom:hover{
+                font-family: 'S-CoreDream-3Light';
+                color: #ff3300;
+                text-decoration: underline;
+                text-decoration-color: #ff3300;
+
     }
 /* 내용 */
-div.contents{  
+div#contents{   
                 position: absolute;
                 height: 80%;
                 padding-bottom: 166em;
                 padding-top: 14em;
-               }
-               
+        }
+                
+
 /* 푸터 */
-    div#footer{
-                background-color: #323232;
-                color: #ffffff;
-                font-family: 'Nanum Square';
-                text-align: left;
-                padding: 1.5em;
-                width: 100%;
-                position:absolute;
-                bottom:0px;
-                left:0px;
+div#footer{
+            background-color: #323232;
+            color: #ffffff;
+            font-family: 'Nanum Square';
+            text-align: left;
+            padding: 1.5em;
+            width: 100%;
+            position:fixed; 
+            bottom:0;
+            left:0;
     }
     
     /*구조*/
