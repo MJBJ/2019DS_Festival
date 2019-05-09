@@ -53,17 +53,14 @@ html, body{ margin:0; padding: 0; height:100%; width: 100;}
             text-decoration-color: #ff3300;
     }
 /* 내용 */
-div.contents{   
+div.contents{  
                 position: absolute;
                 height: 80%;
                 padding-bottom: 166em;
                 padding-top: 14em;
                }
                 
-.contents{
-    width: 100%;
-}
-        
+               
 /* 푸터 */
     div#footer{
                 background-color: #323232;
@@ -72,12 +69,13 @@ div.contents{
                 text-align: left;
                 padding: 1.5em;
                 width: 100%;
-                position:fixed; 
-                bottom:0;
-                left:0;
+                position:absolute; 
+                bottom:0px;
+                left:0px;
     }
+    
     /*구조*/
-    #footer>.row{    margin: 1em;  }
+    #footer>.row{   margin: 1em;  }
     .side{ padding: 0;}
     div.row{ margin: 0em;}
     .box{ padding: 1em;}

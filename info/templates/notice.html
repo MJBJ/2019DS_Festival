@@ -6,20 +6,21 @@
 normal; font-style: normal; }
 body {background-color: #f5f5f5;}
 div#back {
-    padding:5%;
+    padding: 1%;
     background-color: #ffffff;
     margin:1%;
     box-shadow: 2px 2px 5px grey;
 }
-h5 {font-family:'S-CoreDream-3Light'; text-align:center;font-style:bold;}
+span {background-color: lightgrey;}
+h5,h3,p {font-family:'S-CoreDream-3Light'; text-align:center; font-style:bold;}
 table#tel {
     margin-top:5%;
     font-size: 1.2em;
     font-family: 'S-CoreDream-3Light';
     padding-left:10%; padding-right:auto;
 }
-img#f {width:90%; height:60%;}
-img#s {width:90%; height:40%;}
+img#f {width: 80%; height:50em;}
+img#s {width: 80%; height: 50em; margin-left:10%;}
 
 </style>
 
@@ -32,13 +33,13 @@ img#s {width:90%; height:40%;}
             </tr>
         </thead>
         <tr>
-            <td>총학생회장 박시은</td>
+            <td><span>총학생회장</span> 박시은</td>
             <td>010-8771-3931</td>
             <td>사무국장 이은아</td>
             <td>010-6409-5827</td>
         </tr>
         <tr>
-            <td>부총학생회장 서수연</td>
+            <td><span>부총학생회장</span> 서수연</td>
             <td>010-5025-5260</td>
             <td>소통국장 김주혜</td>
             <td>010-8791-3896</td>
@@ -56,6 +57,12 @@ img#s {width:90%; height:40%;}
             <td>010-6264-1889</td>
         </tr>
     </table>
-    <img id="f" src="{% static 'img/smoking.jpg' %}"> <br>
+    <br><hr>
+    <h3>* 흡연구역 안내</h3>
+    <p>반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
+    <img id="f" src="{% static 'img/smoking.jpg' %}"> <br><hr>
+    <h3>* 수익사업 안내</h3><br>
+    <p>수익사업과 관련된 규칙입니다.</p>
+    <img id="s" src="{% static 'img/rule.jpg' %}">
 </div>
 {% endblock %}
