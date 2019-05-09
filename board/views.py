@@ -6,7 +6,7 @@ from .forms import BoardForm
 from django.http import HttpResponseRedirect
 
 def show(request):
-    boards = Board.objects
+    boards = Board.objects.order_by('-id')
     return render(request, 'show.html', {'boards':boards})
 
 def photo(request):
