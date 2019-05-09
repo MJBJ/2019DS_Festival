@@ -13,7 +13,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
-  a:hover {text-decoration:none;}
+  a{color:black;}
+  a:hover {text-decoration:none; color:black;}
   
 
 .eventbg {
@@ -31,13 +32,13 @@
     
    
 }
-#stamp_box{
+
+.container{
   border:2px solid red;
+  width:80em;
+  margin-left:4em;
+  margin-right:4em;
   
-  background-color:red;
-  margin-left:0px;
-  margin-right:0px;
-  width:60em;
 }
 .sline1{
   
@@ -46,8 +47,15 @@
 }
 
 #st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
-    width: 9em; height:9em;
+    width: 10em; height:10em;
     transform:rotate(-20deg);
+}
+.subbtn{
+  background-image: url('../static/mclear.png');
+  background-size:100%;
+  width:20em;
+  height:6em;
+  background-repeat: no-repeat;
 }
  
 </style>
@@ -88,8 +96,8 @@
         </div>
         <div class="row">          
           <form id="fform" action="{%url 'clear' %}">
-            <input type="text" id="goinit" value={{finishbtn}} name="goinit"/>
-            <input type="submit" id="fbtn" onclick="finish();"/>
+            <input type="hidden" id="goinit" value={{finishbtn}} name="goinit"/>
+            <input class="subbtn" type="submit" id="fbtn" onclick="finish();"/>
           </form>
         </div>
       </div>
