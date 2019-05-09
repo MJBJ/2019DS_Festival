@@ -5,6 +5,7 @@
 
 <head>
 <style>
+    body{background-color: #FFFFFF;}
     .container1{background-color: F5f5f5;
     width:80em;}
     #s_row{
@@ -16,6 +17,7 @@
         padding: 1.5em;
     }
     #s_img{width:22em; height:18em; padding-left:1em; padding-top:1em;}
+    #s_defaultimg{width:22em; height:18em; padding-left:1em; padding-top:1em;}
     #s_title{color:#ff3300;
             font-size:2.5em; margin:0; margin-top:0.2em;}
     #s_date{ font-size:2em;margin:0; padding:0.5em 0 0 0; color:black;}
@@ -45,11 +47,13 @@
                     {{board.updated_at|date:"m/d H:i"}}
                 </div>
             </div>
-            <div class="s_body">{{board.body}}</div>
+            <div class="s_body">{{board.summary}} [...]</div>
         </div>
         <div class="col-md-4" id="s_col-md-8">
                 {% if board.file %}
                 <img id="s_img" src="{{board.file.url}}" alt="">
+                {% else %}
+                <img id="s_defaultimg" src="{% static 'default.jpg' %}" alt="">
                 {% endif %}
         </div>        
     </div>

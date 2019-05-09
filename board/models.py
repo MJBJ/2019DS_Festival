@@ -11,4 +11,4 @@ class Board(models.Model):
         return self.title
 
     def summary(self):
-        return self.body[:10]
+        return self.body[:15]
