@@ -66,8 +66,6 @@
             {{board.내용}}
         </div>
         <div id="bcontent2">
-            <a class="ba" href="{% url 'show' %}">뒤로</a>
-
             <div id="bpwd">
                 <form method="get" action="{% url 'delete' board.id %}">
                     {% comment %} {% csrf_token %}  {% endcomment %}
