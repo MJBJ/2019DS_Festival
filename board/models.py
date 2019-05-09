@@ -11,4 +11,4 @@ class Board(models.Model):
         return self.제목
 
     def summary(self):
-        return self.제목[:15]
+        return self.내용[:15]
