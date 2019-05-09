@@ -4,7 +4,7 @@ from .models import Board
 class BoardForm(forms.ModelForm):
     class Meta:
         model = Board
-        fields = ['file', '제목','내용','비밀번호']
+        fields = ['file', 'Title','Text','pwd']
 
         def __init__(self, *args, **kwargs):
             super(PostForm, self).__init__(*args, **kwargs)
