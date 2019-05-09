@@ -53,27 +53,27 @@ def check(request):
     # 혜영: if-elif spotNum 찾기. 각 비밀번호 맞으면세션 저장
     if spotNum == "1":
         print("1")
-        if user_pwd == "lionking":
+        if user_pwd == "like70":
             print("ok")
             request.session['photo'] = spotNum    
     elif spotNum == "2":
         print("2")
-        if user_pwd == "lionking":
+        if user_pwd == "lion13":
             print("ok")
             request.session['game'] = spotNum
     elif spotNum == "3":
         print("3")
-        if user_pwd == "lionking":
+        if user_pwd == "hack66":
             print("ok")
             request.session['bangbang'] = spotNum
     elif spotNum == "4":
         print("4")
-        if user_pwd == "lionking":
+        if user_pwd == "your5":
             print("ok")
             request.session['viking'] = spotNum
     elif spotNum == "5":
         print("5")
-        if user_pwd == "lionking":
+        if user_pwd == "life7":
             print("ok")
             request.session['popcorn'] = spotNum
 
