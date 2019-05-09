@@ -17,8 +17,8 @@
    @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
    @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-  .stamp_a:hover {text-decoration:none; color:black;}
-  
+.stamp_a:hover {text-decoration:none; color:#362f2d;}
+
 .stamp_a{
   font-size:1.7em;color:#362f2d;
   font-family: 'S-CoreDream-5Medium';
@@ -27,8 +27,6 @@
   text-align:center;
 }
 .eventbg {
-    
-    
   
     height:110em;
     margin-top:0px; 
@@ -135,13 +133,11 @@ font-size:2.1em;
           <div class="col">      
           <form id="fform" action="{%url 'clear' %}">
             <input type="hidden" id="goinit" value={{finishbtn}} name="goinit"/>
-            <input class="subbtn" type="submit" id="fbtn" onclick="finish();"/>
+            <input class="subbtn" type="submit" value="" id="fbtn" onclick="finish();"/>
           </form>
         </div> 
         </div>
       </div>
-    
- 
 </div>
 
 
@@ -160,7 +156,7 @@ font-size:2.1em;
       // 완료 버튼을 누르면 
       // 그제서야 세션을 만든다.
       if(st1=="1"&&st2=="2"&&st3=="3"&&st4=="4"&&st5=="5"){ 
-        alert("hellp")
+        alert("미션 성공!");
         document.getElementById('goinit').setAttribute('value',"goinit");
 
     }
@@ -168,6 +164,8 @@ font-size:2.1em;
     }
     // 지연 : 페이지가 로드 될때마다 
     window.onload=function(){
+    
+    
     
       // 지연 : st1 = 인풋1의 value 속성값을 받아옴
       var st1=document.getElementById('st1').getAttribute('value');
@@ -180,7 +178,7 @@ font-size:2.1em;
       // 페이지가 로드 될떄마다 완료버튼의 세션값을 확인한다.
       // 만약 세션이 저장되어 있으면 완료라고 써놓고
       if(goinit=="goinit"){
-        btn.setAttribute('value',"완료");
+        //btn.setAttribute('value',"완료");
         btn.disabled = 'disabled';
       }
       // 안 저장되어 있으면 그대로 유지시킨다.
