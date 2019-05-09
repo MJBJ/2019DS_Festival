@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<!--
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 합쳐지고 최소화된 최신 CSS 
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
--->
-<!-- 부가적인 테마 
+
+<!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
--->
-<!-- 합쳐지고 최소화된 최신 자바스크립트 
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
--->
+
 <style>
    @font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
    @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
    @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
 
-.stamp_a:hover {text-decoration:none; color:black;}
-  
+.stamp_a:hover {text-decoration:none; color:#362f2d;}
+
 .stamp_a{
   font-size:1.7em;color:#362f2d;
   font-family: 'S-CoreDream-5Medium';
@@ -27,7 +27,7 @@
   text-align:center;
 }
 .eventbg {
-    width:70em;
+  
     height:110em;
     margin-top:0px; 
     margin-left:0px;
@@ -36,19 +36,26 @@
     background-image: url('../static/eventbg.png');
     background-size:100%;
     padding-top:8em;
+
+    
+   
 }
 
 .container{
-  
+  border:2px solid red;
   min-width:62em;
   height:60em;
   margin-left:4em;
   margin-right:auto;
   padding:2em;
-
+  
+  
+  
 }
 .sline1{
+  
     display:inline;
+    
 }
 
 #st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
@@ -67,15 +74,15 @@
 }
 .h1style{
   font-size:4.3em;
-  font-family: 'S-CoreDream-5Medium';
+ font-family: 'S-CoreDream-5Medium';
   text-align:center;
-  color:#ff3300;
+color:#ff3300;
 }
 .h3style{
   font-family:'S-CoreDream-3Light';
   text-align:center;
-  color:#362f2d;
-  font-size:2.1em;
+color:#362f2d;
+font-size:2.1em;
 }
 
 </style>
@@ -100,6 +107,7 @@
               <a href="{%url 'quest1' %}" class="stamp_a" >STEP1 사진찍기</a><br/><br/>
               <img id="st1_img" src="{% static 'st1r.png'%}" alt="스탬프 찍기전1">
             </div>
+            
             <div class="col">
               <a href="{%url 'quest2' %}" class="stamp_a">STEP2 오락기</a><br/><br/>
               <img id="st2_img" src="{% static 'st2r.png'%}" alt="스탬프 찍기전2">
@@ -125,23 +133,21 @@
           <div class="col">      
           <form id="fform" action="{%url 'clear' %}">
             <input type="hidden" id="goinit" value={{finishbtn}} name="goinit"/>
-            <input class="subbtn" type="submit" id="fbtn" onclick="finish();"/>
+            <input class="subbtn" type="submit" value="" id="fbtn" onclick="finish();"/>
           </form>
         </div> 
         </div>
       </div>
-    
- 
 </div>
 
 
-<!-- 세션이 저장되어 있나 확인 한다. hidden 입력 태그의 value값으로 -->
+<!-- 지연 : 세션이 저장되어 있나 확인 한다. hidden 입력 태그의 value값으로 -->
 </div>
   <script>
     function finish(){
 
 // 미션버튼도 세션에 저장되어 있나 확인한다.
-      
+      //var finishbtn=document.getElementById('goinit').getAttribute('value');
       var st1=document.getElementById('st1').getAttribute('value');
       var st2=document.getElementById('st2').getAttribute('value');
       var st3=document.getElementById('st3').getAttribute('value');
@@ -150,7 +156,7 @@
       // 완료 버튼을 누르면 
       // 그제서야 세션을 만든다.
       if(st1=="1"&&st2=="2"&&st3=="3"&&st4=="4"&&st5=="5"){ 
-        alert("hellp")
+        alert("미션 성공!");
         document.getElementById('goinit').setAttribute('value',"goinit");
 
     }
@@ -158,6 +164,8 @@
     }
     // 지연 : 페이지가 로드 될때마다 
     window.onload=function(){
+    
+    
     
       // 지연 : st1 = 인풋1의 value 속성값을 받아옴
       var st1=document.getElementById('st1').getAttribute('value');
@@ -170,7 +178,7 @@
       // 페이지가 로드 될떄마다 완료버튼의 세션값을 확인한다.
       // 만약 세션이 저장되어 있으면 완료라고 써놓고
       if(goinit=="goinit"){
-        btn.setAttribute('value',"완료");
+        //btn.setAttribute('value',"완료");
         btn.disabled = 'disabled';
       }
       // 안 저장되어 있으면 그대로 유지시킨다.
