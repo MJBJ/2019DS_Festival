@@ -76,8 +76,9 @@ div#footer{
             bottom:0;
             left:0;
     }
+    
     /*구조*/
-    #footer>.row{    margin: 1em;  }
+    #footer>.row{   margin: 1em;  }
     .side{ padding: 0;}
     div.row{ margin: 0em;}
     .box{ padding: 1em;}
