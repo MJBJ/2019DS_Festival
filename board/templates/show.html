@@ -5,9 +5,9 @@
 
 <head>
 <style>
-    body{background-color: #FFFFFF;}
     .container1{background-color: F5f5f5;
-    width:80em;}
+                width:80em;
+                min-height: 110em;}
     #s_row{
         background-color: #FFFFFF;
         box-shadow: 2px 2px 3px gray;
@@ -34,6 +34,7 @@
 
 <div class="container1">
     <h4><a id="s_a2" href="{% url 'post' %}">글쓰기</a></h4>
+    {% if boards %}
     {%for board in boards.all%}
     
     <a id="s_a" href="{% url 'detail' board.id %}">
@@ -41,7 +42,7 @@
         <div class="col-md-8" id="s_col-md-8">
             <div class="row" id="s_row1">
                 <div class="col-md-10" id="s_title">
-                    {{board.title}}
+                    {{board.Title}}
                 </div>
                 <div class="col-md-1" id="s_date">
                     {{board.updated_at|date:"m/d H:i"}}
@@ -59,6 +60,7 @@
     </div>
     </a>
     {%endfor%}
+    {%endif%}
 </div>
 </body>
 {% endblock %}
