@@ -42,13 +42,13 @@ div#header{
         }
         .title:hover{text-decoration: none;} 
         /* navbar */
-        a.navbar-custom{
+        .navbar-custom{
                         font-family: 'S-CoreDream-3Light';
                         color: #362f2d;         
                         font-size: 2em;
                         
         }
-        a.navbar-custom:hover{
+        .navbar-custom:hover{
                 font-family: 'S-CoreDream-3Light';
                 color: #ff3300;
                 text-decoration: underline;
