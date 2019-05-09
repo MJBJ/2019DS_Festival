@@ -10,8 +10,8 @@ def show(request):
     return render(request, 'show.html', {'boards':boards})
 
 def photo(request):
-    boards = Board.objects
-    return render(request, 'photo.html', {'boards':boards})
+	boards = Board.objects
+	return render(request, 'photo.html', {'boards':boards})
 
 def detail(request,board_id):
     board_detail = get_object_or_404(Board, pk=board_id)
