@@ -10,13 +10,12 @@
         box-shadow: 2px 2px 5px grey;
         padding:3%;
     }
-
 </style>
 
  <div class="back">
     <form method="post"  enctype="multipart/form-data">
     {% csrf_token %} 
-    <table class="table stripe">
+    <table id="ptable" class="table stripe">
         {{form.as_table}}
     </table>
     <Br>
