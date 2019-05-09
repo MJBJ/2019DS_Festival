@@ -42,13 +42,13 @@ div#header{
         }
         .title:hover{text-decoration: none;} 
         /* navbar */
-        a.navbar-custom{
+        .navbar-custom{
                         font-family: 'S-CoreDream-3Light';
                         color: #362f2d;         
                         font-size: 2em;
                         
         }
-        a.navbar-custom:hover{
+        .navbar-custom:hover{
                 font-family: 'S-CoreDream-3Light';
                 color: #ff3300;
                 text-decoration: underline;
@@ -58,11 +58,10 @@ div#header{
 /* 내용 */
 div#contents{   
                 position: absolute;
-                height: 80%;
-                padding-bottom: 166em;
+                padding-bottom: 20em;
                 padding-top: 14em;
         }
-                
+      
 
 /* 푸터 */
 div#footer{
@@ -84,7 +83,7 @@ div#footer{
     .box{ padding: 1em;}
     #rightside{vertical-align: center;}
     /*글자*/
-    h3.title_m{  font-weight: 700; font-size: 1.5em; margin-right: 1.5em; }
+    h3.title_m{  font-weight: 700; font-size: 1.5em; margin-right: 1.5em; text-align: left;}
     h4.title_s{  font-weight: 400; font-size: 1em;  margin: 0.4em; margin-left:0;}
     h5.content{  font-weight: 100; font-size: 0.7em; margin-top: auto; margin-bottom: auto;}
     .logo{     font-weight: 900;  }
