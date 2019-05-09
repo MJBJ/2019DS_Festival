@@ -6,8 +6,8 @@
 <head>
 <style>
     .container1{background-color: F5f5f5;
-                width:80em;
-                min-height: 110em;}
+                width:85em;
+                min-height: 120em;}
     #s_row{
         background-color: #FFFFFF;
         box-shadow: 2px 2px 3px gray;
@@ -34,9 +34,7 @@
 
 <div class="container1">
     <h4><a id="s_a2" href="{% url 'post' %}">글쓰기</a></h4>
-    {% if boards %}
-    {%for board in boards.all%}
-    
+    {%for board in boards.all%}    
     <a id="s_a" href="{% url 'detail' board.id %}">
     <div class="row" id="s_row">
         <div class="col-md-8" id="s_col-md-8">
@@ -60,7 +58,6 @@
     </div>
     </a>
     {%endfor%}
-    {%endif%}
 </div>
 </body>
 {% endblock %}
