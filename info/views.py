@@ -23,3 +23,6 @@ def notice(request):
 # # 공연 타임테이블
 def timetable(request):
      return render(request,'timetable.html')
+
+def develop(request):
+     return render(request,'develop.html')
