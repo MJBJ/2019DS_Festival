@@ -2,32 +2,111 @@
 {% load static %}
 {%block content%}
 
+
 <style>
     body{background-color: #F5f5f5;}
+    .container{
+       
+    }
+    .shadow {
+    padding: 1em;
+    background-color: #ffffff;
+    margin:1em;
+    box-shadow: 2px 2px 5px grey;
+}
 </style>
 
-<div id="pback">
-<div class="container" id="left" style="width:30em;height:30em;">
-            ddddd
-</div>
+<div class="shadow">
+<table>
+
+    <tr>
+        <td>
+                <div class="container" id="left" style="width:30em;height:auto;">
+                       
+                </div>
+        </td>
+        <td>
+                <div class="container" id="right" style="width:30em;height:auto;">
+                      
+                </div>
+        </td>
+    </tr>
     
-{%for board in boards.all%}
-<input type="hidden" id="treasure_id" value="{{board.id}}"> 
-<input type="hidden" id="treasure_url" value="{{board.file.url}}">
-    <script>
-        var left=document.getElementById('left');
-        var right=document.getElementById('right');
-        var hidden=document.getElementById('treasure_id');
-        var hidden_url=document.getElementById('treasure_url');
-
-        if(hidden%2==0){
-            var x = document.createElement('div');
-            x.style.backgroundImage = '"url("'+hidden_url+')"';
-            left.appendChild(x);
-        } 
-    </script>
-{%endfor%}
+        
+    
+</table>
 
 </div>
 
+
+<input type="hidden" id="treasure_url" value="{{board.file.url}}">
+</div>
+
+{%for board in boards.all%}
+<!-- 이미지 정보 담을 태그 생성--> 
+<input type="hidden" class="treasure_id" value="{{board.id}}"> 
+<input type="hidden" class="treasure_url" value="{{board.file.url}}">
+
+{%endfor%}
+<script>
+   
+var left=document.getElementById('left'); // left div
+var right=document.getElementById('right'); // right div
+
+// 이미지 정보가 모두 설정 된 후
+// 요소를 생성하고 추가한다.
+var treasure_ids = document.getElementsByClassName("treasure_id");
+var treasure_urls = document.getElementsByClassName("treasure_url");
+
+
+// 이미지 객체 개수 : treasure_ids.length
+var flag=0; // 왼쪽div에 넣을 것인지, 오른쪽 div에 넣을 것인지 구분
+var i=0; // 생성한 이미지 객체요소 번째수
+var x = new Array();
+while(i<treasure_ids.length){
+    //var p = treasure_ids[i].value;
+    
+    // (1) div 요소를 생성
+    x[i] = document.createElement('div');
+    
+    // (2) div 요소의 background image를 db 이미지로 지정
+    //x[i].style.backgroundColor="red";
+    //x[i].setAttribute('class',"shadow");
+    x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
+    //x[i].style.padding="0px";
+    x[i].style.minHeight="40em";
+    
+    
+    x[i].style.backgroundSize= "100%";
+    x[i].style.backgroundRepeat ="no-repeat";
+
+    //
+    // (3) div 요소를 left나 right에 붙임
+    //      flag==0 일땐 left / flag==1일 땐 right
+    
+    if(flag==0){
+        left.appendChild(x[i]);
+        left.appendChild(document.createElement('button'));
+        flag=1;
+    }
+    else{
+        /*
+        right.style.backgroundColor="pink";
+        right.appendChild(x[i]);
+        flag=0;alert(i+"붙임");
+        */
+        right.appendChild(x[i]);
+        flag=0;
+       
+        
+    }
+    
+    i++;
+    
+   
+    
+}
+
+
+</script>
 {%endblock%}

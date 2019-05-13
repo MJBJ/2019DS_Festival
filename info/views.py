@@ -26,3 +26,4 @@ def timetable(request):
 
 def develop(request):
      return render(request,'develop.html')
+
