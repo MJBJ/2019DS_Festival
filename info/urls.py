@@ -9,8 +9,9 @@ urlpatterns = [
     # path('notice', views.notice, name='notice'),
     # path('timetable', views.timetable, name='timetable'),
     # path('detail', views.detail, name='detail'),
-    path('dday',views.dday, name='dday'),
+    # path('dday',views.dday, name='dday'),
     # path('develop', views.develop, name='develop'),
     # path('board/', include('board.urls')),
     # path('stamp/', include('stamp.urls')),
+    path('',views.dday, name='dday'),
 ]
