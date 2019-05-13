@@ -2,29 +2,47 @@
 {% block content %}
 
 <style>
-    body{background-color: #f5f5f5;}
-    
-    div.container {
-        width:60em;
-        background-color: #ffffff;
-        margin:1%;
-        box-shadow: 2px 2px 5px grey;
-        padding:3%;
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+
+    * {font-family: 'S-CoreDream-3Light';}
+    body{background-color: #f5f5f5;
     }
-    
+    textarea{width:30em;}
+    div.container {
+<<<<<<< HEAD
+        width:60em;
+=======
+        min-width:55em;
+>>>>>>> 11bc1f925609da359fca7ab2845a5d602764d69e
+        background-color: #ffffff;
+        margin-left:5.5%;
+        margin-top:3%;
+        box-shadow: 2px 2px 5px grey;
+        padding-left:5%;
+        padding-top:5%;
+        padding-bottom:5%;
+    }
+    input{
+        font-size:1em;
+        width:35em;
+        height:3em;
+        border:none;
+    }
+    textarea {border:none;}
     input[type=submit] {
         width:8em;
         height:3em;
+        margin-left:35%;
         background-image:url("../../static/img/post.png");
-        background-size:8em 3em;
+        background-size:100%;
         background-repeat: no-repeat;
     }
 </style>
 
 <div class="container">
-    <form method="post"  enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %} 
-    <table id="ptable" class="table stripe">
+    <table id="ptable" class="table stripe" style="font-size:1.2em;">
         {{form.as_table}}
     </table>
     <Br>
@@ -32,4 +50,14 @@
     </form>
 </div>
 </div>
+<script>
+        var f = document.getElementsByTagName("label");
+        f[0].innerHTML="파일";  f[0].style.color="#ff3300";  
+        f[1].innerHTML="제목";  f[1].style.color="#ff3300";  
+        f[2].innerHTML="내용";  f[2].style.color="#ff3300";  
+        f[3].innerHTML="비밀번호";  f[3].style.color="#ff3300";  
+
+        var t = document.getElementById("id_Title");
+        t.setAttribute('placeholder',"제목을 입력하세요");
+</script>
 {% endblock %}
