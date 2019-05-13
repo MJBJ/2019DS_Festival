@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
 {%block content%}
-<head>
+
 <style>
-    .container{width:90%; height:45%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-bottom: 5%;}
-    body{  background-color: #FFFFFF;
-        box-shadow: 2px 2px 3px gray ;}
+    body{background-color: #F5f5f5;}
 </style>
-</head>
-{%for board in boards.all%}
-<div class="container">
-    {% if board.file %}
-    <img style="width:100%; height:100%;" src="{{board.file.url}}" alt="">
-    {% endif %}
+
+<div id="pback">
+<div class="container" id="left" style="width:30em;height:30em;">
+            ddddd
 </div>
+    
+{%for board in boards.all%}
+<input type="hidden" id="treasure_id" value="{{board.id}}"> 
+<input type="hidden" id="treasure_url" value="{{board.file.url}}">
+    <script>
+        var left=document.getElementById('left');
+        var right=document.getElementById('right');
+        var hidden=document.getElementById('treasure_id');
+        var hidden_url=document.getElementById('treasure_url');
+
+        if(hidden%2==0){
+            var x = document.createElement('div');
+            x.style.backgroundImage = '"url("'+hidden_url+')"';
+            left.appendChild(x);
+        } 
+    </script>
 {%endfor%}
+
+</div>
+
 {%endblock%}

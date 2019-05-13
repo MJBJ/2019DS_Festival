@@ -28,10 +28,11 @@
 }
 .eventbg {
   
+  min-width:70em;
     height:110em;
     margin-top:0px; 
     margin-left:0px;
-    margin-right:auto;
+    margin-right:0px;
     background-repeat: no-repeat;
     background-image: url('../static/eventbg.png');
     background-size:100%;
@@ -42,15 +43,12 @@
 }
 
 .container{
-  
   min-width:62em;
   height:60em;
   margin-left:4em;
   margin-right:auto;
-  padding:2em;
-  
-  
-  
+  padding-right:2.5em;
+
 }
 .sline1{
   
@@ -155,10 +153,15 @@ font-size:2.1em;
       var st5=document.getElementById('st5').getAttribute('value');
       // 완료 버튼을 누르면 
       // 그제서야 세션을 만든다.
+      var btn = document.getElementById('fbtn');
       if(st1=="1"&&st2=="2"&&st3=="3"&&st4=="4"&&st5=="5"){ 
         alert("미션 성공!");
+         
+        btn.style.backgroundImage="url('../static/mclear2.png')";
+        alert("배겨이밉");
         document.getElementById('goinit').setAttribute('value',"goinit");
-
+        alert("what");
+        btn.disabled = 'disabled';
     } 
     
     }
@@ -179,6 +182,7 @@ font-size:2.1em;
       // 만약 세션이 저장되어 있으면 완료라고 써놓고
       if(goinit=="goinit"){
         //btn.setAttribute('value',"완료");
+        //btn.style.backgroundImage=url('../static/mclear2.png');
         btn.disabled = 'disabled';
       }
       // 안 저장되어 있으면 그대로 유지시킨다.
