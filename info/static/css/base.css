@@ -63,7 +63,6 @@ div#header{
 /* 내용 */
 div#contents{   
                 width: 60em;
-                position: absolute;
                 padding-bottom: 20em;
                 padding-top: 14em;
         }
