@@ -31,6 +31,11 @@
         font-family:'S-CoreDream-3Light';
         font-size:2em;
     }
+    #id_uploaded_file{
+        background-color:lightgray;
+        border-radius:0.2em;
+        padding:0.5em;
+    }
     #bbody {
         font-fmaily: 'S-CoreDream-3Light';
         font-size: 3em; 
@@ -38,7 +43,7 @@
         margin-top: 2em;
         padding-bottom: 3em;
     }
-    #bcontent2 {width: 50em;}
+    #bcontent2 {width: 50em;margin-left:30em;}
     #bcontent2, #bpwd {display :inline-block; font-family:'S-CoreDream-3Light';}
 
     #bpwd input[type=password] {
@@ -51,6 +56,17 @@
 
     .ba:link,.ba:visited,.ba.active,.ba.hover 
     { text-decoration: none; color:#362f2d;font-size:1.5em; padding-right:auto;}
+    
+    .dbtn{
+        background-image:url('../static/img/delete.png');
+        background-size:100%;
+        background-color:white;
+        border:none;
+        width:2em;
+        height:2.5em;
+        
+        background-repeat: no-repeat;
+    }
 </style>
 
 <div id="back">
@@ -69,11 +85,11 @@
             <div id="bpwd">
                 <form method="get" action="{% url 'delete' board.id %}">
                     {% comment %} {% csrf_token %}  {% endcomment %}
-                    <input type="password" name="passwd" required>
-                    <input type="submit" value="삭제">
+                    <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
+                    <input type="submit" value="" class="dbtn">
                 </form>
             </div>
-            <a class="ba" id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드</a>
+            <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드</a>
         </div>
     </div>
 </div>
