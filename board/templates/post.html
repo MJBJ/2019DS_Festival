@@ -2,29 +2,35 @@
 {% block content %}
 
 <style>
-    body{background-color: #f5f5f5;}
-    
-    div.container {
-        width:70em;
-        background-color: #ffffff;
-        margin:1%;
-        box-shadow: 2px 2px 5px grey;
-        padding:3%;
+    body{background-color: #f5f5f5;
     }
-    
+    textarea{width:30em;}
+    div.container {
+        min-width:55em;
+        background-color: #ffffff;
+        margin-left:3%;
+        box-shadow: 2px 2px 5px grey;
+        padding-left:15%;
+        padding-top:5%;
+        padding-bottom:5%;
+    }
+    input{
+        width:30em;
+    }
     input[type=submit] {
         width:8em;
         height:3em;
+        margin-left:35%;
         background-image:url("../../static/img/post.png");
-        background-size:8em 3em;
+        background-size:100%;
         background-repeat: no-repeat;
     }
 </style>
 
 <div class="container">
-    <form method="post"  enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %} 
-    <table id="ptable" class="table stripe">
+    <table id="ptable" class="table stripe" style="font-size:1.2em;">
         {{form.as_table}}
     </table>
     <Br>
