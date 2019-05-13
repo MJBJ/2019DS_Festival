@@ -5,26 +5,26 @@
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 
-
-    body {background-color:#f5f5f5;}
+    div#header{
+        width: 61.5em;
+    }
+    body {background-color:#f5f5f5; width: 61.5em;}
     /* back div - shadow */
     #back {
-        width: 57em;
+        width: 60em;
         min-height: 70em;
-        margin: 1%;
-        margin-left:3.5%;
+        margin: 1em;
         background-color: #ffffff;
         box-shadow: 2px 2px 5px grey;
         }
 
     /* contents */
-    #bcontent {margin:5%;padding-top:5%;}
-    #btitle, #bdate{display:inline-block;margin-bottom:2%;}
+    #btitle, #bdate{display:inline-block;margin-left:2em;margin-top: 1em; margin-right: 0;width: 10em;}
+    #bdate{margin-left: 3.5em;}
     #btitle {
         font-family:'S-CoreDream-3Light'; 
         font-style:bold; 
         color:#ff3300;
-        margin-right:11em;
         font-size:3em;
     }
     #bdate {
@@ -37,13 +37,14 @@
         padding:0.5em;
     }
     #bbody {
-        font-fmaily: 'S-CoreDream-3Light';
+        font-family: 'S-CoreDream-3Light';
         font-size: 3em; 
         color:#505050;
         margin-top: 2em;
         padding-bottom: 3em;
     }
-    #bcontent2 {width: 50em;margin-left:30em;}
+    #bcontent{width: 60em;}
+    #bcontent2 {width: 50em;}
     #bcontent2, #bpwd {display :inline-block; font-family:'S-CoreDream-3Light';}
 
     #bpwd input[type=password] {
@@ -56,16 +57,9 @@
 
     .ba:link,.ba:visited,.ba.active,.ba.hover 
     { text-decoration: none; color:#362f2d;font-size:1.5em; padding-right:auto;}
-    
-    .dbtn{
-        background-image:url('../static/img/delete.png');
-        background-size:100%;
-        background-color:white;
-        border:none;
-        width:2em;
-        height:2.5em;
-        
-        background-repeat: no-repeat;
+
+    #s_row{
+        width: 55em;
     }
 </style>
 
