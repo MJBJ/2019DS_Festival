@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="container">
+    <form method="post"  enctype="multipart/form-data">
+    {% csrf_token %} 
+    <table class="table stripe" style="font-size:40px;">
+
 <style>
     body{background-color: #f5f5f5;}
     div.back {

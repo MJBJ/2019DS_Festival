@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+'<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+'
+<style>
+    body{background-color: #F5f5f5;}
+    .container{
+        border:2px solid red;
+    }
+</style>
+
+<table>
+
+    <tr>
+        <td>
+                <div class="container" id="left" style="width:30em;height:30em;">
+                        left
+                </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+                <div class="container" id="right" style="width:30em;height:30em;">
+                        right
+                </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+<input type="hidden" id="treasure_url" value="{{board.file.url}}">
+</div>
+{{boards}}
+{%for board in boards.all%}
+<!-- 이미지 정보 담을 태그 생성--> 
+<input type="text" class="treasure_id" value="{{board.id}}"> 
+<input type="text" class="treasure_url" value="{{board.file.url}}">
+
+{%endfor%}
+<script>
+   
+var left=document.getElementById('left'); // left div
+var right=document.getElementById('right'); // right div
+
+// 이미지 정보가 모두 설정 된 후
+// 요소를 생성하고 추가한다.
+var treasure_ids = document.getElementsByClassName("treasure_id");
+var treasure_urls = document.getElementsByClassName("treasure_url");
+
+
+// 이미지 객체 개수 : treasure_ids.length
+var flag=0; // 왼쪽div에 넣을 것인지, 오른쪽 div에 넣을 것인지 구분
+var i=0; // 생성한 이미지 객체요소 번째수
+var x = new Array();
+while(i<treasure_ids.length){
+    //var p = treasure_ids[i].value;
+    
+    // (1) div 요소를 생성
+    x[i] = document.createElement('div');
+    
+    // (2) div 요소의 background image를 db 이미지로 지정
+    //x[i].style.backgroundColor="red";
+    x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
+    x[i].style.width="10em";
+    x[i].style.height="10em";
+   
+    //
+    // (3) div 요소를 left나 right에 붙임
+    //      flag==0 일땐 left / flag==1일 땐 right
+    
+    if(flag==0){
+        left.appendChild(x[i]);
+        left.appendChild(document.createElement('button'));
+        flag=1;
+    }
+    else{
+        /*
+        right.style.backgroundColor="pink";
+        right.appendChild(x[i]);
+        flag=0;alert(i+"붙임");
+        */
+        right.appendChild(x[i]);
+        flag=0;
+       
+        
+    }
+    
+    i++;
+    
+   
+    
+}
+
+
+</script>
+{%endblock%}
