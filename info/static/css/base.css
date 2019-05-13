@@ -39,7 +39,8 @@ div#header{
                         border-top: 1.6em;
         }
         .title#since2019{
-                                font-size: 1.3em; 
+                                font-size: 1.3em;
+                                padding-bottom: 5em; 
         }
         .title:hover{text-decoration: none;} 
         /* navbar */
@@ -65,6 +66,11 @@ div#contents{
       
 
 /* 푸터 */
+.wrapper {
+        min-height: 100%;
+        position: relative;
+      padding-bottom:20em; /* footer's height */
+}
 div#footer{
             background-color: #323232;
             color: #ffffff;
