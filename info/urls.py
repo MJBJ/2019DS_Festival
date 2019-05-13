@@ -1,7 +1,8 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
-
+import board.views
+import stamp.views 
 urlpatterns = [
     path('', views.main, name='main'),
     path('map', views.map, name='map'),
@@ -10,4 +11,6 @@ urlpatterns = [
     path('detail', views.detail, name='detail'),
     #path('',views.dday, name='dday'),
     path('develop', views.develop, name='develop'),
+    path('board/', include('board.urls')),
+    path('stamp/', include('stamp.urls')),
 ]
