@@ -12,19 +12,21 @@
             font-style: normal; 
             }
 
-html, body{ margin:0; padding: 0; height:100%; width: 100;}
+html, body{ margin:0; padding: 0; width: 100;}
     
 /*헤더*/
 div#header{
+        box-sizing: border-box;
             margin-bottom: 1em;
             padding-top: 3em;
             background-color: #ffffff;
             position: fixed;
             top: 0;
             left : 0;
-            width: 100%;
+            height: 20em;
+            width: 60em;
             z-index: 1;
-            max-width: 100%;
+            max-width: 62em;
             }
         /* 타이틀 */
         .title{
@@ -35,12 +37,13 @@ div#header{
                 }       
         .title#flower{
                         font-size: 4em; 
-                        margin: auto;
+                        margin: 0;
                         border-top: 1.6em;
         }
         .title#since2019{
                                 font-size: 1.3em;
-                                padding-bottom: 5em; 
+                                padding-bottom: 1em; 
+                                margin: 0;
         }
         .title:hover{text-decoration: none;} 
         /* navbar */
@@ -59,6 +62,7 @@ div#header{
     }
 /* 내용 */
 div#contents{   
+                width: 60em;
                 position: absolute;
                 padding-bottom: 20em;
                 padding-top: 14em;
@@ -77,13 +81,14 @@ div#footer{
             font-family: 'Nanum Square';
             text-align: left;
             padding: 1.5em;
-            width: 100%;
+            width: 60em;
             position:fixed; 
             bottom:0;
             left:0;
     }
     
     /*구조*/
+    div#fotter{width: 60em;}
     #footer>.row{   margin: 1em;  }
     .side{ padding: 0;}
     div.row{ margin: 0em;}

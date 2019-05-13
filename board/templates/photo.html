@@ -4,9 +4,17 @@
 
 
 <style>
-    body{background-color: #F5f5f5;}
-    .container{
-       
+    html {width: 62em;}
+    body{background-color: #F5f5f5;
+        width: 62em;}
+        div#header{
+            width: 62em;
+        }
+    #back{
+       width: 62em;
+    }
+    div#footer{
+       width: 62em;
     }
     .shadow {
     padding: 1em;
@@ -15,18 +23,18 @@
     box-shadow: 2px 2px 5px grey;
 }
 </style>
-
+<div id="back">
 <div class="shadow">
 <table>
 
     <tr>
         <td>
-                <div class="container" id="left" style="width:30em;height:auto;">
+                <div class="Pcontainer" id="left" style="width:30em;height:auto;">
                        
                 </div>
         </td>
         <td>
-                <div class="container" id="right" style="width:30em;height:auto;">
+                <div class="Pcontainer" id="right" style="width:30em;height:auto;">
                       
                 </div>
         </td>
@@ -109,4 +117,5 @@ while(i<treasure_ids.length){
 
 
 </script>
+</div>
 {%endblock%}

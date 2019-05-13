@@ -6,24 +6,29 @@
 <head>
 <style>
     .container1{background-color: F5f5f5;
-                width:85em;
+                width:61em;
                 min-height: 120em;}
     #s_row{
         background-color: #FFFFFF;
         box-shadow: 2px 2px 3px gray;
-        width: 74em;
+        width: 59em;
         height: 22em;
-        margin: 2em 2em 2em 3em;
+        margin: 1em;
         padding: 1.5em;
     }
-    #s_img{width:22em; height:18em; padding-left:1em; padding-top:1em;}
+    #s_row1{
+        width: 30em;
+        margin-right: 1em;
+    }
+    #s_img{width:18em; height:18em; padding-left:1em; padding-top:1em;}
     #s_defaultimg{width:22em; height:18em; padding-left:1em; padding-top:1em;}
     #s_title{color:#ff3300;
-            font-size:2.5em; margin:0; margin-top:0.2em;}
-    #s_date{ font-size:2em;margin:0; padding:0.5em 0 0 0; color:black;}
-    #s_col-md-8{width:50em;height:18em;margin:0px;}
+            font-size:2.5em; margin:0; margin-top:0.2em;
+            width: 12em;}
+    #s_date{ font-size:2em;margin:0; padding:0.5em 0 0 0; color:black; width: 4em;}
+    #s_col-md-8{width:14.1em;height:18em;margin:0px;}
     #s_col-md-4{width:18em; height:18em;margin:0 0;}
-    .s_body{height:8em; margin:2.5em 0 0 0.5em; font-size:2.5em; color:black;}
+    .s_body{height:4em; width: 14.1em; font-size:2.5em; color:black; margin-top: 1em;}
     #s_a:hover{text-decoration: none;}
     #s_a:visited{color:black;}
     #s_a2:hover{text-decoration: none;}
@@ -48,7 +53,7 @@
             </div>
             <div class="s_body">{{board.summary}} [...]</div>
         </div>
-        <div class="col-md-4" id="s_col-md-8">
+        <div class="col-md-4" id="s_col-md-4">
                 {% if board.file %}
                 <img id="s_img" src="{{board.file.url}}" alt="">
                 {% else %}

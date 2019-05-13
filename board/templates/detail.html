@@ -5,26 +5,26 @@
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 
-
-    body {background-color:#f5f5f5;}
+    div#header{
+        width: 61.5em;
+    }
+    body {background-color:#f5f5f5; width: 61.5em;}
     /* back div - shadow */
     #back {
-        width: 57em;
+        width: 60em;
         min-height: 70em;
-        margin: 1%;
-        margin-left:3.5%;
+        margin: 1em;
         background-color: #ffffff;
         box-shadow: 2px 2px 5px grey;
         }
 
     /* contents */
-    #bcontent {margin:5%;padding-top:5%;}
-    #btitle, #bdate{display:inline-block;margin-bottom:2%;}
+    #btitle, #bdate{display:inline-block;margin-left:2em;margin-top: 1em; margin-right: 0;width: 10em;}
+    #bdate{margin-left: 3.5em;}
     #btitle {
         font-family:'S-CoreDream-3Light'; 
         font-style:bold; 
         color:#ff3300;
-        margin-right:11em;
         font-size:3em;
     }
     #bdate {
@@ -38,6 +38,7 @@
         margin-top: 2em;
         padding-bottom: 3em;
     }
+    #bcontent{width: 60em;}
     #bcontent2 {width: 50em;}
     #bcontent2, #bpwd {display :inline-block; font-family:'S-CoreDream-3Light';}
 
@@ -51,6 +52,10 @@
 
     .ba:link,.ba:visited,.ba.active,.ba.hover 
     { text-decoration: none; color:#362f2d;font-size:1.5em; padding-right:auto;}
+
+    #s_row{
+        width: 55em;
+    }
 </style>
 
 <div id="back">
