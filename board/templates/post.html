@@ -2,21 +2,29 @@
 {% block content %}
 
 <style>
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+
+    * {font-family: 'S-CoreDream-3Light';}
     body{background-color: #f5f5f5;
     }
     textarea{width:30em;}
     div.container {
         min-width:55em;
         background-color: #ffffff;
-        margin-left:3%;
+        margin-left:5.5%;
+        margin-top:3%;
         box-shadow: 2px 2px 5px grey;
-        padding-left:15%;
+        padding-left:5%;
         padding-top:5%;
         padding-bottom:5%;
     }
     input{
-        width:30em;
+        font-size:1em;
+        width:35em;
+        height:3em;
+        border:none;
     }
+    textarea {border:none;}
     input[type=submit] {
         width:8em;
         height:3em;
@@ -38,4 +46,18 @@
     </form>
 </div>
 </div>
+<script>
+        var f = document.getElementsByTagName("label");
+        f[0].innerHTML="파일";  f[0].style.color="#ff3300";  
+        f[1].innerHTML="제목";  f[1].style.color="#ff3300";  
+        f[2].innerHTML="내용";  f[2].style.color="#ff3300";  
+        f[3].innerHTML="비밀번호";  f[3].style.color="#ff3300";  
+
+        var t = document.getElementById("id_Title");
+        t.setAttribute('placeholder',"제목을 입력하세요");
+
+        var b = document.getElementById("id_Text");
+        b.setAttribute('placeholder',"내용을 입력하세요");
+   
+</script>
 {% endblock %}
