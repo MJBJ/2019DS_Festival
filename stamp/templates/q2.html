@@ -1,9 +1,135 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<form action="{%url 'check' %}">
-<input type="text" name="pwd"/>
-<input type="hidden" name="spot_num" value="2"/>
-<input type="submit" value="제출" />
-</form>
+
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<style>
+   @font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+   @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+   @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+.stamp_a:hover {text-decoration:none; color:#362f2d;}
+
+.stamp_a{
+  font-size:1.7em;color:#362f2d;
+  font-family: 'S-CoreDream-5Medium';
+}
+.col{
+  text-align:center;
+}
+.eventbg {
+  
+  min-width:70em;
+    height:110em;
+    margin-top:0px; 
+    margin-left:0px;
+    margin-right:0px;
+    background-repeat: no-repeat;
+    background-image: url('../static/eventbg.png');
+    background-size:100%;
+    padding-top:8em;
+   
+}
+
+.container{
+  min-width:62em;
+  height:60em;
+  margin-left:4em;
+  margin-right:auto;
+  padding-right:2.5em;
+
+}
+.sline1{
+    display:inline;
+}
+
+#st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
+    width: 15em; height:15em;
+    transform:rotate(-20deg);
+}
+
+/* 제출 버튼 */
+.pwdbtn{
+  background-image: url('../static/pwdbtn.png');
+  background-size:100%;
+  width:13em;
+  height:6em;
+  background-repeat: no-repeat;
+}
+.stamp_title{
+  margin-bottom:15em;
+}
+.h1style{
+  font-size:4.3em;
+ font-family: 'S-CoreDream-5Medium';
+  text-align:center;
+color:#ff3300;
+}
+.h3style{
+  font-family:'S-CoreDream-3Light';
+  text-align:center;
+color:#362f2d;
+font-size:2.1em;
+}
+/* 비밀번호를 입력해주세요 */
+.pwdText{
+    font-family:'S-CoreDream-3Light';
+    text-align:center;
+    color:black;
+    font-size:3.3em;
+}
+/* 입력 태그 */
+.pwdBox{
+     
+    
+    background-repeat: no-repeat;
+    width:15em;
+    height:2.4em;
+    background-image:url('../static/pwdbox.png');
+    background-size:100%;
+    font-family:'S-CoreDream-3Light';
+  text-align:center;
+color:black;
+font-size:3.3em;
+}
+</style>
+
+<div class="eventbg">
+    <div class="stamp_title">
+        <h1 class="h1style">백일화 100배 즐기기!</h1>
+        <h3 class="h3style">숨겨진 다섯개의 스탬프 찾고 선물받자!</h3>
+      </div>
+    
+      <div class="container" >
+        <div class="row" >
+            <div class="col">
+              <h3 class="pwdText">비밀번호를 입력해주세요</h3> 
+            </div>
+            
+        </div>	
+        <br/> <br/> 
+        <div class="row" >   
+          <div class="col">      
+            <form action="{%url 'check' %}">
+                <input class="pwdBox" type="text" name="pwd"/>
+                <input type="hidden" name="spot_num" value="2"/>
+                <br/> <br/> 
+                <br/><input type="submit" value="" class="pwdbtn" />
+            </form>
+        </div> 
+        </div>
+      </div>
+</div>
+</div>
+  
 {% endblock %}

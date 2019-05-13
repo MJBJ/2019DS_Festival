@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
- <div class="container">
+<style>
+</style> 
+<div class="container">
     <form method="post"  enctype="multipart/form-data">
     {% csrf_token %} 
-    <table class="table stripe">
+    <table class="table stripe" style="font-size:40px;">
         {{form.as_table}}
     </table>
     <Br>
