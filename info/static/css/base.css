@@ -39,7 +39,8 @@ div#header{
                         border-top: 1.6em;
         }
         .title#since2019{
-                                font-size: 1.3em; 
+                                font-size: 1.3em;
+                                padding-bottom: 5em; 
         }
         .title:hover{text-decoration: none;} 
         /* navbar */
