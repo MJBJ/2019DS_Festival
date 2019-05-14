@@ -7,11 +7,17 @@ from django.http import HttpResponseRedirect
 
 def show(request):
     boards = Board.objects.order_by('-id')
-    return render(request, 'show.html', {'boards':boards})
+    if boards:
+        return render(request, 'show.html', {'boards':boards})
+    else:
+        return render(request, 'show.html')
 
 def photo(request):
-	boards = Board.objects
-	return render(request, 'photo.html', {'boards':boards})
+        boards = Board.objects
+	if boards:
+                return render(request, 'photo.html', {'boards':boards})
+        else:
+                return render(request, 'photo.html')
 
 def detail(request,board_id):
     board_detail = get_object_or_404(Board, pk=board_id)
