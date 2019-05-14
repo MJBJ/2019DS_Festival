@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 
 def show(request):
     boards = Board.objects.order_by('-id')
-	return render(request, 'show.html', {'boards':boards})
+    return render(request, 'show.html', {'boards':boards})
 
 def photo(request):
     boards = Board.objects
