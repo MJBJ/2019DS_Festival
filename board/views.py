@@ -13,11 +13,11 @@ def show(request):
         return render(request, 'show.html')
 
 def photo(request):
-        boards = Board.objects
+    boards = Board.objects
 	if boards:
-                return render(request, 'photo.html', {'boards':boards})
-        else:
-                return render(request, 'photo.html')
+        return render(request, 'photo.html', {'boards':boards})
+    else:
+        return render(request, 'photo.html')
 
 def detail(request,board_id):
     board_detail = get_object_or_404(Board, pk=board_id)
