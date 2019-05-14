@@ -4,50 +4,34 @@
 
 
 <style>
-    html {width: 62em;}
-    body{background-color: #F5f5f5;
-        width: 62em;}
-        div#header{
-            width: 62em;
-        }
-    #back{
-       width: 62em;
-    }
-    div#footer{
-       width: 62em;
-    }
+    
     .shadow {
-    padding: 1em;
     background-color: #ffffff;
-    margin:1em;
+    margin-top:2em;
+    padding-top: 2em;
     box-shadow: 2px 2px 5px grey;
+    min-height: 120em;
+    z-index: 0;
 }
+#tb{ width: 55.5em; margin: 1em;}
+.tbtd{ width: 27em; padding: 1em;}
 </style>
 <div id="back">
-<div class="shadow">
-<table>
-
-    <tr>
-        <td>
-                <div class="Pcontainer" id="left" style="width:30em;height:auto;">
-                       
-                </div>
-        </td>
-        <td>
-                <div class="Pcontainer" id="right" style="width:30em;height:auto;">
-                      
-                </div>
-        </td>
-    </tr>
-    
-        
-    
-</table>
-
-</div>
+    <div class="shadow">
+        <table id="tb">
+            <tr>
+                <td class="tbtd">
+                    <div class="Pcontainer" id="left" style="width:27.5em;height:auto;"></div>
+                </td>
+                <td class="tbtd">
+                    <div class="Pcontainer" id="right" style="width:27.5em;height:auto;"></div>
+                </td>
+            </tr>
+        </table>    
+    </div>
 
 
-<input type="hidden" id="treasure_url" value="{{board.file.url}}">
+    <input type="hidden" id="treasure_url" value="{{board.file.url}}">
 </div>
 
 {%for board in boards.all%}
@@ -85,7 +69,7 @@ while(i<treasure_ids.length){
     x[i].style.minHeight="40em";
     
     
-    x[i].style.backgroundSize= "100%";
+    x[i].style.backgroundSize= "27em";
     x[i].style.backgroundRepeat ="no-repeat";
 
     //
@@ -94,7 +78,6 @@ while(i<treasure_ids.length){
     
     if(flag==0){
         left.appendChild(x[i]);
-        left.appendChild(document.createElement('button'));
         flag=1;
     }
     else{

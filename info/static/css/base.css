@@ -1,4 +1,5 @@
 /*폰트*/
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');
 @font-face { 
             font-family: 'HSBombaram'; 
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/HSBombaram.woff') format('woff'); 
@@ -12,7 +13,6 @@
             font-style: normal; 
             }
 
-html, body{ margin:0; padding: 0; width: 100;}
     
 /*헤더*/
 div#header{
@@ -23,10 +23,10 @@ div#header{
             position: fixed;
             top: 0;
             left : 0;
-            height: 20em;
-            width: 60em;
+            height: 15em;
+            width: 61.5em;
             z-index: 1;
-            max-width: 62em;
+            max-width: 61.5em;
             }
         /* 타이틀 */
         .title{
@@ -41,7 +41,7 @@ div#header{
                         border-top: 1.6em;
         }
         .title#since2019{
-                                font-size: 1.3em;
+                                font-size: 1.5em;
                                 padding-bottom: 1em; 
                                 margin: 0;
         }
@@ -50,7 +50,7 @@ div#header{
         .navbar-custom{
                         font-family: 'S-CoreDream-3Light';
                         color: #362f2d;         
-                        font-size: 2em;
+                        font-size: 2.3em;
                         
         }
         .navbar-custom:hover{
@@ -62,9 +62,10 @@ div#header{
     }
 /* 내용 */
 div#contents{   
-                width: 60em;
+                position: absolute;
+                width: 61.5em;
                 padding-bottom: 20em;
-                padding-top: 14em;
+                padding-top: 15em;
         }
       
 
@@ -80,28 +81,28 @@ div#footer{
             font-family: 'Nanum Square';
             text-align: left;
             padding: 1.5em;
-            width: 60em;
+            width: 61.5em;
             position:fixed; 
             bottom:0;
             left:0;
     }
     
     /*구조*/
-    div#fotter{width: 60em;}
     #footer>.row{   margin: 1em;  }
     .side{ padding: 0;}
     div.row{ margin: 0em;}
     .box{ padding: 1em;}
+    .box.row{padding-left: 1em; padding-top: 1em; padding-bottom: 0;}
     #rightside{vertical-align: center;}
     /*글자*/
-    h3.title_m{  font-weight: 700; font-size: 1.5em; margin-right: 1.5em; text-align: left;}
-    h4.title_s{  font-weight: 400; font-size: 1em;  margin: 0.4em; margin-left:0;}
-    h5.content{  font-weight: 100; font-size: 0.7em; margin-top: auto; margin-bottom: auto;}
+    h3.title_m{  font-weight: 700; font-size: 2.0em; margin-right: 1.5em; text-align: left;}
+    h4.title_s{  font-weight: 400; font-size: 1.5em;  margin: 0.4em; margin-left:0;}
+    h5.content{  font-weight: 100; font-size: 1em; margin-top: auto; margin-bottom: auto;}
     .logo{     font-weight: 900;  }
     /*로고*/
     .logo{ height: 1em; font-size: 3em;}
     H1.logo{ font-size: 1.6em; margin: 0;}
     #logo>h5.content{ font-size: 0.6em;}
-    .box#logo{ padding: 0;vertical-align: middle; }
-    .row#logo{ padding:0; margin-top: 1em; margin-left: 1.5em; align-items: center; width: 30em;}
-    
+    .box#logo{ padding: 0;vertical-align: middle; margin-top:2em;margin-left: 4.5em;}
+    .row#logo{ padding:0; margin-left: 1.5em; align-items: center; width: 30em;}
+    #small{font-size: 0.7em;}

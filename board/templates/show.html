@@ -6,8 +6,9 @@
 <head>
 <style>
     .container1{background-color: F5f5f5;
-                width:61em;
-                min-height: 120em;}
+                width:61.5em;
+                min-height: 120em;
+                padding-top: 0.5em;}
     #s_row{
         background-color: #FFFFFF;
         box-shadow: 2px 2px 3px gray;
@@ -28,17 +29,18 @@
     #s_date{ font-size:2em;margin:0; padding:0.5em 0 0 0; color:black; width: 4em;}
     #s_col-md-8{width:14.1em;height:18em;margin:0px;}
     #s_col-md-4{width:18em; height:18em;margin:0 0;}
-    .s_body{height:4em; width: 14.1em; font-size:2.5em; color:black; margin-top: 1em;}
+    .s_body{height:4em; width: 14.1em; font-size:2.0em; color:black; margin-top: 1em;}
     #s_a:hover{text-decoration: none;}
     #s_a:visited{color:black;}
     #s_a2:hover{text-decoration: none;}
     #s_a2:visited{color:black;}
+    .btn_write{ z-index: 1; margin: 12em; position: fixed; bottom: 15em;}
 </style>
 </head>
 <body>
 
 <div class="container1">
-    <a id="s_a2" href="{% url 'post' %}" style="margin-left:3%;margin-top:2%;"><img style="margin-top:2%;" src="{% static 'img/post.png' %}" alt="글쓰기"></a>
+   
     {%for board in boards.all%}    
     <a id="s_a" href="{% url 'detail' board.id %}">
     <div class="row" id="s_row">
@@ -63,6 +65,7 @@
     </div>
     </a>
     {%endfor%}
+    <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'img/post.png' %}" alt="글쓰기" class="btn_write"></a>
 </div>
 </body>
 {% endblock %}

@@ -1,16 +1,8 @@
 
-   @font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
-   @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
-   @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
-  html,body{
-    width: 61em;
-  }
-   div#header{
-     width: 61em;
-   }
-   div#footer{
-     width:61em;
-   }
+@font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+@font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 .stamp_a:hover {text-decoration:none; color:#362f2d;}
 
 .stamp_a{
@@ -18,11 +10,9 @@
   font-family: 'S-CoreDream-5Medium';
 }
 .eventbg {
-    width:61em;
+    width:61.5em;
     height:90em;
-    margin-top:0px; 
-    margin-left:0px;
-    margin-right:0px;
+    margin: 1em;
     background-repeat: no-repeat;
     background-image: url('../static/eventbg.png');
     background-size:100%;

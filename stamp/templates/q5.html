@@ -2,7 +2,116 @@
 {% load staticfiles %}
 {% block content %}
 
-<link rel="stylesheet" href="../static/stamp.css">
+
+<style>
+  
+  @font-face{ font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+  @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+  @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+  
+  .stamp_a:hover {text-decoration:none; color:#362f2d;}
+  
+  .stamp_a{
+    font-size:1.7em;color:#362f2d;
+    font-family: 'S-CoreDream-5Medium';
+  }
+  .eventbg {
+      width:61.5em;
+      height:90em;
+  
+      background-repeat: no-repeat;
+      background-image: url('../static/eventbg.png');
+      background-size:100%;
+      padding-top:8em;   
+  }
+  
+  .vcontainer{
+    min-width:60em;
+    height:60em;
+  
+  }
+  .sline1{
+    
+      display:inline;
+      
+  }
+  
+  #st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
+      width: 13em; height:13em;
+      transform:rotate(-20deg);
+  }
+  .subbtn{
+    background-image: url('../static/mclear.png');
+    background-size:100%;
+    width:20em;
+    height:6em;
+    background-repeat: no-repeat;
+  }
+  .stamp_title{
+    margin-bottom:15em;
+  }
+  
+  .stamp_title10{
+    margin-bottom:10em;
+  }
+  .h1style{
+    font-size:4.3em;
+   font-family: 'S-CoreDream-5Medium';
+    text-align:center;
+  color:#ff3300;
+  }
+  #not{
+    font-family: 'S-CoreDream-5Medium';
+    text-align:center;
+  color:#ff3300;
+  margin-top: 2em;
+  }
+  .h3style{
+    font-family:'S-CoreDream-3Light';
+    text-align:center;
+  color:#362f2d;
+  font-size:2.1em;
+  }
+  #stst{
+    margin-top: 4em;
+    margin-left: 7em;
+  }
+  #stststamp{
+    margin-right: 4em;
+    text-align: center;
+  }
+  #stst2{
+    margin-left: 16em;
+  }
+  .btn-scs{
+    margin: auto;
+  }
+  
+  /* 비밀번호를 입력해주세요 */
+  .pwdText{
+      font-family:'S-CoreDream-3Light';
+      text-align:center;
+      color:black;
+      font-size:3.3em;
+  }
+  /* 입력 태그 */
+  .pwdBox{
+      background-repeat: no-repeat;
+      width:13.1em;
+      height:2em;
+      background-image:url('../static/pwdbox.png');
+      background-size: 13em;
+      font-family:'S-CoreDream-3Light';
+      text-align:center;
+      color:black;
+      font-size:3.3em;
+      margin-top: 1em;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  </style>
+
 
 <div class="eventbg">
     <div class="stamp_title">
