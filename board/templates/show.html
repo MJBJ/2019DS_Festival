@@ -40,7 +40,7 @@
 <body>
 
 <div class="container1">
-   
+{% if boards %}
     {%for board in boards.all%}    
     <a id="s_a" href="{% url 'detail' board.id %}">
     <div class="row" id="s_row">
@@ -65,6 +65,7 @@
     </div>
     </a>
     {%endfor%}
+{% endif %}
     <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'img/post.png' %}" alt="글쓰기" class="btn_write"></a>
 </div>
 </body>
