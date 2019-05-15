@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['dsfestival2019.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,7 +136,7 @@ SESSION_COOKIE_AGE = 20 # 지연 : 20초 동안 유지
 if DEBUG:
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-    STATICFILES_STORAGE = 'ds_operator.storages.S3StaticStorage'
+    STATICFILES_STORAGE = 'ds_operator.storage_backends.S3StaticStorage'
 
     MEDIA_URL = '/media/'
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -153,13 +153,11 @@ else:
 
     # Static Setting
     STATIC_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/static/" 
-    STATICFILES_STORAGE = 'ds_operator.storages.S3StaticStorage'
-    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'ds_operator.storage_backends.S3StaticStorage'
 
     #Media Setting
     MEDIA_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/media/"
-    DEFAULT_FILE_STORAGE = 'ds_operator.storages.S3DefaultStorage'
-    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'ds_operator.storage_backends.S3DefaultStorage'
 
     STATIC_DIR = os.path.join(BASE_DIR, 'static')
     STATICFILES_DIRS = [
