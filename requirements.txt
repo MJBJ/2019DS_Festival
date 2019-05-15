@@ -22,7 +22,6 @@ jmespath==0.9.4
 kiwisolver==1.0.1
 Markdown==3.0.1
 matplotlib==3.0.3
-numpy==1.16.2+mkl
 opencv-python==4.0.1+contrib
 pafy==0.5.4
 pandas==0.24.1
