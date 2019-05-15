@@ -35,10 +35,11 @@
 </div>
 
 {%for board in boards.all%}
-<!-- 이미지 정보 담을 태그 생성--> 
+<!-- 이미지 정보 담을 태그 생성-->
+{% if board.file %}
 <input type="hidden" class="treasure_id" value="{{board.id}}"> 
 <input type="hidden" class="treasure_url" value="{{board.file.url}}">
-
+{% endif %}
 {%endfor%}
 <script>
    
@@ -49,7 +50,6 @@ var right=document.getElementById('right'); // right div
 // 요소를 생성하고 추가한다.
 var treasure_ids = document.getElementsByClassName("treasure_id");
 var treasure_urls = document.getElementsByClassName("treasure_url");
-
 
 // 이미지 객체 개수 : treasure_ids.length
 var flag=0; // 왼쪽div에 넣을 것인지, 오른쪽 div에 넣을 것인지 구분

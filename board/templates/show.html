@@ -58,6 +58,11 @@
         <div class="col-md-4" id="s_col-md-4">
                 {% if board.file %}
                 <img id="s_img" src="{{board.file.url}}" alt="">
+                <video style="width:100%" controls>
+                    <source src="{{ board.file.url }}" type='video/ogg'>
+                    <source src="{{ board.file.url }}" type='video/mp4'>
+                    <source src="{{ board.file.url }}" type='video/webm'>
+                </video>
                 {% else %}
                 <img id="s_defaultimg" src="{% static 'default.jpg' %}" alt="">
                 {% endif %}

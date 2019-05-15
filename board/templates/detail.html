@@ -99,7 +99,12 @@
                 <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
         
                 <div id="bimg">
-                    <img style="width:100%;" src="{{ board.file.url }}" alt="">
+                    <img style="width:100%;" src="{{ board.file.url }}" alt=".">
+                    <video style="width:100%" controls>
+                        <source src="{{ board.file.url }}" type='video/ogg'>
+                        <source src="{{ board.file.url }}" type='video/mp4'>
+                        <source src="{{ board.file.url }}" type='video/webm'>
+                    </video>
                 </div>
         
                 <div id="bbody">
@@ -114,7 +119,7 @@
                         </form>
                     </div>
                     <br>
-                    <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>이미지 다운로드하기</a>
+                    <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
                 </div>
         </div>
     </div>
