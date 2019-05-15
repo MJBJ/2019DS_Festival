@@ -154,12 +154,19 @@ else:
     # Static Setting
     STATIC_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/static/" 
     STATICFILES_STORAGE = 'ds_operator.storages.S3StaticStorage'
+    STATICFILES_LOCATION = 'static'
 
     #Media Setting
     MEDIA_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/media/"
     DEFAULT_FILE_STORAGE = 'ds_operator.storages.S3DefaultStorage'
-
+    MEDIAFILES_LOCATION = 'media'
+    
     STATIC_DIR = os.path.join(BASE_DIR, 'static')
     STATICFILES_DIRS = [
         STATIC_DIR,
     ]
+
+# for django https config
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
