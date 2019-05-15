@@ -159,7 +159,7 @@ else:
     MEDIA_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/media/"
     DEFAULT_FILE_STORAGE = 'ds_operator.storage_backends.S3DefaultStorage'
 
-    STATIC_DIR = os.path.join(BASE_DIR, 'static')
-    STATICFILES_DIRS = [
-        STATIC_DIR,
-    ]
+    # STATIC_DIR = os.path.join(BASE_DIR, 'static')
+    # STATICFILES_DIRS = [
+    #     STATIC_DIR,
+    # ]
