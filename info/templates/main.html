@@ -28,14 +28,14 @@
 
 <!--script-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'main.js' %}"></script>
 
 <!--html-->
 <div class="banner">
     <h1 id="d-day"></h1>
     <ul>
-        <li><img src="{% static 'img/ad.jpg' %} width="100%" height="100%"></li>
-        <li><img src="{% static 'img/ad1.jpg' %} width="100%" height="100%"></li>
+        <li><img src="{% static 'ad.jpg' %}" width="100%" height="100%"></li>
+        <li><img src="{% static 'ad1.jpg' %}" width="100%" height="100%"></li>
     </ul>
 </div>
 
@@ -45,7 +45,7 @@
     <a href="{% url 'timetable' %}"><img src="{% static 'timetable.png' %}" alt="timetable" class="img_button"></a>
     <a href="{% url 'map' %}"><img src="{% static 'map.png' %}" alt="map" class="img_button"></a>
     <a href="{% url 'show' %}"><img src="{% static 'board.png' %}" alt="board" class="img_button"></a>
-    <a href="#"><img src="{% static 'gallery.png' %}" alt="gallery" class="img_button"></a>
+    <a href="{% url 'photo' %}"><img src="{% static 'gallery.png' %}" alt="gallery" class="img_button"></a>
 </div>
 
 {% endblock %}
