@@ -64,7 +64,7 @@ div#header{
 div#contents{   
                 position: absolute;
                 width: 61.5em;
-                padding-bottom: 20em;
+                padding-bottom: 25em;
                 padding-top: 15em;
         }
       
@@ -73,7 +73,7 @@ div#contents{
 .wrapper {
         min-height: 100%;
         position: relative;
-      padding-bottom:20em; /* footer's height */
+        padding-bottom:20em; /* footer's height */
 }
 div#footer{
             background-color: #323232;
