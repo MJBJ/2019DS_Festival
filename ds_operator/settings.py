@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'django-storages',
     'stamp.apps.StampConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,8 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'board.apps.BoardConfig',
     'info.apps.InfoConfig',
-    'storages',
-    'django_s3_storage',
 ]
 
 MIDDLEWARE = [
