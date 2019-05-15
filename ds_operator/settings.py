@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'django-storages',
+    'storages',
     'stamp.apps.StampConfig',
     'django.contrib.admin',
     'django.contrib.auth',
