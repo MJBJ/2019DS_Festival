@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{%load static%}
 {% block content %}
 
 <style>
@@ -27,7 +28,7 @@
         width:8em;
         height:3em;
         margin-left: 20em;
-        background-image:url("../../static/img/post.png");
+        background-image:url("{% static 'post.png' %}");
         background-size:100%;
         background-repeat: no-repeat;
         font-family: 'S-CoreDream-3Light';

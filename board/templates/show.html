@@ -22,7 +22,7 @@
         margin-right: 1em;
     }
     #s_img{width:18em; height:18em; padding-left:1em; padding-top:1em;}
-    #s_defaultimg{width:22em; height:18em; padding-left:1em; padding-top:1em;}
+    #s_defaultimg{width:18em; height:18em; padding-left:1em; padding-top:1em;}
     #s_title{color:#ff3300;
             font-size:2.5em; margin:0; margin-top:0.2em;
             width: 12em;}
@@ -71,7 +71,7 @@
     </a>
     {%endfor%}
     {%endif%}
-    <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'img/post.png' %}" alt="글쓰기" class="btn_write"></a>
+    <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'post.png' %}" alt="글쓰기" class="btn_write"></a>
 </div>
 </body>
 {% endblock %}
