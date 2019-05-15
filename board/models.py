@@ -1,7 +1,7 @@
 from django.db import models
 
 class Board(models.Model):
-    file = models.FileField(null=True)
+    file = models.FileField(null=True, blank=True)
     Title = models.CharField(max_length=20, blank=True) # 제목
     Text = models.TextField(max_length=100, blank=True)
     updated_at = models.DateTimeField(auto_now=True) # 현재시각
