@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'board.apps.BoardConfig',
     'info.apps.InfoConfig',
     'storages',
+    'django_s3_storage',
 ]
 
 MIDDLEWARE = [
