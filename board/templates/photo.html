@@ -35,10 +35,11 @@
 </div>
 
 {%for board in boards.all%}
-<!-- 이미지 정보 담을 태그 생성--> 
+<!-- 이미지 정보 담을 태그 생성-->
+{% if board.file %}
 <input type="hidden" class="treasure_id" value="{{board.id}}"> 
 <input type="hidden" class="treasure_url" value="{{board.file.url}}">
-
+{% endif %}
 {%endfor%}
 <script>
    
