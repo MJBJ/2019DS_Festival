@@ -24,8 +24,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = False
+# DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'board.apps.BoardConfig',
     'info.apps.InfoConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +124,6 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 # Heroku: Update database configuration from $DATABASE_URL.
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
@@ -136,3 +132,29 @@ DATABASES['default'].update(db_from_env)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False 
 SESSION_COOKIE_AGE = 20 # 지연 : 20초 동안 유지
 
+# s3
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage' # Local, 즉 DEBUG=True 일 경우 pipeline 사용
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+else:
+    # AWS Setting
+    AWS_REGION = 'ap-northeast-2'
+    AWS_STORAGE_BUCKET_NAME = 'dsfestival2019'
+    AWS_QUERYSTRING_AUTH = False
+    AWS_S3_HOST = 's3.ap-northeast-2.amazonaws.com' 
+    AWS_ACCESS_KEY_ID = 'AKIAZGJ2AXVLHHEOHKMG'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_S3_CUSTOM_DOMAIN = 'dsfestival2019.s3.amazonaws.com' 
+
+    # Static Setting
+    STATIC_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/static/" 
+    STATICFILES_STORAGE = 'ds_operator.storages.S3StaticStorage'
+
+    #Media Setting
+    MEDIA_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/media/"
+    DEFAULT_FILE_STORAGE = 'ds_operator.storages.S3DefaultStorage'
