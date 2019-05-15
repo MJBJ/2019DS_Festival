@@ -64,17 +64,13 @@ div#header{
 div#contents{   
                 position: absolute;
                 width: 61.5em;
-                padding-bottom: 25em;
+                padding-bottom: 24em;
                 padding-top: 15em;
         }
       
 
 /* 푸터 */
-.wrapper {
-        min-height: 100%;
-        position: relative;
-        padding-bottom:20em; /* footer's height */
-}
+
 div#footer{
             background-color: #323232;
             color: #ffffff;
