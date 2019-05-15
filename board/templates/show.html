@@ -56,6 +56,7 @@
             <div class="s_body">{{board.summary}} [...]</div>
         </div>
         <div class="col-md-4" id="s_col-md-4">
+                {% if board.file %}
                 <img id="s_img" src="{{board.file.url}}" alt="">
                 <video style="width:100%" controls>
                     <source src="{{ board.file.url }}" type='video/ogg'>
