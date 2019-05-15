@@ -163,8 +163,3 @@ else:
     STATICFILES_DIRS = [
         STATIC_DIR,
     ]
-
-# for django https config
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
