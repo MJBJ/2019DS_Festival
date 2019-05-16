@@ -134,4 +134,7 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 # 지연 : 세션
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False 
-SESSION_COOKIE_AGE = 20 # 지연 : 20초 동안 유지
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 5
+# 지연 : 20초 동안 유지
+
