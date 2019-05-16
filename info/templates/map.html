@@ -16,7 +16,7 @@
     margin-top:0em;
     box-shadow: 2px 2px 5px grey;
   }
-
+  div#back ul{list-style-type:none;}
   /* tab */
   div#tablist {margin-top:2em;margin-left:0.5em;}
   div#back img {
@@ -25,6 +25,14 @@
   }
   /* a tag 
   { text-decoration: none; color:#362f2d;font-size:1.5em;} */
+
+  #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
+    margin-left:2em;
+    margin-right:2em;
+    font-size:2em;
+    display:inline-block;
+  }
+  #maplist{margin-left:2em;margin-top:1em;margin-right:2em;}
 </style>
 
 <!-- map tab -->
@@ -41,15 +49,65 @@
   <!-- 22일 낮지도 -->
   <div id="22d" class="tabcontent">
     <img src="{% static 'img/map22d.png'%}">
-    <h1>
-    <span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 
-    민주동산
-    </h1>
-    <ul>
-      <li>
-    </ul>
-  </div>
-
+    <div id="maplist">
+    <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+    <div id="m1">
+      <ul>
+        <li>[1] 총학 음식존</li>
+        <li>[2] 자연대 학생회</li>
+        <li>[3] 피스</li>
+        <li>[4] 회계학과</li>
+        <li>[5] 쿠사</li>
+      </ul>
+    </div>
+    <div id="m2">
+      <ul>
+        <li>[6] 운지문학회</li>
+        <li>[7] 멋쟁이사자처럼</li>
+        <li>[8] 우푸</li>
+        <li>[9] 예운</li>
+        <li>&nbsp;</li>
+      </ul>
+    </div>
+  <hr>
+    <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+     <div id="m3">
+        <ul>
+          <li>[1] 총학 만들기</li>
+          <li>[2] 총학 게임존</li>
+        </ul>
+     </div>
+     <div id="m4">
+        <ul>
+          <li>[3] 타투</li>
+          <li>[4] 타로</li>
+        </ul>
+     </div>
+  <hr>
+     <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+      <div id="m5">
+        <ul>
+          <li>[1] 파동</li>
+          <li>[2] 로미오</li>
+          <li>[3] 빛내미</li>
+        </ul>
+      </div>
+      <div id="m6">
+        <ul>
+          <li>[4] 유아교육학과</li>
+          <li>[5] 생활체육학과</li>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    <hr>
+        <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
+        <div id="m7">
+          <ul>
+            <li>[1] 한빛</li>
+            <li>[2] 아미공 내부자들</li>
+          </ul>
+        </div>
+      </div>
 
   <!-- 23일 낮지도 -->
   <div id="23d" class="tabcontent">
