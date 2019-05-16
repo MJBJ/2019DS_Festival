@@ -38,13 +38,13 @@
   /******************************/
   /*라이트 박스 컨테이너*/
   #lightbox.active{
-                position: absolute; overflow: hidden;
+                position: fixed;overflow:scroll;
                 background: #333;
                 width: 800px;
-                height: 540px;
+                height: 800px;
                 left: 50%;
                 margin-left: -400px;
-                top: 50%;
+                top: 30%;
                 margin-top: -250px;
                 box-sizing: border-box;
                 padding: 30px;
@@ -59,7 +59,7 @@
 
             /*이미지 박스*/
             figure{
-                width: 500px; height: 300px;
+                width: 90%; height: 90%;
                 position: relative;
                 margin: 10px auto;
                 overflow: hidden;
@@ -77,10 +77,11 @@
 
             /*창 닫기 버튼*/
             .btn-close{
+                z-index:1;
                 position: absolute;
-                top: 0px; right: 0px;
+                top: 5px; right: 5px;
                 padding: 10px;
-                color: white; font-size: large;
+                color: white; font-size: 1.5em;
             }
             .btn-close:hover{ background-color: #666;}
 
@@ -303,12 +304,8 @@
               </li>
               <li><a class="maplink" href="#">[8] 심리학과</a>
               </li>
-<<<<<<< HEAD
               <li>
-                  <a class="maplink" href="#" onclick="lightbox_open(1)">[9] 유교</a>
-=======
-              <li><a class="maplink" href="#">[9] 유아교육학과</a>
->>>>>>> c206c8c3c76903181d058cbe0f5337f482a4eed6
+                  <a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[9] 유아교육학과</a>
               </li>
               <li>&nbsp;</li>
            </ul>   
@@ -316,15 +313,8 @@
       <hr>
     </div>
   
-<<<<<<< HEAD
-    
-    
-    
-  <!-- 24일 낮지도 -->
-=======
 
    <!-- 24일 낮지도 -->
->>>>>>> c206c8c3c76903181d058cbe0f5337f482a4eed6
   <div id="24d" class="tabcontent">
     <img src="{% static 'img/map24d.png'%}">
     <div id="maplist">
@@ -415,21 +405,16 @@
 <!-- 라이트 박스 배경-->
 <div id="block"></div>
 <div id="lightbox">
-    <h1>박물관에서 사라진 아빠를 찾아서</h1>
-    <p>아빠와 함께 떠난 숲속의 박물관 여행에서 아빠가 말도 없이 사라지자 강아지 베리와 함께 아빠를 찾아서 헤메는데...<br><br></p>
+    <div class="btn-close" onclick="lightbox_close()">X</div>
    <figure>
-        <img src="img01.jpg" alt="" class="active"/>
-        <img src="img02.jpg" alt=""/>
-        <img src="img03.jpg" alt=""/>
+        <img  id="fid" src="" alt="" class="active"/>
+        
     </figure>
-
-   <div class="indicator">
-        <button onclick="change_img(1)">1</button>
         
     </div>
     <!-- end lightbox -->
 
-    <div class="btn-close" onclick="lightbox_close()">X</div>
+    
 </div>
 
 <script>
@@ -476,11 +461,12 @@
     var lightbox = document.querySelector('#lightbox');
     var block = document.querySelector('#block'); //라이트 박스 배경
 
-    function lightbox_open(num) {
+    function lightbox_open(name) {
 
       lightbox.setAttribute('class', 'active');
       block.setAttribute('class', 'active');
-
+      var fid=document.getElementById('fid');
+      fid.setAttribute('src', "/static/img/"+name);
       indicator[0].focus();
     }
 
