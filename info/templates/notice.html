@@ -4,6 +4,20 @@
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:
 normal; font-style: normal; }
+@media (min-width: 1025px){
+    div#back {
+    padding-left: 25%;
+    padding-right: 25%;
+    background-color: #ffffff;
+    margin:1em;
+    box-shadow: 2px 2px 5px grey;
+    }
+    
+    img#f {width: 100%; }
+    img#s {width: 100%; }
+
+}
+@media (max-width: 1025px)  {
 body {background-color: #f5f5f5;}
 div#back {
     padding: 1em;
@@ -26,6 +40,7 @@ img#s {width: 80%; height:55em; margin-left:10%;}
 div#container{
     position: absolute;
     padding-top: 14em;
+}
 }
 </style>
 
@@ -68,13 +83,13 @@ div#container{
     <div id="smoke">
         <h3 class="ntxt">* 흡연구역 안내</h3>
         <p class="ntxt">반드시 지정된 흡연구역을 이용해주시길 바랍니다.<p>
-        <img id="f" src="{% static 'img/smoking.jpg' %}"> <br><hr>
+        <img id="f" src="{% static 'smoking.jpg' %}"> <br><hr>
     </div>
 
     <div id="revenue">
         <h3 class="ntxt">* 수익사업 안내</h3>
         <p class="ntxt">수익사업과 관련된 규칙입니다.</p>
-        <img id="s" src="{% static 'img/rule.jpg' %}"><br><br>
+        <img id="s" src="{% static 'rule.jpg' %}"><br><br>
     </div>
 </div>
 {% endblock %}

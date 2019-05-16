@@ -135,4 +135,3 @@ DATABASES['default'].update(db_from_env)
 # 지연 : 세션
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False 
 SESSION_COOKIE_AGE = 20 # 지연 : 20초 동안 유지
-
