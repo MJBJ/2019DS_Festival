@@ -5,7 +5,7 @@
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 @media (min-width: 1025px){
-    
+
 }
 @media (max-width: 1025px)  {
     div#header{
@@ -94,52 +94,51 @@
         margin-top: 2em;
     }}
 </style>
-
 <div id="back">
-    <div id="bcontent">
-        <div id="b">
-                <div id="btitle">{{ board.Title }}</div>
-                <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
-        
-                <div id="bimg">
-                    <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
-                    <video id="vdtag" style="width:100%" controls>
-                        <source src="{{ board.file.url }}" type='video/ogg'>
-                        <source src="{{ board.file.url }}" type='video/mp4'>
-                        <source src="{{ board.file.url }}" type='video/webm'>
-                    </video>    
-                </div>
-                <div id="bbody">
-                    {{board.Text}}
-                </div>
-                <div id="bcontent2">
-                    <div id="bpwd">
-                        <form method="get" action="{% url 'delete' board.id %}">
-                            {% comment %} {% csrf_token %}  {% endcomment %}
-                            <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
-                            <input type="submit" value="게시글 삭제" class="dbtn">
-                        </form>
+        <div id="bcontent">
+            <div id="b">
+                    <div id="btitle">{{ board.Title }}</div>
+                    <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
+            
+                    <div id="bimg">
+                        <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
+                        <video id="vdtag" style="width:100%" controls>
+                            <source src="{{ board.file.url }}" type='video/ogg'>
+                            <source src="{{ board.file.url }}" type='video/mp4'>
+                            <source src="{{ board.file.url }}" type='video/webm'>
+                        </video>    
                     </div>
-                    <br>
-                    <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
-                </div>
+                    <div id="bbody">
+                        {{board.Text}}
+                    </div>
+                    <div id="bcontent2">
+                        <div id="bpwd">
+                            <form method="get" action="{% url 'delete' board.id %}">
+                                {% comment %} {% csrf_token %}  {% endcomment %}
+                                <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
+                                <input type="submit" value="게시글 삭제" class="dbtn">
+                            </form>
+                        </div>
+                        <br>
+                        <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
+                    </div>
+            </div>
         </div>
     </div>
-</div>
-
-<script>
-    var img = document.getElementById("imgtag");
-    var vd = document.getElementById("vdtag");
-    var src=img.getAttribute('src');
-
-    if(src.match('png')){
-        vd.remove();
-    } else if(src.match('jpg')){
-        vd.remove();
-    } else if(src.match('gif')){
-        vd.remove();
-    } else {
-        img.remove();
-    }
-</script>
-{% endblock %}
+    
+    <script>
+        var img = document.getElementById("imgtag");
+        var vd = document.getElementById("vdtag");
+        var src=img.getAttribute('src');
+    
+        if(src.match('png')){
+            vd.remove();
+        } else if(src.match('jpg')){
+            vd.remove();
+        } else if(src.match('gif')){
+            vd.remove();
+        } else {
+            img.remove();
+        }
+    </script>
+{% endblock %}    
