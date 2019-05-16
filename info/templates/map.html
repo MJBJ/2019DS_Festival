@@ -34,6 +34,76 @@
     display:inline-block;
   }
   #maplist{margin-left:2em;margin-top:1em;margin-right:2em;}
+
+  /******************************/
+  /*라이트 박스 컨테이너*/
+  #lightbox.active{
+                position: fixed;overflow:scroll;
+                background: #333;
+                width: 800px;
+                height: 800px;
+                left: 50%;
+                margin-left: -400px;
+                top: 30%;
+                margin-top: -250px;
+                box-sizing: border-box;
+                padding: 30px;
+                z-index: 99; display: block;
+            }
+            #lightbox{display: none;}
+            #lightbox h1, #lightbox {
+                color: white;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            /*이미지 박스*/
+            figure{
+                width: 90%; height: 90%;
+                position: relative;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+
+            figure img{
+                display: none;
+                position: absolute;
+            }
+            figure img{
+                display: none;
+                position:absolute;
+            }
+            figure img.active{display: block;}
+
+            /*창 닫기 버튼*/
+            .btn-close{
+                z-index:1;
+                position: absolute;
+                top: 5px; right: 5px;
+                padding: 10px;
+                color: white; font-size: 1.5em;
+            }
+            .btn-close:hover{ background-color: #666;}
+
+            /*배경처리*/
+            #block{
+                position: fixed;
+                width: 100%; height: 100%;
+                top: 0; bottom: 0; left: 0;right: 0;
+                background: #111;
+                opacity: 0.5;
+                z-index: 9;
+                display: none;
+            }
+            #block.active{ display: block;}
+
+            .indicator{text-align: center;}
+            .indicator button{
+                background: #666; color: white;
+                font-size: 12px;
+                border: none; padding: 2px 5px;
+            }
+            .indicator button:focus{background: #38f;}
 </style>
 
 <!-- map tab -->
@@ -234,7 +304,8 @@
               </li>
               <li><a class="maplink" href="#">[8] 심리학과</a>
               </li>
-              <li><a class="maplink" href="#">[9] 유아교육학과</a>
+              <li>
+                  <a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[9] 유아교육학과</a>
               </li>
               <li>&nbsp;</li>
            </ul>   
@@ -325,6 +396,26 @@
   </div>
 
 </div>
+<header>
+    <h1>light box</h1>
+    <img class="thumb" src="img01.jpg" width="100" onclick="lightbox_open(1)"/>
+    <img class="thumb" src="img02.jpg" width="100" onclick="lightbox_open(2)"/>
+    <img class="thumb" src="img03.jpg" width="100" onclick="lightbox_open(3)"/>
+</header>
+<!-- 라이트 박스 배경-->
+<div id="block"></div>
+<div id="lightbox">
+    <div class="btn-close" onclick="lightbox_close()">X</div>
+   <figure>
+        <img  id="fid" src="" alt="" class="active"/>
+        
+    </figure>
+        
+    </div>
+    <!-- end lightbox -->
+
+    
+</div>
 
 <script>
   function change(elmnt, day,j){
@@ -363,5 +454,25 @@
 
   //default
   document.getElementById("defaultOpen").click();
+
+
+  // 팝업
+  var indicator = document.querySelectorAll('.indicator button');
+    var lightbox = document.querySelector('#lightbox');
+    var block = document.querySelector('#block'); //라이트 박스 배경
+
+    function lightbox_open(name) {
+
+      lightbox.setAttribute('class', 'active');
+      block.setAttribute('class', 'active');
+      var fid=document.getElementById('fid');
+      fid.setAttribute('src', "/static/img/"+name);
+      indicator[0].focus();
+    }
+
+    function lightbox_close() {
+      lightbox.removeAttribute('class');
+      block.removeAttribute('class');
+    }
 </script>
 {% endblock %}
