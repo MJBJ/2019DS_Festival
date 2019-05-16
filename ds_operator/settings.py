@@ -180,6 +180,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'board.apps.BoardConfig',
     'info.apps.InfoConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -274,3 +275,34 @@ DATABASES['default'].update(db_from_env)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False 
 SESSION_COOKIE_AGE = 20 # 지연 : 20초 동안 유지
 
+# s3
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_STORAGE = 'ds_operator.storage_backends.S3StaticStorage'
+
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+else:
+    # AWS Setting
+    AWS_REGION = 'ap-northeast-2'
+    AWS_STORAGE_BUCKET_NAME = 'dsfestival2019'
+    AWS_QUERYSTRING_AUTH = False
+    AWS_S3_HOST = 's3.ap-northeast-2.amazonaws.com' 
+    AWS_ACCESS_KEY_ID = 'AKIAZGJ2AXVLHHEOHKMG'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_S3_CUSTOM_DOMAIN = 'dsfestival2019.s3.amazonaws.com' 
+
+    # Static Setting
+    STATIC_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/static/" 
+    STATICFILES_STORAGE = 'ds_operator.storage_backends.S3StaticStorage'
+
+    #Media Setting
+    MEDIA_URL = "https://dsfestival2019.s3-website.ap-northeast-2.amazonaws.com/media/"
+    DEFAULT_FILE_STORAGE = 'ds_operator.storage_backends.S3DefaultStorage'
+
+    # STATIC_DIR = os.path.join(BASE_DIR, 'static')
+    # STATICFILES_DIRS = [
+    #     STATIC_DIR,
+    # ]
