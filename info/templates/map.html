@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> 
 <style>
 .nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
@@ -16,153 +15,70 @@
     margin: 0.5em;
     box-shadow: 2px 2px 5px grey;
   }
-  
-  .maplink:link,.maplink:visited,.maplink.active,.maplink.hover { text-decoration: none; color:#362f2d;font-size:1.5em;}
-  
-  /* tab */
-  div#tab div{
-    display: inline-block;
-    margin-top:1em;
-    margin-left:1em;
-  }
-  div#tab div img { width:6em; height:3em;margin-top:1em;}
-
-  /* 지도 이미지 */
-  #mapimg > img {
-    width: 58em;
-    height: 55em;
-    margin-left: 0.5em;
-  }
-
-  /* 지도 리스트 */
-  #m1,#m2,#m3,#m4,#m5,#m6 {display:inline-block;}
-  #back ul {list-style-type:none;}
-  #maplist {margin-left:3em;font-size:1.5em;}
-
+  /* a tag */
+  { text-decoration: none; color:#362f2d;font-size:1.5em;}
 </style>
-  <div id="tab">
-      <div>
-        <a class="maplink" href="#">
-        <img onclick="change1();" id="d22" src="{% static 'img/22day.png'%}"></a>
-      </div>
-      <div>
-      <a class="maplink" href="#">
-      <img onclick="change2();" id="d23" src="{% static 'img/23day.png'%}"></a>
-      </div>
-      <div>
-        <a class="maplink" href="#">
-        <img onclick="change3();" id="n23" src="{% static 'img/23night.png'%}"></a>
-      </div>
-      <div>
-        <a class="maplink" href="#">
-        <img onclick="change4();" id="d24" src="{% static 'img/24day.png'%}"></a>
-      </div>
-      <div>
-        <a class="maplink" href="#">
-        <img onclick="change5();" id="n24" src="{% static 'img/24night.png'%}"></a>
-      </div>
-  </div>
+
+<div id="tablist">  
+  <img id="defaultOpen" class="tabs" onclick="change(this,'22d',0)" src="{% static 'img/22day.png' %}">
+  <img class="tabs" onclick="change(this,'23d',1)" src="{% static 'img/23day.png' %}">
+  <img class="tabs" onclick="change(this,'23n',2)" src="{% static 'img/23night.png' %}">
+  <img class="tabs" onclick="change(this,'24d',3)" src="{% static 'img/24day.png' %}">
+  <img class="tabs" onclick="change(this,'24n',4)" src="{% static 'img/24night.png' %}">
+</div>
 
 <div id="back">
-<!-- 지도 이미지-->
-  <div id="mapimg">
-    <img id="mimg" src="{% static 'img/map22d.png' %}">
+  <div id="22d" class="tabcontent">
+    <h1>test 22day</h1>
   </div>
-
-<div id="maplist">
-  <!-- 민주동산-->
-  <div id="minju">
-  <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-    <div id="m1">
-      <ul>
-        <li><a class="maplink" href="#">[1] 총학 음식존</a></li>
-          <li><a class="maplink" href="#">[2] 자연대 학생회</a></li>
-          <li><a class="maplink" href="#">[3] 피스</a></li>
-          <li><a class="maplink" href="#">[4] 회계학과</a></li>
-          <li><a class="maplink" href="#">[5] 쿠사</a></li>
-      </ul>
-    </div>
-    <div id="m2">
-      <ul>
-       <li><a class="maplink" href="#">[6] 운지문학회</a></li>
-          <li><a class="maplink" href="#">[7] 멋쟁이사자처럼</a></li>
-          <li><a class="maplink" href="#">[8] 우푸</a></li>
-          <li><a class="maplink" href="#">[9] 예운</a></li>
-          <li>&nbsp;</li>
-        </ul>
-    </div>
+  <div id="23d" class="tabcontent">
+    <h1>test 23day</h1>
   </div>
-<hr>
-  <!-- 소영근터 -->
-  <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-    <div id="m3">
-      <ul>
-          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
-          <li><a class="maplink" href="#">[2] 총학 게임존</a></li></ul></div>
-          <div id="m4">
-          <ul><li><a class="maplink" href="#">[3] 타투</a></li>
-          <li><a class="maplink" href="#">[4] 타로</a></li>
-        </ul>
-    </div>
-<hr>
-  <!-- 영근터 -->
-  <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-    <div id="m5">
-      <ul>
-          <li><a class="maplink" href="#">[1] 파동</a></li>
-          <li><a class="maplink" href="#">[2] 로미오</a></li>
-          <li><a class="maplink" href="#">[3] 빛내미</a></li>
-    </div>
-    <div id="m6">
-      <ul>
-          <li><a class="maplink" href="#">[4] 유아교육학과</a></li>
-          <li><a class="maplink" href="#">[5] 생활체육학과</a></li>
-          <li>&nbsp;</li>
-      </ul>
-    </div>
-  <hr>
-  <!--학생회관-->
-  <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
-    <div id="m7">
-      <ul>
-          <li><a class="maplink" href="#">[1] 한빛</a></li>
-          <li><a class="maplink" href="#">[2] 아미공 내부자들</a></li>
-        </ul>
-    </div>
- </div>
+  <div id="23n" class="tabcontent">
+    <h1>test 23night</h1>
+  </div>
+  <div id="24d" class="tabcontent">
+    <h1>test 24day</h1>
+  </div>
+  <div id="24n" class="tabcontent">
+    <h1>test 24night</h1>
+  </div>
 </div>
 
 <script>
+  function change(elmnt, day,j){
+    // click image
+    var src=["{% static 'img/22dayC.png' %}",
+            "{% static 'img/23dayC.png' %}",
+            "{% static 'img/23nightC.png' %}",
+            "{% static 'img/24dayC.png' %}",
+            "{% static 'img/24nightC.png' %}",
+    ];
+    // default image
+    var src2=["{% static 'img/22day.png' %}",
+            "{% static 'img/23day.png' %}",
+            "{% static 'img/23night.png' %}",
+            "{% static 'img/24day.png' %}",
+            "{% static 'img/24night.png' %}",
+    ];
+    var i, tabcontent,tabs;
+    tabcontent=document.getElementsByClassName("tabcontent");
+    for(i=0;i<tabcontent.length;i++){
+      tabcontent[i].style.display="none";
+    }
+    tabs=document.getElementsByClassName("tabs");
 
-  function change1(){
-    var tab = document.getElementById("d22");
-    var img = document.getElementById("mimg");
-    tab.setAttribute("src","{% static 'img/22dayC.png' %}");
-    img.setAttribute("src","{% static 'img/map22d.png' %}");  
+    // 현재 클릭한거 (j)랑 같으면 continue
+    // 나머지는 default image로 바꿈
+    for(i=0;i<tabs.length;i++){
+      if (i==j) continue;
+      tabs[i].setAttribute('src',src2[i]);
+    }
+    document.getElementById(day).style.display="block";
+    elmnt.setAttribute('src',src[j]);
   }
-  function change2(){
-    var tab = document.getElementById("d23");
-    tab.setAttribute("src","{% static 'img/23dayC.png' %}")
-    var img = document.getElementById("mimg");   
-    img.setAttribute("src","{% static 'img/map23d.png' %}"); 
-  }
-  function change3(){
-    var tab = document.getElementById("n23");
-    tab.setAttribute("src","{% static 'img/23nightC.png' %}")  
-    var img = document.getElementById("mimg");   
-    img.setAttribute("src","{% static 'img/map23n.png' %}");  
-  }
-  function change4(){
-    var tab = document.getElementById("d24");
-    tab.setAttribute("src","{% static 'img/24dayC.png' %}")   
-    var img = document.getElementById("mimg");   
-    img.setAttribute("src","{% static 'img/map24d.png' %}"); 
-  }
-  function change5(){
-    var tab = document.getElementById("n24");
-    tab.setAttribute("src","{% static 'img/24nightC.png' %}")   
-    var img = document.getElementById("mimg");   
-    img.setAttribute("src","{% static 'img/map24n.png' %}"); 
-  }
+
+  //default
+  document.getElementById("defaultOpen").click();
 </script>
 {% endblock %}
