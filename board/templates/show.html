@@ -77,7 +77,9 @@
 </style>
  </head>
 <body>
-
+<script>
+     var board_cnt=0;
+    </script>
 <div class="container1">
         <div id="btn_write">
                 <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'post.png' %}" alt="글쓰기" class="btn_write"></a>
@@ -85,6 +87,7 @@
     <div id="board">
     {% if boards %}
     {%for board in boards.all%}    
+    <input type="hidden"  id="total_count">
     <a id="s_a" href="{% url 'detail' board.id %}">
     <div class="row" id="s_row">
         <div class="col-md-8" id="s_col-md-8">
@@ -98,25 +101,110 @@
             </div>
             <div class="s_body">{{board.summary}} [...]</div>
         </div>
-        <div class="col-md-4" id="s_col-md-4">
+        <div class="parent" class="col-md-4" id="s_col-md-4" >
+            <input type="hidden" id="{{board.id}}" value="{{board.id}}">
                 {% if board.file %}
+<<<<<<< HEAD
                 <img id="s_img" src="{{board.file.url}}" alt="">
                 <video style="width:100%;" controls>
+=======
+                <script>
+                    board_cnt++;
+                    
+                    
+                    var url="{{board.file.url}}";
+                   
+                    if(url.match(".jpg")||url.match(".png")||url.match(".gif")){
+                        var global=1; 
+                    }
+                    else if(url.match(".mp4")||url.match(".webm")||url.match(".ogg")){
+                        var global=2;
+                    }
+                    else{
+                        var global=3;// 이미지, 동영상 둘다 아닌 경우
+                    }
+
+                    if(global==1){ //jpg 사진 파일이면,
+                        var img=document.createElement('img');
+                        img.setAttribute('id',"s_img");
+                        img.setAttribute('src',"{{board.file.url}}");
+                        var h=document.getElementById("{{board.id}}");
+                        var pp=h.parentNode;
+                        
+                        pp.append(img);
+                     
+            
+                    }
+                  
+                    if(global==2){
+                        var source1=document.createElement('source');
+                        source1.setAttribute('src',"{{ board.file.url }}");
+                        source1.setAttribute('type',"video/ogg");
+
+                        var source2=document.createElement('source');
+                        source2.setAttribute('src',"{{ board.file.url }}");
+                        source2.setAttribute('type',"video/mp4");
+
+                        var source3=document.createElement('source');
+                        source3.setAttribute('src',"{{ board.file.url }}");
+                        source3.setAttribute('type',"video/webm");
+
+                        var video=document.createElement('video');
+                        video.setAttribute('controls',null);
+                        video.setAttribute('autoplay',null);
+                        video.setAttribute('loop',null);
+                        video.style.width="100%";
+                        video.style.height="18em";
+                        //video.style.margin="0 0";
+                        //width:18em; height:18em;margin:0 0;
+
+                        video.append(source1);
+                        video.append(source2);
+                        video.append(source3);
+
+                        var hv=document.getElementById("{{board.id}}");
+                        var ppv=hv.parentNode;
+                        //var p=document.getElementsByClassName('{{board.id}}');
+                        ppv.append(video);
+                       
+                    }
+                    if(global==3){
+                        var img=document.createElement('img');
+                        img.setAttribute('id',"s_img");
+                        img.setAttribute('src',"{% static 'default.jpg' %}");
+                        var h=document.getElementById("{{board.id}}");
+                        var pp=h.parentNode;
+                        
+                        pp.append(img);
+                    }
+                   
+                </script>
+                 <!--
+                <img class="s_img" id="s_img" src="{{board.file.url}}" alt="">
+                -->
+                <!--
+                <video class="videotag" style="width:100%" controls>
+>>>>>>> 9a6e08e2484051faa4424b0e3f04dc1d7fa96c95
                     <source src="{{ board.file.url }}" type='video/ogg'>
                     <source src="{{ board.file.url }}" type='video/mp4'>
                     <source src="{{ board.file.url }}" type='video/webm'>
                 </video>
+                -->
                 {% else %}
-                <img id="s_defaultimg" src="{% static 'default.jpg' %}" alt="">
+                <img id="s_img" src="{% static 'default.jpg' %}" alt="">
                 {% endif %}
         </div>        
     </div>
     </a>
+    
     {%endfor%}
     {%endif%}
 </div>
+<<<<<<< HEAD
    
 </div>
+=======
+>>>>>>> 9a6e08e2484051faa4424b0e3f04dc1d7fa96c95
 
 </body>
 {% endblock %}

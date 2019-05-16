@@ -102,14 +102,13 @@
                 <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
         
                 <div id="bimg">
-                    <img style="width:100%;" src="{{ board.file.url }}" alt=".">
-                    <video style="width:100%" controls>
+                    <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
+                    <video id="vdtag" style="width:100%" controls>
                         <source src="{{ board.file.url }}" type='video/ogg'>
                         <source src="{{ board.file.url }}" type='video/mp4'>
                         <source src="{{ board.file.url }}" type='video/webm'>
-                    </video>
+                    </video>    
                 </div>
-        
                 <div id="bbody">
                     {{board.Text}}
                 </div>
@@ -127,4 +126,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    var img = document.getElementById("imgtag");
+    var vd = document.getElementById("vdtag");
+    var src=img.getAttribute('src');
+
+    if(src.match('png')){
+        vd.remove();
+    } else if(src.match('jpg')){
+        vd.remove();
+    } else if(src.match('gif')){
+        vd.remove();
+    } else {
+        img.remove();
+    }
+</script>
 {% endblock %}

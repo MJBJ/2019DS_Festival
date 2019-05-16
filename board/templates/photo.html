@@ -72,16 +72,47 @@ while(i<treasure_ids.length){
     x[i] = document.createElement('div');
     
     // (2) div 요소의 background image를 db 이미지로 지정
-    //x[i].style.backgroundColor="red";
-    //x[i].setAttribute('class',"shadow");
-    x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
-    //x[i].style.padding="0px";
-    x[i].style.minHeight="40em";
-    
-    
-    x[i].style.backgroundSize= "27em";
-    x[i].style.backgroundRepeat ="no-repeat";
+    // url이 이미지인가 동영상인가 구분
+    if(treasure_urls[i].value.match('.jpg')||treasure_urls[i].value.match('.png')||treasure_urls[i].value.match(".png")){
+        // 그림이라면
+        x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
+        //x[i].style.padding="0px";
+        //x[i].style.width="100%";
+        x[i].style.minHeight="30em";
+        x[i].style.backgroundSize= "27em";
+        x[i].style.backgroundRepeat ="no-repeat";
+    }
+    else if(treasure_urls[i].value.match('.mp4')||treasure_urls[i].value.match('.webm')||treasure_urls[i].value.match(".ogg")){
+        // 동영상이라면
+        var source1=document.createElement('source');
+        source1.setAttribute('src',treasure_urls[i].value);
+        source1.setAttribute('type',"video/ogg");
 
+        var source2=document.createElement('source');
+        source2.setAttribute('src',treasure_urls[i].value);
+        source2.setAttribute('type', "video/mp4");
+
+        var source3 = document.createElement('source');
+        source3.setAttribute('src',treasure_urls[i].value);
+        source3.setAttribute('type', "video/webm");
+
+        var video = document.createElement('video');
+        video.setAttribute('controls', null);
+        video.setAttribute('autoplay', null);
+        video.setAttribute('loop', null);
+        video.style.width="100%";
+        video.style.maxHeight="27em";
+        x[i].style.minHeight="30em";
+        
+
+        video.append(source1);
+        video.append(source2);
+        video.append(source3);
+
+        x[i].append(video);
+        
+    }
+    
     //
     // (3) div 요소를 left나 right에 붙임
     //      flag==0 일땐 left / flag==1일 땐 right
