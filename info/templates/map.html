@@ -5,6 +5,22 @@
 <style>
 .nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
+@media (min-width: 1025px){
+  div#back {
+    margin: 1%;
+    padding-left: 25%;
+    padding-right: 25%; 
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px grey;
+}
+/* 지도 이미지 */
+#mapimg > img {
+    margin-left:1%;
+    margin-right: 1%;
+    width: 98%;
+  }
+}
+@media (max-width: 1025px)  {
   body{background-color: #f5f5f5;}
   div#back {
     width:59.5em;
@@ -81,7 +97,7 @@
     width: 55em;
     height: 40em;
   }
-
+}
 </style>
 
 <div id="back">

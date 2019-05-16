@@ -4,7 +4,15 @@
 
 
 <style>
+     @media (min-width: 1025px){
+         #back{ margin-left: 25%; margin-right: 25%;}
+         
+        #tb{ width: 98%; margin: 1%;}
+         .tbtd{ width: 49%; padding: 1%;}
+        #left #right{width: 100%;height: auto;margin-left: 0.5%; margin-right: 0.5%;}
     
+     }
+    @media (max-width: 1025px){
     .shadow {
     background-color: #ffffff;
     margin-top:2em;
@@ -15,16 +23,18 @@
 }
 #tb{ width: 55.5em; margin: 1em;}
 .tbtd{ width: 27em; padding: 1em;}
+#left #right{width: 27em;height: auto;}
+    }
 </style>
 <div id="back">
     <div class="shadow">
         <table id="tb">
             <tr>
                 <td class="tbtd">
-                    <div class="Pcontainer" id="left" style="width:27.5em;height:auto;"></div>
+                    <div class="Pcontainer" id="left"></div>
                 </td>
                 <td class="tbtd">
-                    <div class="Pcontainer" id="right" style="width:27.5em;height:auto;"></div>
+                    <div class="Pcontainer" id="right"></div>
                 </td>
             </tr>
         </table>    

@@ -7,6 +7,88 @@
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 @font-face { font-family: 'S-CoreDream-5Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
 
+@media (min-width: 1025px)  {
+  .back{
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+  .eventbg {
+    width:100%;
+    background-repeat: no-repeat;
+    background-image: url('../static/eventbg.png');
+    background-size:100%;
+    padding-top:5em;   
+}
+.vcontainer{
+  width:100%;
+  height:80%;
+
+}
+.stamp_title{
+  margin-bottom:15em;
+}
+
+.stamp_title10{
+  margin-bottom:5em;
+}
+.h1style{
+  font-size:2em;
+ font-family: 'S-CoreDream-5Medium';
+  text-align:center;
+color:#ff3300;
+}
+.h3style{
+  font-family:'S-CoreDream-3Light';
+  text-align:center;
+color:#362f2d;
+font-size:1.0em;
+}
+#not{
+  font-family: 'S-CoreDream-5Medium';
+  text-align:center;
+color:#ff3300;
+margin-top: 3em;
+font-size: 1em;
+}
+#st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
+    width: 8em; height:8em;
+    transform:rotate(-20deg);
+    color: black;
+}
+#stst{
+  margin-top: 4em;
+  margin-left: 5em;
+  padding-top: 2em;
+}
+#stststamp{
+  margin-right: 2em;
+  text-align: center;
+}
+#stst2{
+  margin-left: 10em;
+  padding-top: 2em;
+}
+.subbtn{
+  background-image: url('../static/mclear.png');
+  background-size:100%;
+  width:9.5em;
+  height:3em;
+  background-repeat: no-repeat;
+  padding-left: 40%;
+}
+.btn-scs{
+  padding-left: 37%;
+  padding-top: 10%;
+}
+.stamp_a:hover {text-decoration:none; color:#362f2d;}
+
+.stamp_a{
+  color:#362f2d;
+  font-family: 'S-CoreDream-5Medium';
+}
+}
+@media (max-width: 1025px)  {
 .stamp_a:hover {text-decoration:none; color:#362f2d;}
 
 .stamp_a{
@@ -79,37 +161,19 @@ font-size:2.1em;
   text-align: center;
 }
 #stst2{
+  margin-top: 3em;
   margin-left: 16em;
+  
 }
 .btn-scs{
   margin: auto;
+  margin-top: 6em;
 }
 
-/* 비밀번호를 입력해주세요 */
-.pwdText{
-    font-family:'S-CoreDream-3Light';
-    text-align:center;
-    color:black;
-    font-size:3.3em;
-}
-/* 입력 태그 */
-.pwdBox{
-    background-repeat: no-repeat;
-    width:13.1em;
-    height:2em;
-    background-image:url('../static/pwdbox.png');
-    background-size: 13em;
-    font-family:'S-CoreDream-3Light';
-    text-align:center;
-    color:black;
-    font-size:3.3em;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-}
 
+}
 </style>
-    
+<div class="back">
 <div class="eventbg">
     <div class="stamp_title10">
         <h1 class="h1style">백일화 100배 즐기기!</h1>
@@ -142,7 +206,6 @@ font-size:2.1em;
               <img id="st3_img" src="{% static 'st3r.png'%}" alt="스탬프 찍기전3">
             </div>
         </div>	
-        <br/><br/><br/>
         <div class="row" id="stst2">
           <div id="stststamp">
             <a href="{%url 'quest4' %}" class="stamp_a">STEP4 바이킹</a><br/><br/>
@@ -153,7 +216,6 @@ font-size:2.1em;
             <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
           </div>
         </div>
-        <br/><br/><br/>
         <div class="row" >   
           <div class="btn-scs">      
           <form id="fform" action="{%url 'clear' %}">
@@ -164,7 +226,7 @@ font-size:2.1em;
         </div>
       </div>
 </div>
-
+</div>
 
 <!-- 지연 : 세션이 저장되어 있나 확인 한다. hidden 입력 태그의 value값으로 -->
 </div>
