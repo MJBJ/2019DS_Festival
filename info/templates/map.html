@@ -13,12 +13,21 @@
     /*padding: 1em;*/
     background-color: #ffffff;
     margin: 0.5em;
+    margin-top:0em;
     box-shadow: 2px 2px 5px grey;
   }
-  /* a tag */
-  { text-decoration: none; color:#362f2d;font-size:1.5em;}
+
+  /* tab */
+  div#tablist {margin-top:2em;margin-left:0.5em;}
+  div#back img {
+    width:58em;
+    height:60em;
+  }
+  /* a tag 
+  { text-decoration: none; color:#362f2d;font-size:1.5em;} */
 </style>
 
+<!-- map tab -->
 <div id="tablist">  
   <img id="defaultOpen" class="tabs" onclick="change(this,'22d',0)" src="{% static 'img/22day.png' %}">
   <img class="tabs" onclick="change(this,'23d',1)" src="{% static 'img/23day.png' %}">
@@ -27,22 +36,42 @@
   <img class="tabs" onclick="change(this,'24n',4)" src="{% static 'img/24night.png' %}">
 </div>
 
+<!--background div : shadow-->
 <div id="back">
+  <!-- 22일 낮지도 -->
   <div id="22d" class="tabcontent">
-    <h1>test 22day</h1>
+    <img src="{% static 'img/map22d.png'%}">
+    <h1>
+    <span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 
+    민주동산
+    </h1>
+    <ul>
+      <li>
+    </ul>
   </div>
+
+
+  <!-- 23일 낮지도 -->
   <div id="23d" class="tabcontent">
-    <h1>test 23day</h1>
+    <img src="{% static 'img/map23d.png'%}">
   </div>
+
+
+  <!-- 23일 밤지도 -->
   <div id="23n" class="tabcontent">
-    <h1>test 23night</h1>
+    <img src="{% static 'img/map23n.png'%}">
   </div>
+
+  <!-- 24일 낮지도 -->
   <div id="24d" class="tabcontent">
-    <h1>test 24day</h1>
+    <img src="{% static 'img/map24d.png'%}">
   </div>
+
+  <!-- 24일 밤지도 -->
   <div id="24n" class="tabcontent">
-    <h1>test 24night</h1>
+    <img src="{% static 'img/map24n.png'%}">
   </div>
+
 </div>
 
 <script>
@@ -62,18 +91,20 @@
             "{% static 'img/24night.png' %}",
     ];
     var i, tabcontent,tabs;
+
     tabcontent=document.getElementsByClassName("tabcontent");
     for(i=0;i<tabcontent.length;i++){
       tabcontent[i].style.display="none";
     }
-    tabs=document.getElementsByClassName("tabs");
 
+    tabs=document.getElementsByClassName("tabs");
     // 현재 클릭한거 (j)랑 같으면 continue
     // 나머지는 default image로 바꿈
     for(i=0;i<tabs.length;i++){
       if (i==j) continue;
       tabs[i].setAttribute('src',src2[i]);
     }
+
     document.getElementById(day).style.display="block";
     elmnt.setAttribute('src',src[j]);
   }
