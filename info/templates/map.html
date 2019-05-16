@@ -25,9 +25,7 @@
     height:60em;
   }
  
- /* link css*/
- .maplink:link,.maplink:visited,.maplink.active,.maplink.hover
- { text-decoration: none; color:#362f2d;font-size:1.5em;}
+ .maplink:link,.maplink:visited,.maplink.active,.maplink.hover{ text-decoration: none; color:#362f2d;}
 
   #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
     margin-left:2em;
@@ -42,14 +40,14 @@
   #lightbox.active{
                 position: fixed;overflow:scroll;
                 background: #333;
-                width: 800px;
-                height: 800px;
+                width: 50em;
+                height: 70em;
                 left: 50%;
                 margin-left: -400px;
                 top: 30%;
                 margin-top: -250px;
                 box-sizing: border-box;
-                padding: 30px;
+                padding:1em;
                 z-index: 99; display: block;
             }
             #lightbox{display: none;}
@@ -126,19 +124,19 @@
     <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
     <div id="m1">
       <ul>
-        <li>[1] 총학 음식존</li>
-        <li>[2] 자연대 학생회</li>
-        <li>[3] 피스</li>
-        <li>[4] 회계학과</li>
-        <li>[5] 쿠사</li>
+        <li><a class="maplink" href="#">[1] 총학 음식존</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('na.png')">[2] 자연대 학생회</a></li>
+        <li><a class="maplink" href="#">[3] 피스</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[4] 회계학과</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('kusa.jpg')">[5] 쿠사</a></li>
       </ul>
     </div>
     <div id="m2">
       <ul>
-        <li>[6] 운지문학회</li>
-        <li>[7] 멋쟁이사자처럼</li>
-        <li>[8] 우푸</li>
-        <li>[9] 예운</li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[6] 운지문학회</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('ll.jpg')">[7] 멋쟁이사자처럼</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[8] 우푸</a></li>
+        <li><a class="maplink" href="#" onclick="lightbox_open('ye.jpg')">[9] 예운</a></li>
         <li>&nbsp;</li>
       </ul>
     </div>
@@ -146,29 +144,29 @@
     <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
      <div id="m3">
         <ul>
-          <li>[1] 총학 만들기</li>
-          <li>[2] 총학 게임존</li>
+          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
+          <li><a class="maplink" href="#">[2] 총학 게임존</a></li>
         </ul>
      </div>
      <div id="m4">
         <ul>
-          <li>[3] 타투</li>
-          <li>[4] 타로</li>
+          <li><a class="maplink" href="#">[3] 타투</a></li>
+          <li><a class="maplink" href="#">[4] 타로</a></li>
         </ul>
      </div>
   <hr>
      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
       <div id="m5">
         <ul>
-          <li>[1] 파동</li>
-          <li>[2] 로미오</li>
-          <li>[3] 빛내미</li>
+          <li><a class="maplink" href="#">[1] 파동</a></li>
+          <li><a class="maplink" href="#">[2] 로미오</a></li>
+          <li><a class="maplink" href="#" onclick="lightbox_open('bit.jpg')">[3] 빛내미</a></li>
         </ul>
       </div>
       <div id="m6">
         <ul>
-          <li>[4] 유아교육학과</li>
-          <li>[5] 생활체육학과</li>
+          <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[4] 유아교육학과</a></li>
+          <li><a class="maplink" href="#">[5] 생활체육학과</a></li>
           <li>&nbsp;</li>
         </ul>
       </div>
@@ -176,8 +174,8 @@
         <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
         <div id="m7">
           <ul>
-            <li>[1] 한빛</li>
-            <li>[2] 아미공 내부자들</li>
+            <li><a class="maplink" href="#">[1] 한빛</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[2] 아미공 내부자들</a></li>
           </ul>
         </div>
       </div>
@@ -195,15 +193,15 @@
             <li><a class="maplink" href="#">[2] 수협</a></li>
             <li><a class="maplink" href="#">[3] 덕냥당</a></li>
             <li><a class="maplink" href="#">[4] 국어국문학과</a></li>
-            <li><a class="maplink" href="#">[5] 아동가족학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('chf.png')">[5] 아동가족학과</a></li>
           </ul>
         </div>
         <div id="m2">
           <ul>
-           <li><a class="maplink" href="#">[6] 쿠사</a></li>
-            <li><a class="maplink" href="#">[7] 사회학과</a></li>
-            <li><a class="maplink" href="#">[8] 우푸</a></li>
-            <li><a class="maplink" href="#">[9] 예운</a></li>
+           <li><a class="maplink" href="#" onclick="lightbox_open('kusa.jpg')">[6] 쿠사</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('his_d.jpg')">[7] 사회학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[8] 우푸</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('ye.jpg')">[9] 예운</a></li>
             <li>&nbsp;</li>
           </ul>
         </div>
@@ -214,15 +212,15 @@
           <ul>
               <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
               <li><a class="maplink" href="#">[2] 지음</a></li>
-              <li><a class="maplink" href="#">[3] 경영학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[3] 경영학과</a></li>
               <li><a class="maplink" href="#">[4] 열음</a></li>
-              <li><a class="maplink" href="#">[5] 두콩이공방 </a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('dukong.jpg')">[5] 두콩이공방 </a></li>
             </ul>
           </div>
         <div id="m4">
             <ul>
-              <li><a class="maplink" href="#">[6] 사회대 학생회</a></li>
-              <li><a class="maplink" href="#">[7] 멋쟁이사자처럼 </a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('sch.jpg')">[6] 사회대 학생회</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ll.jpg')">[7] 멋쟁이사자처럼 </a></li>
               <li><a class="maplink" href="#">[8] 총학게임판 </a></li>
               <li><a class="maplink" href="#">[9] 타투 </a></li>
             </ul>
@@ -234,13 +232,13 @@
         <div id="m5">
           <ul>
               <li><a class="maplink" href="#">[1] 피스</a></li>
-              <li><a class="maplink" href="#">[2] 유아교육학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</a></li>
               <li><a class="maplink" href="#">[3] 동천</a></li>
-              <li><a class="maplink" href="#">[4] 운지문학회</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[4] 운지문학회</a>
               </li>
               <li><a class="maplink" href="#">[5] 텍스트디자인학과</a>
               </li>
-              <li><a class="maplink" href="#">[6] 빛내미</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('bit.jpg')">[6] 빛내미</a>
               </li>
               <li><a class="maplink" href="#">[7] 파동</a>
               </li>
@@ -250,13 +248,13 @@
           <ul>
               <li><a class="maplink" href="#">[8] 생활체육학과</a>
               </li>
-              <li><a class="maplink" href="#">[9] 회계학과</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[9] 회계학과</a>
               </li>
-              <li><a class="maplink" href="#">[10] 자연대 학생회</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('na.jpg')">[10] 자연대 학생회</a>
               </li>
               <li><a class="maplink" href="#">[11] 포크</a>
               </li>   
-              <li><a class="maplink" href="#">[12] 유아교육학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[12] 유아교육학과</a></li>
               <li><a class="maplink" href="#">[13] 생활체육학과</a></li>
               <li>&nbsp;</li>
           </ul>
@@ -274,7 +272,7 @@
       <h1 style="margin-left:0.5em"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1">
           <ul>
-            <li><a class="maplink" href="#">[1] 사회학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[1] 사회학과</a></li>
           </ul>
         </div>
         <div id="m2">  
@@ -288,23 +286,23 @@
       <h1 style="margin-left:0.5em"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-              <li><a class="maplink" href="#">[1] 회계학과</a></li>
-              <li><a class="maplink" href="#">[2] 영어영문학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[1] 회계학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('eng.jpg')">[2] 영어영문학과</a></li>
               <li><a class="maplink" href="#">[3] 국어국문학과</a>
               </li>
-              <li><a class="maplink" href="#">[4] 경영학과</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[4] 경영학과</a>
               </li>
-              <li><a class="maplink" href="#">[5] 아미공 내부자들</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[5] 아미공 내부자들</a>
               </li>  
            </ul>
         </div> 
         <div id="m4"> 
            <ul>
-              <li><a class="maplink" href="#">[6] 사학과</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('his_n.jpg')">[6] 사학과</a>
               </li>
               <li><a class="maplink" href="#">[7] 국제통상학과</a>
               </li>
-              <li><a class="maplink" href="#">[8] 심리학과</a>
+              <li><a class="maplink" href="#" onclick="lightbox_open('psy.jpg')">[8] 심리학과</a>
               </li>
               <li>
                   <a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[9] 유아교육학과</a>
@@ -322,14 +320,14 @@
     <div id="maplist">
       <!-- 민주동산-->
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1"><ul><li>[1] 운지문학회<li></ul></div>
+        <div id="m1"><ul><li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[1] 운지문학회</a><li></ul></div>
       <hr>
       <!-- 소영근터 -->
       <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
       <div id="m2">
         <ul>
-          <li>[1] 총학 만들기</li>
-          <li>[2] 타투</li>
+          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
+          <li><a class="maplink" href="#">[2] 타투</a></li>
         </ul>
       </div>
       <hr>
@@ -337,21 +335,21 @@
       <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-            <li>[1] 사학과</li>
-            <li>[2] 열음</li>
-            <li>[3] 듈립</li>
-            <li>[4] 불어불문학과</li>
-            <li>[5] 우푸</li>
-            <li>[6] 국제통상학과</li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('his_d.jpg')">[1] 사학과</a></li>
+            <li><a class="maplink" href="#">[2] 열음</a></li>
+            <li><a class="maplink" href="#">[3] 듈립</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('fr.jpg')">[4] 불어불문학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[5] 우푸</a></li>
+            <li><a class="maplink" href="#">[6] 국제통상학과</a></li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li>[7] 아동가족학과<li>
-            <li>[8] 사회학과<li>
-            <li>[9] 국어국문학과<li>
-            <li>[10] 공과대 학생회<li>
-            <li>[11] 국민은행<li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('chf.png')">[7] 아동가족학과</a><li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[8] 사회학과</a><li>
+            <li><a class="maplink" href="#">[9] 국어국문학과</a><li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('en.jpg')">[10] 공과대 학생회</a><li>
+            <li><a class="maplink" href="#">[11] 국민은행</a><li>
             <li>&nbsp;<li>
           </ul>
         </div>
@@ -367,8 +365,8 @@
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1">
           <ul>
-            <li>[1] 사회학과<li>
-            <li>[2] 생활체육학과<li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[1] 사회학과</a><li>
+            <li><a class="maplink" href="#">[2] 생활체육학과</a><li>
           </ul>
         </div>
       <hr>
@@ -376,19 +374,19 @@
       <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-            <li>[1] 회계학과</li>
-            <li>[2] 유아교육학과</li>
-            <li>[3] 국어국문학과</li>
-            <li>[4] 아미공 내부자들</li>
-            <li>[5] 국제통상학과</li>
-            <li>[6] 식품영양학과</li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[1] 회계학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</a></li>
+            <li><a class="maplink" href="#">[3] 국어국문학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[4] 아미공 내부자들</a></li>
+            <li><a class="maplink" href="#">[5] 국제통상학과</a></li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('food.jpg')">[6] 식품영양학과</a></li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li>[7] 식품영양학과<li>
-            <li>[8] 심리학과<li>
-            <li>[9] 경영학과<li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('food.jpg')">[7] 식품영양학과</a><li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('psy.jpg')">[8] 심리학과</a><li>
+            <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[9] 경영학과</a><li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
@@ -398,18 +396,13 @@
   </div>
 
 </div>
-<header>
-    <h1>light box</h1>
-    <img class="thumb" src="img01.jpg" width="100" onclick="lightbox_open(1)"/>
-    <img class="thumb" src="img02.jpg" width="100" onclick="lightbox_open(2)"/>
-    <img class="thumb" src="img03.jpg" width="100" onclick="lightbox_open(3)"/>
-</header>
+
 <!-- 라이트 박스 배경-->
 <div id="block"></div>
 <div id="lightbox">
     <div class="btn-close" onclick="lightbox_close()">X</div>
    <figure>
-        <img  id="fid" src="" alt="" class="active"/>
+        <img style="width:100%" id="fid" src="" alt="" class="active"/>
         
     </figure>
         
