@@ -57,8 +57,8 @@
         </div>
         <div class="col-md-4" id="s_col-md-4">
                 {% if board.file %}
-                <img id="s_img" src="{{board.file.url}}" alt="">
-                <video style="width:100%" controls>
+                <img class="imgc" id="s_img" src="{{board.file.url}}" alt="">
+                <video class="vdc" style="width:100%" controls>
                     <source src="{{ board.file.url }}" type='video/ogg'>
                     <source src="{{ board.file.url }}" type='video/mp4'>
                     <source src="{{ board.file.url }}" type='video/webm'>
@@ -66,6 +66,25 @@
                 {% else %}
                 <img id="s_defaultimg" src="{% static 'default.jpg' %}" alt="">
                 {% endif %}
+
+            {% comment %} <script>
+              
+                var img = document.getElementsByClassName("imgc");
+                var vd = document.getElementsByClassName("vdc");
+                try{var src=img[i].getAttribute('src');}catch{var src=vd[i].getAttribute('src');}
+
+                alert(src);
+                
+                if(src.match('png')){
+                    vd[i].remove();
+                } else if(src.match('jpg')){
+                    vd[i].remove();
+                } else if(src.match('gif')){
+                    vd[i].remove();
+                } else {
+                    img[i].remove();
+                }
+            </script> {% endcomment %}
         </div>        
     </div>
     </a>
@@ -73,6 +92,7 @@
     {%endif%}
     <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'img/post.png' %}" alt="글쓰기" class="btn_write"></a>
 </div>
+
 </body>
 {% endblock %}
     

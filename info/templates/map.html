@@ -2,121 +2,167 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css"> 
 <style>
 .nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
   body{background-color: #f5f5f5;}
   div#back {
-    width:59.5em;
-    padding: 1em;
+    font-family: 'NanumSquare';
+    width:60em;
+    height: 130em;
+    /*padding: 1em;*/
     background-color: #ffffff;
-    margin: 1em;
+    margin: 0.5em;
     box-shadow: 2px 2px 5px grey;
-}
+  }
+  
   .maplink:link,.maplink:visited,.maplink.active,.maplink.hover { text-decoration: none; color:#362f2d;font-size:1.5em;}
   
   /* tab */
   div#tab div{
-    padding-top: 1%;
-    margin-top: 5%;
-    margin-left:3%;
-    background-color: #fc6b58;
-    border-radius: 20% 20% 0 0;
     display: inline-block;
+    margin-top:1em;
+    margin-left:1em;
   }
-
-  /* tab */
-  div#tab div>a {
-    color: white;
-    padding-left: 2em;
-    padding-right: 0.5em;
-    font-family:'NanumSquare';
-  }
-
-  /* 지도 메뉴 */
-  .maplink {font-family: 'S-CoreDream-3Light';}
-
-  .maplist {
-    width:18em;
-    display: inline-block;
-    list-style:none;} 
-
-  li.truck {
-    padding-left: 3.5em;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    background-image: url("../static/img/truck.png"); 
-    background-repeat: no-repeat;
-	  background-position: left;
-    background-size: 3em;}
-
-  li.flea  {
-    padding-left: 3.5em;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    background-image: url("../static/img/flea.png"); 
-    background-repeat: no-repeat;
-	  background-position: left;
-    background-size: 3em;
-  }
-  li.booth {
-    padding-left: 3.5em;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-    background-image: url("../static/img/booth.png");
-    background-repeat: no-repeat;
-	  background-position: left;
-    background-size: 3em;
-  }
-
-  .mapspan {
-    padding:8%;
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
+  div#tab div img { width:6em; height:3em;margin-top:1em;}
 
   /* 지도 이미지 */
   #mapimg > img {
-    margin-left:3%;
-    width: 55em;
-    height: 40em;
+    width: 58em;
+    height: 55em;
+    margin-left: 0.5em;
   }
 
+  /* 지도 리스트 */
+  #m1,#m2,#m3,#m4,#m5,#m6 {display:inline-block;}
+  #back ul {list-style-type:none;}
+  #maplist {margin-left:3em;font-size:1.5em;}
+
 </style>
+  <div id="tab">
+      <div>
+        <a class="maplink" href="#">
+        <img onclick="change1();" id="d22" src="{% static 'img/22day.png'%}"></a>
+      </div>
+      <div>
+      <a class="maplink" href="#">
+      <img onclick="change2();" id="d23" src="{% static 'img/23day.png'%}"></a>
+      </div>
+      <div>
+        <a class="maplink" href="#">
+        <img onclick="change3();" id="n23" src="{% static 'img/23night.png'%}"></a>
+      </div>
+      <div>
+        <a class="maplink" href="#">
+        <img onclick="change4();" id="d24" src="{% static 'img/24day.png'%}"></a>
+      </div>
+      <div>
+        <a class="maplink" href="#">
+        <img onclick="change5();" id="n24" src="{% static 'img/24night.png'%}"></a>
+      </div>
+  </div>
 
 <div id="back">
-  <div id="tab">
-      <div><a class="maplink" href="#">영근터</a></div>
-      <div><a class="maplink" href="#">소영근터</a></div>
-      <div><a class="maplink" href="#">학관</a></div>
-      <div><a class="maplink"href="#">민주동산</a></div>
-  </div>
-
+<!-- 지도 이미지-->
   <div id="mapimg">
-    <img src="{% static 'img/test.jpg' %}">
+    <img id="mimg" src="{% static 'img/map22d.png' %}">
   </div>
 
-  <div id="mapdiv">
-  <ul class="maplist">
-    <li class="truck"><span class="mapspan"><a class="maplink" href="#">두끼떡볶이</a></span></li>
-    <li class="truck"><span class="mapspan"><a class="maplink" href="#">타코야끼</a></span></li>
-    <li class="truck"><span class="mapspan"><a class="maplink" href="#">녹차호떡</a></span></li>
-    <li class="truck"><span class="mapspan"><a class="maplink" href="#">야채곱창</a></span></li>
-  </ul>
-
-  <ul class="maplist">
-    <li class="flea"><span class="mapspan"><a class="maplink" href="#">동화플리마켓</a></span></li>
-    <li class="flea"><span class="mapspan"><a class="maplink" href="#">멋사플리마켓</a></span></li>
-    <li class="flea"><span class="mapspan"><a class="maplink" href="#">덕성플리마켓</a></span></li>
-    <li class="flea"><span class="mapspan"><a class="maplink" href="#">도봉플리마켓</a></span></li>
-  </ul>
-
-  <ul class="maplist">
-    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">유교과</a></span></li>
-    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">철학과</a></span></li>
-    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">회계학과</a></span></li>
-    <li class="booth" ><span class="mapspan"><a class="maplink" href="#">컴퓨터학과</a></span></li>
-  </ul>
+<div id="maplist">
+  <!-- 민주동산-->
+  <div id="minju">
+  <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+    <div id="m1">
+      <ul>
+        <li><a class="maplink" href="#">[1] 총학 음식존</a></li>
+          <li><a class="maplink" href="#">[2] 자연대 학생회</a></li>
+          <li><a class="maplink" href="#">[3] 피스</a></li>
+          <li><a class="maplink" href="#">[4] 회계학과</a></li>
+          <li><a class="maplink" href="#">[5] 쿠사</a></li>
+      </ul>
+    </div>
+    <div id="m2">
+      <ul>
+       <li><a class="maplink" href="#">[6] 운지문학회</a></li>
+          <li><a class="maplink" href="#">[7] 멋쟁이사자처럼</a></li>
+          <li><a class="maplink" href="#">[8] 우푸</a></li>
+          <li><a class="maplink" href="#">[9] 예운</a></li>
+          <li>&nbsp;</li>
+        </ul>
+    </div>
   </div>
+<hr>
+  <!-- 소영근터 -->
+  <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+    <div id="m3">
+      <ul>
+          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
+          <li><a class="maplink" href="#">[2] 총학 게임존</a></li></ul></div>
+          <div id="m4">
+          <ul><li><a class="maplink" href="#">[3] 타투</a></li>
+          <li><a class="maplink" href="#">[4] 타로</a></li>
+        </ul>
+    </div>
+<hr>
+  <!-- 영근터 -->
+  <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+    <div id="m5">
+      <ul>
+          <li><a class="maplink" href="#">[1] 파동</a></li>
+          <li><a class="maplink" href="#">[2] 로미오</a></li>
+          <li><a class="maplink" href="#">[3] 빛내미</a></li>
+    </div>
+    <div id="m6">
+      <ul>
+          <li><a class="maplink" href="#">[4] 유아교육학과</a></li>
+          <li><a class="maplink" href="#">[5] 생활체육학과</a></li>
+          <li>&nbsp;</li>
+      </ul>
+    </div>
+  <hr>
+  <!--학생회관-->
+  <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
+    <div id="m7">
+      <ul>
+          <li><a class="maplink" href="#">[1] 한빛</a></li>
+          <li><a class="maplink" href="#">[2] 아미공 내부자들</a></li>
+        </ul>
+    </div>
+ </div>
 </div>
+
+<script>
+
+  function change1(){
+    var tab = document.getElementById("d22");
+    var img = document.getElementById("mimg");
+    tab.setAttribute("src","{% static 'img/22dayC.png' %}");
+    img.setAttribute("src","{% static 'img/map22d.png' %}");  
+  }
+  function change2(){
+    var tab = document.getElementById("d23");
+    tab.setAttribute("src","{% static 'img/23dayC.png' %}")
+    var img = document.getElementById("mimg");   
+    img.setAttribute("src","{% static 'img/map23d.png' %}"); 
+  }
+  function change3(){
+    var tab = document.getElementById("n23");
+    tab.setAttribute("src","{% static 'img/23nightC.png' %}")  
+    var img = document.getElementById("mimg");   
+    img.setAttribute("src","{% static 'img/map23n.png' %}");  
+  }
+  function change4(){
+    var tab = document.getElementById("d24");
+    tab.setAttribute("src","{% static 'img/24dayC.png' %}")   
+    var img = document.getElementById("mimg");   
+    img.setAttribute("src","{% static 'img/map24d.png' %}"); 
+  }
+  function change5(){
+    var tab = document.getElementById("n24");
+    tab.setAttribute("src","{% static 'img/24nightC.png' %}")   
+    var img = document.getElementById("mimg");   
+    img.setAttribute("src","{% static 'img/map24n.png' %}"); 
+  }
+</script>
 {% endblock %}
