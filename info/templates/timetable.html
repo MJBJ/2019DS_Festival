@@ -4,6 +4,24 @@
 {% block content %}
 
 <style>
+@media (min-width: 1025px){
+    div#back {
+    width:100%;
+    padding: 2em;
+    padding-left: 25%;
+    padding-right: 25%;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px grey;
+    align-content: center;
+    }
+    .tt{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        align-items: center;   
+    }
+}
+@media (max-width: 1025px)  {
     body {background-color: #f5f5f5;}
     div#back {
     width:59.5em;
@@ -19,9 +37,10 @@
         width: 55em;
         align-items: center;   
     }
+}
 </style>
 <div id="back">
-    <img src="../static/img/tt.jpg" alt="timetable" class="tt">
-    <img src="../static/img/lineup.png" alt="lineup" class="tt">
+    <img src="{% static 'tt.jpg' %}" alt="timetable" class="tt">
+    <img src="{% static 'lineup.png' %}" alt="lineup" class="tt">
 </div>
 {% endblock %}
