@@ -33,6 +33,75 @@
     display:inline-block;
   }
   #maplist{margin-left:2em;margin-top:1em;margin-right:2em;}
+
+  /******************************/
+  /*라이트 박스 컨테이너*/
+  #lightbox.active{
+                position: absolute; overflow: hidden;
+                background: #333;
+                width: 800px;
+                height: 540px;
+                left: 50%;
+                margin-left: -400px;
+                top: 50%;
+                margin-top: -250px;
+                box-sizing: border-box;
+                padding: 30px;
+                z-index: 99; display: block;
+            }
+            #lightbox{display: none;}
+            #lightbox h1, #lightbox {
+                color: white;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            /*이미지 박스*/
+            figure{
+                width: 500px; height: 300px;
+                position: relative;
+                margin: 10px auto;
+                overflow: hidden;
+            }
+
+            figure img{
+                display: none;
+                position: absolute;
+            }
+            figure img{
+                display: none;
+                position:absolute;
+            }
+            figure img.active{display: block;}
+
+            /*창 닫기 버튼*/
+            .btn-close{
+                position: absolute;
+                top: 0px; right: 0px;
+                padding: 10px;
+                color: white; font-size: large;
+            }
+            .btn-close:hover{ background-color: #666;}
+
+            /*배경처리*/
+            #block{
+                position: fixed;
+                width: 100%; height: 100%;
+                top: 0; bottom: 0; left: 0;right: 0;
+                background: #111;
+                opacity: 0.5;
+                z-index: 9;
+                display: none;
+            }
+            #block.active{ display: block;}
+
+            .indicator{text-align: center;}
+            .indicator button{
+                background: #666; color: white;
+                font-size: 12px;
+                border: none; padding: 2px 5px;
+            }
+            .indicator button:focus{background: #38f;}
 </style>
 
 <!-- map tab -->
@@ -242,7 +311,8 @@
               </li>
               <li><a class="maplink" href="#">[8] 심리</a>
               </li>
-              <li><a class="maplink" href="#">[9] 유교</a>
+              <li>
+                  <a class="maplink" href="#" onclick="lightbox_open(1)">[9] 유교</a>
               </li>
               <li>&nbsp;</li>
            </ul>   
@@ -252,7 +322,9 @@
      
     </div>
   
-
+    
+    
+    
   <!-- 24일 낮지도 -->
   <div id="24d" class="tabcontent">
     <img src="{% static 'img/map24d.png'%}">
@@ -263,6 +335,31 @@
     <img src="{% static 'img/map24n.png'%}">
   </div>
 
+</div>
+<header>
+    <h1>light box</h1>
+    <img class="thumb" src="img01.jpg" width="100" onclick="lightbox_open(1)"/>
+    <img class="thumb" src="img02.jpg" width="100" onclick="lightbox_open(2)"/>
+    <img class="thumb" src="img03.jpg" width="100" onclick="lightbox_open(3)"/>
+</header>
+<!-- 라이트 박스 배경-->
+<div id="block"></div>
+<div id="lightbox">
+    <h1>박물관에서 사라진 아빠를 찾아서</h1>
+    <p>아빠와 함께 떠난 숲속의 박물관 여행에서 아빠가 말도 없이 사라지자 강아지 베리와 함께 아빠를 찾아서 헤메는데...<br><br></p>
+   <figure>
+        <img src="img01.jpg" alt="" class="active"/>
+        <img src="img02.jpg" alt=""/>
+        <img src="img03.jpg" alt=""/>
+    </figure>
+
+   <div class="indicator">
+        <button onclick="change_img(1)">1</button>
+        
+    </div>
+    <!-- end lightbox -->
+
+    <div class="btn-close" onclick="lightbox_close()">X</div>
 </div>
 
 <script>
@@ -302,5 +399,24 @@
 
   //default
   document.getElementById("defaultOpen").click();
+
+
+  // 팝업
+  var indicator = document.querySelectorAll('.indicator button');
+    var lightbox = document.querySelector('#lightbox');
+    var block = document.querySelector('#block'); //라이트 박스 배경
+
+    function lightbox_open(num) {
+
+      lightbox.setAttribute('class', 'active');
+      block.setAttribute('class', 'active');
+
+      indicator[0].focus();
+    }
+
+    function lightbox_close() {
+      lightbox.removeAttribute('class');
+      block.removeAttribute('class');
+    }
 </script>
 {% endblock %}
