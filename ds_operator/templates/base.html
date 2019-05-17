@@ -70,9 +70,11 @@ div#header{
     /* 내용 */
 div#contents{   
                 width: 100%;
+                position: relative;
                 padding-top: 6.5em;
         }
         div#footer{
+            position: relative;
             background-color: #323232;
             color: #ffffff;
             font-family: 'Nanum Square';
@@ -87,7 +89,7 @@ div#contents{
     }
     
     /*구조*/
-    #footer>.row{   margin: 1em;  }
+    #footer>.row{   margin: 1em; position: relative; }
     .side{ padding: 0;}
     div.row{ margin: 0em;}
     .box{ padding: 1%;}
@@ -212,7 +214,7 @@ div#footer{
     <!--title-->
     <div class="title">
         <a href="{% url 'main' %}" class="title"><h1 class="title" id="flower">백일화</h1></a>
-        <a href="{% url 'main' %}" class="title"><h2 class="title" id="since2019">since 2019</h2></a>
+        <a href="{% url 'main' %}" class="title"><h2 class="title" id="since2019">since 1920</h2></a>
     </div>
 
     <!--menubar-->
@@ -244,7 +246,7 @@ div#footer{
                 <div class="box" id="dts">
                     <h3 class="title_m">백일화</h3>
                     <div class="box">
-                        <div class="row"><h4 class="title_s">날짜</h4><h5 class="content">2019.05.22(수)-25(목)</h5></div>
+                        <div class="row"><h4 class="title_s">날짜</h4><h5 class="content">2019.05.22(수)-25(금)</h5></div>
                         <div class="row"><h4 class="title_s">시간</h4><h5 class="content">10:00-24:00</h5></div>
                         <div class="row"><h4 class="title_s">장소</h4><h5 class="content">서울특별시 도봉구 쌍문1동 삼양로144길 33, 덕성여자대학교</h5></div>
                         <div class="row"> <h5 class="content"></h5></div>
