@@ -5,7 +5,61 @@
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 @media (min-width: 1025px){
-
+    #back {
+        width: 100%;
+        min-height: 120;
+        padding-left: 25%;
+        padding-right: 25%;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 5px grey;
+        }
+        #btitle, #bdate{ margin-right: 0;width: 10em;}
+        #btitle {
+        font-family:'S-CoreDream-3Light'; 
+        font-style:bold; 
+        color:#ff3300;
+        font-size:2em;
+        margin-bottom: 0;
+        padding-top: 0.3em;
+    }
+    #bimg{
+        width: 100%;
+        height: auto;
+        align-items: center;
+        margin-left: 1em;
+        margin-top: 2em;
+    }
+    #bbody {
+        font-family: 'S-CoreDream-3Light';
+        font-size: 1em; 
+        color:#505050;
+        padding: 3em;
+    }
+    #bpwd input[type=password] {
+        width: 10em;
+        height: 2em;
+        border-top: thick solid #ffffff;
+        border-right: thick solid #ffffff;
+        border-left: thick solid #ffffff;
+        border-bottom: thick solid #ff3300;
+        }
+        input.dbtn{ 
+        background-color:#362f2d;
+        border-radius:0.5em;
+        padding:0.2em;
+        color: #f5f5f5;
+        width: 6em;
+        height: 2em;
+        font-size: 1em;
+    }
+    #id_uploaded_file{
+        background-color:#362f2d;
+        border-radius:0.2em;
+        padding:0.5em;
+        color: #f5f5f5;
+        width: 4em;
+        height: 2em;
+    }
 }
 @media (max-width: 1025px)  {
     div#header{
@@ -95,53 +149,119 @@
     }}
 </style>
 <div id="back">
-        <div id="bcontent">
-            <div id="b">
-                    <div id="btitle">{{ board.Title }}</div>
-                    <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
-                    <div id="bimg">
-                        {% if board.file %}
-                        <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
-                        <video id="vdtag" style="width:100%" controls>
-                            <source src="{{ board.file.url }}" type='video/ogg'>
-                            <source src="{{ board.file.url }}" type='video/mp4'>
-                            <source src="{{ board.file.url }}" type='video/webm'>
-                        </video>
-                        {% else %}
-                        <img id="default" style="width:100%;" src="{% static 'default.jpg' %}" alt=".">
-                        {% endif %}
-                    </div>
-                    <div id="bbody">
-                        {{board.Text}}
-                    </div>
-                    <div id="bcontent2">
-                        <div id="bpwd">
-                            <form method="get" action="{% url 'delete' board.id %}">
-                                {% comment %} {% csrf_token %}  {% endcomment %}
-                                <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
-                                <input type="submit" value="게시글 삭제" class="dbtn">
-                            </form>
-                        </div>
-                        <br>
-                        <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
-                    </div>
-            </div>
-        </div>
+    <div class="shadow">
+        <table id="tb">
+            <tr>
+                <td class="tbtd">
+                    <div class="Pcontainer" id="left" style="width:27.5em;height:auto;"></div>
+                </td>
+                <td class="tbtd">
+                    <div class="Pcontainer" id="right" style="width:27.5em;height:auto;"></div>
+                </td>
+            </tr>
+        </table>    
     </div>
+
+
+    <input type="hidden" id="treasure_url" value="{{board.file.url}}">
+</div>
+
+{%for board in boards.all%}
+<!-- 이미지 정보 담을 태그 생성-->
+{% if board.file %}
+<input type="hidden" class="treasure_id" value="{{board.id}}"> 
+<input type="hidden" class="treasure_url" value="{{board.file.url}}">
+{% endif %}
+{%endfor%}
+<script>
+   
+var left=document.getElementById('left'); // left div
+var right=document.getElementById('right'); // right div
+
+// 이미지 정보가 모두 설정 된 후
+// 요소를 생성하고 추가한다.
+var treasure_ids = document.getElementsByClassName("treasure_id");
+var treasure_urls = document.getElementsByClassName("treasure_url");
+
+// 이미지 객체 개수 : treasure_ids.length
+var flag=0; // 왼쪽div에 넣을 것인지, 오른쪽 div에 넣을 것인지 구분
+var i=0; // 생성한 이미지 객체요소 번째수
+var x = new Array();
+while(i<treasure_ids.length){
+    //var p = treasure_ids[i].value;
     
-    <script>
-        var img = document.getElementById("imgtag");
-        var vd = document.getElementById("vdtag");
-        var src=img.getAttribute('src');
+    // (1) div 요소를 생성
+    x[i] = document.createElement('div');
     
-        if(src.match('png')){
-            vd.remove();
-        } else if(src.match('jpg')){
-            vd.remove();
-        } else if(src.match('gif')){
-            vd.remove();
-        } else {
-            img.remove();
-        }
-    </script>
-{% endblock %}    
+    // (2) div 요소의 background image를 db 이미지로 지정
+    // url이 이미지인가 동영상인가 구분
+    if(treasure_urls[i].value.match('.jpg')||treasure_urls[i].value.match('.png')||treasure_urls[i].value.match(".png")){
+        // 그림이라면
+        x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
+        //x[i].style.padding="0px";
+        //x[i].style.width="100%";
+        x[i].style.minHeight="30em";
+        x[i].style.backgroundSize= "27em";
+        x[i].style.backgroundRepeat ="no-repeat";
+    }
+    else if(treasure_urls[i].value.match('.mp4')||treasure_urls[i].value.match('.webm')||treasure_urls[i].value.match(".ogg")){
+        // 동영상이라면
+        var source1=document.createElement('source');
+        source1.setAttribute('src',treasure_urls[i].value);
+        source1.setAttribute('type',"video/ogg");
+
+        var source2=document.createElement('source');
+        source2.setAttribute('src',treasure_urls[i].value);
+        source2.setAttribute('type', "video/mp4");
+
+        var source3 = document.createElement('source');
+        source3.setAttribute('src',treasure_urls[i].value);
+        source3.setAttribute('type', "video/webm");
+
+        var video = document.createElement('video');
+        video.setAttribute('controls', null);
+        video.setAttribute('autoplay', null);
+        video.setAttribute('loop', null);
+        video.style.width="100%";
+        video.style.maxHeight="27em";
+        x[i].style.minHeight="30em";
+        
+
+        video.append(source1);
+        video.append(source2);
+        video.append(source3);
+
+        x[i].append(video);
+        
+    }
+    
+    //
+    // (3) div 요소를 left나 right에 붙임
+    //      flag==0 일땐 left / flag==1일 땐 right
+    
+    if(flag==0){
+        left.appendChild(x[i]);
+        flag=1;
+    }
+    else{
+        /*
+        right.style.backgroundColor="pink";
+        right.appendChild(x[i]);
+        flag=0;alert(i+"붙임");
+        */
+        right.appendChild(x[i]);
+        flag=0;
+       
+        
+    }
+    
+    i++;
+    
+   
+    
+}
+
+
+</script>
+</div>
+{%endblock%}
