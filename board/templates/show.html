@@ -56,7 +56,7 @@
                     {{board.updated_at|date:"m/d H:i"}}
                 </div>
             </div>
-            <div class="s_body">{{board.summary}} [...]</div>
+            <div class="s_body">{{board.summary}} </div>
         </div>
         <div class="parent" class="col-md-4" id="s_col-md-4" >
             <input type="hidden" id="{{board.id}}" value="{{board.id}}">
@@ -145,7 +145,7 @@
     
     {%endfor%}
     {%endif%}
-    <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'img/post.png' %}" alt="글쓰기" class="btn_write"></a>
+    <a id="s_a2" href="{% url 'post' %}" class="btn_write"><img src="{% static 'post.png' %}" alt="글쓰기" class="btn_write"></a>
 </div>
 
 </body>
