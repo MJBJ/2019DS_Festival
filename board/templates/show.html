@@ -42,7 +42,6 @@
      var board_cnt=0;
     </script>
 <div class="container1">
-    {% if boards %}
     {%for board in boards.all%}    
     <input type="hidden"  id="total_count">
     <a id="s_a" href="{% url 'detail' board.id %}">
@@ -136,9 +135,6 @@
                     <source src="{{ board.file.url }}" type='video/webm'>
                 </video>
                 -->
-                {% else %}
-                <img id="s_img" src="{% static 'default.jpg' %}" alt="">
-                {% endif %}
         </div>        
     </div>
     </a>

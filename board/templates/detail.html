@@ -98,7 +98,6 @@
         <div id="b">
                 <div id="btitle">{{ board.Title }}</div>
                 <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
-                {% if board.file %}
                 <div id="bimg">
                     <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
                     <video id="vdtag" style="width:100%" controls>
@@ -107,9 +106,6 @@
                         <source src="{{ board.file.url }}" type='video/webm'>
                     </video>    
                 </div>
-                {% else %}
-                <img style="width:100%;" src="{% static 'default.jpg' %}" alt=".">
-                {% endif %}
                 <div id="bbody">
                     {{board.Text}}
                 </div>
