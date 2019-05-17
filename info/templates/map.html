@@ -67,6 +67,17 @@ div#back ul{list-style-type:none;}
   #maplist{margin-left:2em;margin-top:1em;margin-right:2em;}
 }
 
+/* maplist span */
+/* 민주동산*/
+.mj {background-color:#2e75b6;color:white;border-radius:5px;border:solid 1px black;}
+/* 소영근터*/
+.sy {background-color:#ffd966;border-radius:5px;border:solid 1px black;}
+/* 영근터 */
+.yg {background-color:#70ad47;border-radius:5px;color:white;border:solid 1px black;}
+/* 학생회관 */
+.hk {background-color:#a365d1;border-radius:5px;color:white;border:solid 1px black;}
+
+
   /******************************/
   /*라이트 박스 컨테이너*/
   #lightbox.active{
@@ -157,19 +168,23 @@ div#back ul{list-style-type:none;}
     <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
     <div id="m1">
       <ul>
-        <li>[1] 총학 음식존</li>
-        <li onclick="lightbox_open('na.png')">[2] 자연대 학생회</li>
-        <li>[3] 피스</li>
-        <li onclick="lightbox_open('acc.jpg')">[4] 회계학과</li>
-        <li onclick="lightbox_open('kusa.jpg')">[5] 쿠사</li>
+        <li><span class="mj">&nbsp;1&nbsp;</span> 총학 음식존</li>
+        <li onclick="lightbox_open('na.png')"><span class="mj">&nbsp;2&nbsp;</span> 자연대 학생회</li>
+        <li><span class="mj">&nbsp;3&nbsp;</span> 피스</li>
+        <li onclick="lightbox_open('acc.jpg')"><span class="mj">&nbsp;4&nbsp;</span> 회계학과</li>
+        <li onclick="lightbox_open('kusa.jpg')"><span class="mj">&nbsp;5&nbsp;</span> 쿠사</li>
       </ul>
     </div>
     <div id="m2">
       <ul>
-        <li onclick="lightbox_open('ung.jpg')">[6] 운지문학회</li>
-        <li onclick="lightbox_open('lion.jpg')">[7] 멋쟁이사자처럼</li>
-        <li onclick="lightbox_open('upu.jpg')">[8] 우푸</li>
-        <li onclick="lightbox_open('ye.jpg')">[9] 예운</li>
+        <li onclick="lightbox_open('ung.jpg')">
+        <span class="mj">&nbsp;6&nbsp;</span> 운지문학회</li>
+        <li onclick="lightbox_open('lion.jpg')">
+        <span class="mj">&nbsp;7&nbsp;</span> 멋쟁이사자처럼</li>
+        <li onclick="lightbox_open('upu.jpg')">
+        <span class="mj">&nbsp;8&nbsp;</span> 우푸</li>
+        <li onclick="lightbox_open('ye.jpg')">
+        <span class="mj">&nbsp;9&nbsp;</span> 예운</li>
         <li>&nbsp;</li>
       </ul>
     </div>
@@ -177,29 +192,38 @@ div#back ul{list-style-type:none;}
     <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
      <div id="m3">
         <ul>
-          <li>[1] 총학 만들기</li>
-          <li>[2] 총학 게임존</li>
+          <li>
+          <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+          <li>
+          <span class="sy">&nbsp;2&nbsp;</span> 총학 게임존</li>
         </ul>
      </div>
      <div id="m4">
         <ul>
-          <li>[3] 타투</a></li>
-          <li>[4] 타로</a></li>
+          <li>
+          <span class="sy">&nbsp;3&nbsp;</span> 타투</a></li>
+          <li>
+          <span class="sy">&nbsp;4&nbsp;</span> 타로</a></li>
         </ul>
      </div>
   <hr>
      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
       <div id="m5">
         <ul>
-          <li onclick="lightbox_open('padong.png')">[1] 파동</li>
-          <li>[2] 로미오</li>
-          <li onclick="lightbox_open('bit.jpg')">[3] 빛내미</li>
+          <li onclick="lightbox_open('padong.png')">
+          <span class="yg">&nbsp;1&nbsp;</span> 파동</li>
+          <li>
+          <span class="yg">&nbsp;2&nbsp;</span> 로미오</li>
+          <li onclick="lightbox_open('bit.jpg')">
+          <span class="yg">&nbsp;3&nbsp;</span> 빛내미</li>
         </ul>
       </div>
       <div id="m6">
         <ul>
-          <li onclick="lightbox_open('dong_u.jpg')">[4] 유아교육학과</li>
-          <li>[5] 생활체육학과</li>
+          <li onclick="lightbox_open('dong_u.jpg')">
+          <span class="yg">&nbsp;4&nbsp;</span> 유아교육학과</li>
+          <li>
+          <span class="yg">&nbsp;5&nbsp;</span> 생활체육학과</li>
           <li>&nbsp;</li>
         </ul>
       </div>
@@ -207,8 +231,10 @@ div#back ul{list-style-type:none;}
         <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
         <div id="m7">
           <ul>
-            <li>[1] 한빛</li>
-            <li onclick="lightbox_open('amg.jpg')">[2] 아미공 내부자들</li>
+            <li>
+            <span class="hk">&nbsp;1&nbsp;</span> 한빛</li>
+            <li onclick="lightbox_open('amg.jpg')">
+            <span class="hk">&nbsp;2&nbsp;</span> 아미공 내부자들</li>
           </ul>
         </div>
       </div>
@@ -222,19 +248,26 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1">
           <ul>
-            <li>[1] 총학 휴식존</li>
-            <li>[2] 수협</li>
-            <li onclick="lightbox_open('cat.jpg')">[3] 덕냥당</li>
-            <li>[4] 국어국문학과</li>
-            <li onclick="lightbox_open('chf.png')">[5] 아동가족학과</li>
+            <li><span class="mj">&nbsp;1&nbsp;</span> 총학 휴식존</li>
+            <li><span class="mj">&nbsp;2&nbsp;</span> 수협</li>
+            <li onclick="lightbox_open('cat.jpg')">
+            <span class="mj">&nbsp;3&nbsp;</span> 덕냥당</li>
+            <li>
+            <span class="mj">&nbsp;4&nbsp;</span> 국어국문학과</li>
+            <li onclick="lightbox_open('chf.png')">
+            <span class="mj">&nbsp;5&nbsp;</span> 아동가족학과</li>
           </ul>
         </div>
         <div id="m2">
           <ul>
-           <li onclick="lightbox_open('kusa.jpg')">[6] 쿠사</li>
-            <li onclick="lightbox_open('his_d.jpg')">[7] 사회학과</li>
-            <li onclick="lightbox_open('upu.jpg')">[8] 우푸</li>
-            <li onclick="lightbox_open('ye.jpg')">[9] 예운</li>
+           <li onclick="lightbox_open('kusa.jpg')">
+           <span class="mj">&nbsp;6&nbsp;</span> 쿠사</li>
+            <li onclick="lightbox_open('his_d.jpg')">
+            <span class="mj">&nbsp;7&nbsp;</span> 사회학과</li>
+            <li onclick="lightbox_open('upu.jpg')">
+            <span class="mj">&nbsp;8&nbsp;</span> 우푸</li>
+            <li onclick="lightbox_open('ye.jpg')">
+            <span class="mj">&nbsp;9&nbsp;</span> 예운</li>
             <li>&nbsp;</li>
           </ul>
         </div>
@@ -243,19 +276,28 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
         <div id="m3">
           <ul>
-              <li>[1] 총학 만들기</li>
-              <li>[2] 지음</li>
-              <li onclick="lightbox_open('ky.jpg')">[3] 경영학과</li>
-              <li>[4] 열음</li>
-              <li onclick="lightbox_open('dukong.jpg')">[5] 두콩이공방</li>
+              <li>
+              <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+              <li>
+              <span class="sy">&nbsp;2&nbsp;</span> 지음</li>
+              <li onclick="lightbox_open('ky.jpg')">
+              <span class="sy">&nbsp;3&nbsp;</span> 경영학과</li>
+              <li>
+                <span class="sy">&nbsp;4&nbsp;</span> 열음</li>
+              <li onclick="lightbox_open('dukong.jpg')">
+              <span class="sy">&nbsp;5&nbsp;</span> 두콩이공방</li>
             </ul>
           </div>
         <div id="m4">
             <ul>
-              <li onclick="lightbox_open('sch.jpg')">[6] 사회대 학생회</li>
-              <li onclick="lightbox_open('lion.jpg')">[7] 멋쟁이사자처럼</li>
-              <li>[8] 총학게임판</li>
-              <li>[9] 타투 </li>
+              <li onclick="lightbox_open('sch.jpg')">
+              <span class="sy">&nbsp;6&nbsp;</span> 사회대 학생회</li>
+              <li onclick="lightbox_open('lion.jpg')">
+              <span class="sy">&nbsp;7&nbsp;</span> 멋쟁이사자처럼</li>
+              <li>
+              <span class="sy">&nbsp;8&nbsp;</span> 총학게임판</li>
+              <li>
+              <span class="sy">&nbsp;9&nbsp;</span> 타투 </li>
             </ul>
         </div>
         
@@ -264,30 +306,43 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m5">
           <ul>
-              <li>[1] 피스</a></li>
-              <li onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</li>
-              <li onclick="lightbox_open('dch.jpg')">[3] 동천</li>
-              <li onclick="lightbox_open('ung.jpg')">[4] 운지문학회
+              <li>
+              <span class="yg">&nbsp;1&nbsp;</span> 피스</li>
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;2&nbsp;</span> 유아교육학과</li>
+              <li onclick="lightbox_open('dch.jpg')">
+              <span class="yg">&nbsp;3&nbsp;</span> 동천</li>
+              <li onclick="lightbox_open('ung.jpg')">
+              <span class="yg">&nbsp;4&nbsp;</span> 운지문학회
               </li>
-              <li>[5] 텍스트디자인학과
+              <li>
+              <span class="yg">&nbsp;5&nbsp;</span> 텍스트디자인학과
               </li>
-              <li onclick="lightbox_open('bit.jpg')">[6] 빛내미
+              <li onclick="lightbox_open('bit.jpg')">
+              <span class="yg">&nbsp;6&nbsp;</span> 빛내미
               </li>
-              <li onclick="lightbox_open('padong.png')">[7] 파동
+              <li onclick="lightbox_open('padong.png')">
+              <span class="yg">&nbsp;7&nbsp;</span> 파동
               </li> 
         </div>
         <div id="m6">
           <ul>
-              <li>[8] 생활체육학과
+              <li>
+              <span class="yg">&nbsp;8&nbsp;</span> 생활체육학과
               </li>
-              <li onclick="lightbox_open('acc.jpg')">[9] 회계학과
+              <li onclick="lightbox_open('acc.jpg')">
+              <span class="yg">&nbsp;9&nbsp;</span> 회계학과
               </li>
-              <li onclick="lightbox_open('na.jpg')">[10] 자연대 학생회
+              <li onclick="lightbox_open('na.jpg')">
+              <span class="yg">&nbsp;10&nbsp;</span> 자연대 학생회
               </li>
-              <li>[11] 포크
+              <li>
+              <span class="yg">&nbsp;11&nbsp;</span> 포크
               </li>   
-              <li onclick="lightbox_open('dong_u.jpg')">[12] 유아교육학과</li>
-              <li>[13] 생활체육학과</li>
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;12&nbsp;</span> 유아교육학과</li>
+              <li>
+              <span class="yg">&nbsp;13&nbsp;</span> 생활체육학과</li>
               <li>&nbsp;</li>
           </ul>
         </div>
@@ -302,12 +357,14 @@ div#back ul{list-style-type:none;}
       <h1 style="margin-left:0.5em"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1">
           <ul>
-            <li onclick="lightbox_open('soc.jpg')">[1] 사회학과</li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="mj">&nbsp;1&nbsp;</span> 사회학과</li>
           </ul>
         </div>
         <div id="m2">  
           <ul>
-              <li>[2] 생활체육학과</li>
+              <li>
+              <span class="mj">&nbsp;2&nbsp;</span> 생활체육학과</li>
           </ul>
         </div>
     
@@ -316,25 +373,34 @@ div#back ul{list-style-type:none;}
       <h1 style="margin-left:0.5em"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-              <li onclick="lightbox_open('acc.jpg')">[1] 회계학과</li>
-              <li onclick="lightbox_open('eng.jpg')">[2] 영어영문학과</li>
-              <li>[3] 국어국문학과
+              <li onclick="lightbox_open('acc.jpg')">
+              <span class="yg">&nbsp;1&nbsp;</span> 회계학과</li>
+              <li onclick="lightbox_open('eng.jpg')">
+              <span class="yg">&nbsp;2&nbsp;</span> 영어영문학과</li>
+              <li>
+              <span class="yg">&nbsp;3&nbsp;</span> 국어국문학과
               </li>
-              <li onclick="lightbox_open('ky.jpg')">[4] 경영학과
+              <li onclick="lightbox_open('ky.jpg')">
+              <span class="yg">&nbsp;4&nbsp;</span> 경영학과
               </li>
-              <li onclick="lightbox_open('amg.jpg')">[5] 아미공 내부자들
+              <li onclick="lightbox_open('amg.jpg')">
+              <span class="yg">&nbsp;5&nbsp;</span> 아미공 내부자들
               </li>  
            </ul>
         </div> 
         <div id="m4"> 
            <ul>
-              <li onclick="lightbox_open('his_n.jpg')">[6] 사학과
+              <li onclick="lightbox_open('his_n.jpg')">
+              <span class="yg">&nbsp;6&nbsp;</span> 사학과
               </li>
-              <li>[7] 국제통상학과
+              <li>
+              <span class="yg">&nbsp;7&nbsp;</span> 국제통상학과
               </li>
-              <li onclick="lightbox_open('psy.jpg')">[8] 심리학과
+              <li onclick="lightbox_open('psy.jpg')">
+              <span class="yg">&nbsp;8&nbsp;</span> 심리학과
               </li>
-              <li onclick="lightbox_open('dong_u.jpg')">[9] 유아교육학과
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;9&nbsp;</span> 유아교육학과
               </li>
               <li>&nbsp;</li>
            </ul>   
@@ -349,14 +415,17 @@ div#back ul{list-style-type:none;}
     <div id="maplist">
       <!-- 민주동산-->
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1"><ul><li onclick="lightbox_open('ung.jpg')">[1] 운지문학회<li></ul></div>
+        <div id="m1"><ul><li onclick="lightbox_open('ung.jpg')">
+        <span class="mj">&nbsp;1&nbsp;</span> 운지문학회<li></ul></div>
       <hr>
       <!-- 소영근터 -->
       <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
       <div id="m2">
         <ul>
-          <li>[1] 총학 만들기</li>
-          <li>[2] 타투</li>
+          <li>
+          <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+          <li>
+          <span class="sy">&nbsp;2&nbsp;</span> 타투</li>
         </ul>
       </div>
       <hr>
@@ -364,21 +433,32 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-            <li onclick="lightbox_open('his_d.jpg')">[1] 사학과</li>
-            <li>[2] 열음</li>
-            <li onclick="lightbox_open('dwulip.jpg')">[3] 듈립</li>
-            <li onclick="lightbox_open('fr.jpg')">[4] 불어불문학과</li>
-            <li onclick="lightbox_open('upu.jpg')">[5] 우푸</li>
-            <li>[6] 국제통상학과</li>
+            <li onclick="lightbox_open('his_d.jpg')">
+            <span class="yg">&nbsp;1&nbsp;</span> 사학과</li>
+            <li>
+            <span class="yg">&nbsp;2&nbsp;</span> 열음</li>
+            <li onclick="lightbox_open('dwulip.jpg')">
+            <span class="yg">&nbsp;3&nbsp;</span> 듈립</li>
+            <li onclick="lightbox_open('fr.jpg')">
+            <span class="yg">&nbsp;4&nbsp;</span> 불어불문학과</li>
+            <li onclick="lightbox_open('upu.jpg')">
+            <span class="yg">&nbsp;5&nbsp;</span> 우푸</li>
+            <li>
+            <span class="yg">&nbsp;6&nbsp;</span> 국제통상학과</li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li onclick="lightbox_open('chf.png')">[7] 아동가족학과<li>
-            <li onclick="lightbox_open('soc.jpg')">[8] 사회학과<li>
-            <li>[9] 국어국문학과<li>
-            <li onclick="lightbox_open('en.jpg')">[10] 공과대 학생회<li>
-            <li>[11] 국민은행<li>
+            <li onclick="lightbox_open('chf.png')">
+            <span class="yg">&nbsp;7&nbsp;</span> 아동가족학과<li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="yg">&nbsp;8&nbsp;</span> 사회학과<li>
+            <li>
+            <span class="yg">&nbsp;9&nbsp;</span> 국어국문학과<li>
+            <li onclick="lightbox_open('en.jpg')">
+            <span class="yg">&nbsp;10&nbsp;</span> 공과대 학생회<li>
+            <li>
+            <span class="yg">&nbsp;11&nbsp;</span> 국민은행<li>
             <li>&nbsp;<li>
           </ul>
         </div>
@@ -393,8 +473,10 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1">
           <ul>
-            <li onclick="lightbox_open('soc.jpg')">[1] 사회학과<li>
-            <li>[2] 생활체육학과<li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="mj">&nbsp;1&nbsp;</span> 사회학과<li>
+            <li>
+            <span class="mj">&nbsp;2&nbsp;</span> 생활체육학과<li>
           </ul>
         </div>
       <hr>
@@ -402,19 +484,28 @@ div#back ul{list-style-type:none;}
       <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
         <div id="m3">
           <ul>
-            <li onclick="lightbox_open('acc.jpg')">[1] 회계학과</li>
-            <li onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</li>
-            <li>[3] 국어국문학과</a></li>
-            <li onclick="lightbox_open('amg.jpg')">[4] 아미공 내부자들</li>
-            <li>[5] 국제통상학과</li>
-            <li onclick="lightbox_open('food.jpg')">[6] 식품영양학과</li>
+            <li onclick="lightbox_open('acc.jpg')">
+             <span class="yg">&nbsp;1&nbsp;</span> 회계학과</li>
+            <li onclick="lightbox_open('dong_u.jpg')">
+             <span class="yg">&nbsp;2&nbsp;</span> 유아교육학과</li>
+            <li>
+             <span class="yg">&nbsp;3&nbsp;</span> 국어국문학과</a></li>
+            <li onclick="lightbox_open('amg.jpg')">
+             <span class="yg">&nbsp;4&nbsp;</span> 아미공 내부자들</li>
+            <li>
+             <span class="yg">&nbsp;5&nbsp;</span> 국제통상학과</li>
+            <li onclick="lightbox_open('food.jpg')">
+             <span class="yg">&nbsp;6&nbsp;</span> 식품영양학과</li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li onclick="lightbox_open('food.jpg')">[7] 식품영양학과<li>
-            <li onclick="lightbox_open('psy.jpg')">[8] 심리학과<li>
-            <li onclick="lightbox_open('ky.jpg')">[9] 경영학과<li>
+            <li onclick="lightbox_open('food.jpg')">
+             <span class="yg">&nbsp;7&nbsp;</span> 식품영양학과<li>
+            <li onclick="lightbox_open('psy.jpg')">
+             <span class="yg">&nbsp;8&nbsp;</span> 심리학과<li>
+            <li onclick="lightbox_open('ky.jpg')">
+             <span class="yg">&nbsp;9&nbsp;</span> 경영학과<li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
@@ -422,7 +513,6 @@ div#back ul{list-style-type:none;}
         </div>
       </div>
   </div>
-
 </div>
 
 <!-- 라이트 박스 배경-->
@@ -431,7 +521,6 @@ div#back ul{list-style-type:none;}
     <div class="btn-close" onclick="lightbox_close()">X</div>
    <figure>
         <img style="width:100%" id="fid" src="" alt="" class="active"/>
-        
     </figure>
         
     </div>
