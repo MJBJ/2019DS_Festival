@@ -6,12 +6,12 @@
 .nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
 @media (min-width: 1025px){
-  div#back {
+  div#back1 {
     margin: 1%;
     padding-left: 25%;
     padding-right: 25%; 
+    height: 50em;
     background-color: #ffffff;
-    box-shadow: 2px 2px 5px grey;
 }
 /* 지도 이미지 */
 #mapimg > img {
@@ -19,28 +19,54 @@
     margin-right: 1%;
     width: 98%;
   }
+  div#back {
+    font-family: 'NanumSquare';
+    width:99%;
+    height: 99%;
+    /*padding: 1em;*/
+    background-color: #ffffff;
+    margin: 1%;
+    margin-top:1%;
+    box-shadow: 2px 2px 5px grey;
+  }
+  #tablist { height: 3em; padding: 2%; padding-bottom: 0;padding-left: 1.5em;margin-left: 0.5em;}
+  #tablist>img{height: 100%;}
+  .tabs{height: 100%;}
+  .tabcontent{width: 98%; padding: 2%; padding-top: 0;height: 100em;}
+  .map_images{width: 100%; height: 25em;}
+  #maplist{margin-left:2;margin-top:1%;margin-right:1%; height: auto;}
+  .district_title{ font-size: 20px;}
+  .maplink{font-size: 15px;}
+  ul{list-style-type:none; width: 98%; padding: 1%;}
+  #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
+    margin-left:2%;
+    margin-right:2%;
+    width: 46%;
+    display:inline-block;
+  }
+  .m{width:100%;}
 }
 @media (max-width: 1025px)  {
   body{background-color: #f5f5f5;}
   div#back {
     font-family: 'NanumSquare';
-    width:60em;
+    width:61em;
     height: 140em;
     /*padding: 1em;*/
     background-color: #ffffff;
     margin: 0.5em;
-    margin-top:0em;
+    margin-top:0.5em;
     box-shadow: 2px 2px 5px grey;
   }
   div#back ul{list-style-type:none;}
   /* tab */
 
-  div#tablist {margin-top:2em;margin-left:0.5em;}
-  div#back img {
+  div#tablist {padding-top:2em;margin-left: 2em;}
+  div#back {
     width:58em;
     height:60em;
   }
- 
+ .map_images{width: 57em;}
  .maplink:link,.maplink:visited,.maplink.active,.maplink.hover{ text-decoration: none; color:#362f2d;}
 
   #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
@@ -72,7 +98,7 @@
                 text-align: center;
                 margin-bottom: 10px;
             }
-
+            .tabs{size: 1em;}
             /*이미지 박스*/
             figure{
                 width: 90%; height: 90%;
@@ -122,7 +148,9 @@
             .indicator button:focus{background: #38f;}
 }
 </style>
-
+<div id="back1">
+  <!--background div : shadow-->
+<div id="back">
 <!-- map tab -->
 <div id="tablist">  
   <img id="defaultOpen" class="tabs" onclick="change(this,'22d',0)" src="{% static 'img/22day.png' %}">
@@ -132,12 +160,34 @@
   <img class="tabs" onclick="change(this,'24n',4)" src="{% static 'img/24night.png' %}">
 </div>
 
-<!--background div : shadow-->
-<div id="back">
+
   <!-- 22일 낮지도 -->
   <div id="22d" class="tabcontent">
-    <img src="{% static 'img/map22d.png'%}">
+    <img src="{% static 'img/map22d.png'%}" class="map_images">
     <div id="maplist">
+
+      <div class="district">
+    <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+    <div class="m row">
+        <div id="m1">
+            <ul>
+              <li><a class="maplink" href="#">[1] 총학 음식존</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('na.png')">[2] 자연대 학생회</a></li>
+              <li><a class="maplink" href="#">[3] 피스</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[4] 회계학과</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('kusa.jpg')">[5] 쿠사</a></li>
+            </ul>
+          </div>
+          <div id="m2">
+            <ul>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[6] 운지문학회</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ll.jpg')">[7] 멋쟁이사자처럼</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[8] 우푸</a></li>
+              <li><a class="maplink" href="#" onclick="lightbox_open('ye.jpg')">[9] 예운</a></li>
+              <li>&nbsp;</li>
+            </ul>
+          </div>
+
     <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
     <div id="m1">
       <ul>
@@ -156,10 +206,14 @@
         <li onclick="lightbox_open('ye.jpg')">[9] 예운</li>
         <li>&nbsp;</li>
       </ul>
+
     </div>
+      </div>
   <hr>
-    <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-     <div id="m3">
+  <div class="district">
+    <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+    <div class="m row">
+    <div id="m3">
         <ul>
           <li>[1] 총학 만들기</li>
           <li>[2] 총학 게임존</li>
@@ -171,9 +225,13 @@
           <li>[4] 타로</a></li>
         </ul>
      </div>
+    </div>
+  </div>
   <hr>
-     <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-      <div id="m5">
+  <div class="district">
+     <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+     <div class="m row">
+     <div id="m5">
         <ul>
           <li onclick="lightbox_open('padong.png')">[1] 파동</li>
           <li>[2] 로미오</li>
@@ -187,24 +245,30 @@
           <li>&nbsp;</li>
         </ul>
       </div>
+    </div>
+  </div>
     <hr>
-        <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
+    <div class="district">
+        <h1 class="district_title"><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
+        <div class="m row">
         <div id="m7">
           <ul>
             <li>[1] 한빛</li>
             <li onclick="lightbox_open('amg.jpg')">[2] 아미공 내부자들</li>
           </ul>
         </div>
+        </div>
       </div>
       </div>
-
+  </div>
   <!-- 23일 낮지도 -->
   <div id="23d" class="tabcontent">
-    <img src="{% static 'img/map23d.png'%}">
+    <img src="{% static 'img/map23d.png'%}" class="map_images">
     <div id="maplist">
       <!-- 민주동산-->
-      <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1">
+      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+      <div class="m row">
+      <div id="m1">
           <ul>
             <li>[1] 총학 휴식존</li>
             <li>[2] 수협</li>
@@ -221,11 +285,13 @@
             <li onclick="lightbox_open('ye.jpg')">[9] 예운</li>
             <li>&nbsp;</li>
           </ul>
+          </div>
         </div>
     <hr>
       <!-- 소영근터 -->
-      <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-        <div id="m3">
+      <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+      <div class="m row">
+      <div id="m3">
           <ul>
               <li>[1] 총학 만들기</li>
               <li>[2] 지음</li>
@@ -242,11 +308,13 @@
               <li>[9] 타투 </li>
             </ul>
         </div>
+      </div>
         
     <hr>
       <!-- 영근터 -->
-      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-        <div id="m5">
+      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+      <div class="m row"> 
+      <div id="m5">
           <ul>
               <li>[1] 피스</a></li>
               <li onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</li>
@@ -276,6 +344,8 @@
               <li>&nbsp;</li>
           </ul>
         </div>
+      </div>
+
       <hr>
      
      </div>
@@ -284,10 +354,11 @@
 
   <!-- 23일 밤지도 -->
   <div id="23n" class="tabcontent">
-    <img src="{% static 'img/map23n.png'%}">
+    <img src="{% static 'img/map23n.png'%}" class="map_images">
       <!-- 민주동산-->
       <h1 style="margin-left:0.5em"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1">
+      <div class="m row"> 
+      <div id="m1">
           <ul>
             <li onclick="lightbox_open('soc.jpg')">[1] 사회학과</li>
           </ul>
@@ -297,11 +368,12 @@
               <li>[2] 생활체육학과</li>
           </ul>
         </div>
-    
+      </div>
     <hr>
       <!-- 영근터 -->
       <h1 style="margin-left:0.5em"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-        <div id="m3">
+      <div class="m row">
+      <div id="m3">
           <ul>
               <li onclick="lightbox_open('acc.jpg')">[1] 회계학과</li>
               <li onclick="lightbox_open('eng.jpg')">[2] 영어영문학과</li>
@@ -326,30 +398,39 @@
               <li>&nbsp;</li>
            </ul>   
         </div> 
+      </div>
       <hr>
     </div>
   
 
    <!-- 24일 낮지도 -->
   <div id="24d" class="tabcontent">
-    <img src="{% static 'img/map24d.png'%}">
+    <img src="{% static 'img/map24d.png'%}" class="map_images">
     <div id="maplist">
       <!-- 민주동산-->
+
+      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+        <div id="m1"><ul><li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[1] 운지문학회</a><li></ul></div>
+
       <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
         <div id="m1"><ul><li onclick="lightbox_open('ung.jpg')">[1] 운지문학회<li></ul></div>
+
       <hr>
       <!-- 소영근터 -->
-      <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+      <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+      <div class="m row">
       <div id="m2">
         <ul>
           <li>[1] 총학 만들</li>
           <li>[2] 타투</li>
         </ul>
       </div>
+    </div>
       <hr>
         <!-- 영근터 -->
-      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-        <div id="m3">
+      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+      <div class="m row">
+      <div id="m3">
           <ul>
             <li onclick="lightbox_open('his_d.jpg')">[1] 사학과</li>
             <li>[2] 열음</li>
@@ -369,26 +450,30 @@
             <li>&nbsp;<li>
           </ul>
         </div>
+        </div>
 
     </div>
   </div>
 
   <!-- 24일 밤지도 -->
   <div id="24n" class="tabcontent">
-    <img src="{% static 'img/map24nt.png'%}">
+    <img src="{% static 'img/map24nt.png'%}" class="map_images">
     <div id="maplist"> 
       <!-- 민주동산-->
-      <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1">
+      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+      <div class="m row">
+      <div id="m1">
           <ul>
             <li onclick="lightbox_open('soc.jpg')">[1] 사회학과<li>
             <li>[2] 생활체육학과<li>
           </ul>
         </div>
+      </div>
       <hr>
         <!-- 영근터 -->
-      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-        <div id="m3">
+      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+      <div class="m row">  
+      <div id="m3">
           <ul>
             <li onclick="lightbox_open('acc.jpg')">[1] 회계학과</li>
             <li onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</li>
@@ -408,10 +493,11 @@
             <li>&nbsp;<li>
           </ul>
         </div>
+        </div>
       </div>
   </div>
 
-</div>
+
 
 <!-- 라이트 박스 배경-->
 <div id="block"></div>
@@ -425,9 +511,9 @@
     </div>
     <!-- end lightbox -->
 
-    
+</div>    
 </div>
-
+</div>
 <script>
   function change(elmnt, day,j){
     // click image
