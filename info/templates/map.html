@@ -5,68 +5,57 @@
 <style>
 .nanumsquare { font-family: 'NanumSquare', sans-serif !important; }
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
-@media (min-width: 1025px){
-  div#back1 {
-    margin: 1%;
-    padding-left: 25%;
-    padding-right: 25%; 
-    height: 50em;
-    background-color: #ffffff;
-}
-/* 지도 이미지 */
-#mapimg > img {
-    margin-left:1%;
-    margin-right: 1%;
-    width: 98%;
-  }
-  div#back {
-    font-family: 'NanumSquare';
-    width:99%;
-    height: 99%;
-    /*padding: 1em;*/
-    background-color: #ffffff;
-    margin: 1%;
-    margin-top:1%;
-    box-shadow: 2px 2px 5px grey;
-  }
-  #tablist { height: 3em; padding: 2%; padding-bottom: 0;padding-left: 1.5em;margin-left: 0.5em;}
-  #tablist>img{height: 100%;}
-  .tabs{height: 100%;}
-  .tabcontent{width: 98%; padding: 2%; padding-top: 0;height: 100em;}
-  .map_images{width: 100%; height: 25em;}
-  #maplist{margin-left:2;margin-top:1%;margin-right:1%; height: auto;}
-  .district_title{ font-size: 20px;}
-  .maplink{font-size: 15px;}
-  ul{list-style-type:none; width: 98%; padding: 1%;}
-  #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
-    margin-left:2%;
-    margin-right:2%;
-    width: 46%;
-    display:inline-block;
-  }
-  .m{width:100%;}
-}
-@media (max-width: 1025px)  {
+
+@media (min-width: 1025px){ /* desktop*/
   body{background-color: #f5f5f5;}
   div#back {
     font-family: 'NanumSquare';
-    width:61em;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-right:1.5%;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 5px grey;
+}
+/* 지도 이미지 */
+.tabcontent > img {
+    width: 100%;
+  }
+div#back h1 {margin-left:5%;font-size:1.5em;}
+div#back ul{list-style-type:none;}
+ #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
+    margin-left:2em;
+    margin-right:2em;
+    font-size:1.5em;
+    display:inline-block;
+  }
+  .tabs {width:5em;}
+  #tablist {margin-left:20%;margin-top:1%;}
+
+
+}
+
+
+@media (max-width: 1025px)  { /* mobile */
+  body{background-color: #f5f5f5;}
+  div#back {
+    font-family: 'NanumSquare';
+    width:60em;
     height: 140em;
     /*padding: 1em;*/
     background-color: #ffffff;
     margin: 0.5em;
-    margin-top:0.5em;
+    margin-top:0em;
     box-shadow: 2px 2px 5px grey;
   }
   div#back ul{list-style-type:none;}
   /* tab */
 
-  div#tablist {padding-top:2em;margin-left: 2em;}
-  div#back {
+  div#tablist {margin-top:2em;margin-left:0.5em;}
+  div#back img {
     width:58em;
     height:60em;
   }
- .map_images{width: 57em;}
+ 
  .maplink:link,.maplink:visited,.maplink.active,.maplink.hover{ text-decoration: none; color:#362f2d;}
 
   #m1,#m2,#m3,#m4,#m5,#m6,#m7 {
@@ -76,6 +65,18 @@
     display:inline-block;
   }
   #maplist{margin-left:2em;margin-top:1em;margin-right:2em;}
+}
+
+/* maplist span */
+/* 민주동산*/
+.mj {background-color:#2e75b6;color:white;border-radius:5px;border:solid 1px black;}
+/* 소영근터*/
+.sy {background-color:#ffd966;border-radius:5px;border:solid 1px black;}
+/* 영근터 */
+.yg {background-color:#70ad47;border-radius:5px;color:white;border:solid 1px black;}
+/* 학생회관 */
+.hk {background-color:#a365d1;border-radius:5px;color:white;border:solid 1px black;}
+
 
   /******************************/
   /*라이트 박스 컨테이너*/
@@ -98,7 +99,7 @@
                 text-align: center;
                 margin-bottom: 10px;
             }
-            .tabs{size: 1em;}
+
             /*이미지 박스*/
             figure{
                 width: 90%; height: 90%;
@@ -146,11 +147,9 @@
                 border: none; padding: 2px 5px;
             }
             .indicator button:focus{background: #38f;}
-}
+
 </style>
-<div id="back1">
-  <!--background div : shadow-->
-<div id="back">
+
 <!-- map tab -->
 <div id="tablist">  
   <img id="defaultOpen" class="tabs" onclick="change(this,'22d',0)" src="{% static 'img/22day.png' %}">
@@ -160,319 +159,361 @@
   <img class="tabs" onclick="change(this,'24n',4)" src="{% static 'img/24night.png' %}">
 </div>
 
-
+<!--background div : shadow-->
+<div id="back">
   <!-- 22일 낮지도 -->
   <div id="22d" class="tabcontent">
-    <img src="{% static 'img/map22d.png'%}" class="map_images">
+    <img src="{% static 'img/map22d.png'%}">
     <div id="maplist">
-      <div class="district">
-    <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-    <div class="m row">
-        <div id="m1">
-            <ul>
-              <li><a class="maplink" href="#">[1] 총학 음식존</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('na.png')">[2] 자연대 학생회</a></li>
-              <li><a class="maplink" href="#">[3] 피스</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[4] 회계학과</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('kusa.jpg')">[5] 쿠사</a></li>
-            </ul>
-          </div>
-          <div id="m2">
-            <ul>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[6] 운지문학회</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ll.jpg')">[7] 멋쟁이사자처럼</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[8] 우푸</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ye.jpg')">[9] 예운</a></li>
-              <li>&nbsp;</li>
-            </ul>
-          </div>
+    <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+    <div id="m1">
+      <ul>
+        <li><span class="mj">&nbsp;1&nbsp;</span> 총학 음식존</li>
+        <li onclick="lightbox_open('na.png')"><span class="mj">&nbsp;2&nbsp;</span> 자연대 학생회</li>
+        <li><span class="mj">&nbsp;3&nbsp;</span> 피스</li>
+        <li onclick="lightbox_open('acc.jpg')"><span class="mj">&nbsp;4&nbsp;</span> 회계학과</li>
+        <li onclick="lightbox_open('kusa.jpg')"><span class="mj">&nbsp;5&nbsp;</span> 쿠사</li>
+      </ul>
     </div>
-      </div>
+    <div id="m2">
+      <ul>
+        <li onclick="lightbox_open('ung.jpg')">
+        <span class="mj">&nbsp;6&nbsp;</span> 운지문학회</li>
+        <li onclick="lightbox_open('lion.jpg')">
+        <span class="mj">&nbsp;7&nbsp;</span> 멋쟁이사자처럼</li>
+        <li onclick="lightbox_open('upu.jpg')">
+        <span class="mj">&nbsp;8&nbsp;</span> 우푸</li>
+        <li onclick="lightbox_open('ye.jpg')">
+        <span class="mj">&nbsp;9&nbsp;</span> 예운</li>
+        <li>&nbsp;</li>
+      </ul>
+    </div>
   <hr>
-  <div class="district">
-    <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-    <div class="m row">
-    <div id="m3">
+    <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+     <div id="m3">
         <ul>
-          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
-          <li><a class="maplink" href="#">[2] 총학 게임존</a></li>
+          <li>
+          <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+          <li>
+          <span class="sy">&nbsp;2&nbsp;</span> 총학 게임존</li>
         </ul>
      </div>
      <div id="m4">
         <ul>
-          <li><a class="maplink" href="#">[3] 타투</a></li>
-          <li><a class="maplink" href="#">[4] 타로</a></li>
+          <li>
+          <span class="sy">&nbsp;3&nbsp;</span> 타투</a></li>
+          <li>
+          <span class="sy">&nbsp;4&nbsp;</span> 타로</a></li>
         </ul>
      </div>
-    </div>
-  </div>
   <hr>
-  <div class="district">
-     <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-     <div class="m row">
-     <div id="m5">
+     <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+      <div id="m5">
         <ul>
-          <li><a class="maplink" href="#">[1] 파동</a></li>
-          <li><a class="maplink" href="#">[2] 로미오</a></li>
-          <li><a class="maplink" href="#" onclick="lightbox_open('bit.jpg')">[3] 빛내미</a></li>
+          <li onclick="lightbox_open('padong.png')">
+          <span class="yg">&nbsp;1&nbsp;</span> 파동</li>
+          <li>
+          <span class="yg">&nbsp;2&nbsp;</span> 로미오</li>
+          <li onclick="lightbox_open('bit.jpg')">
+          <span class="yg">&nbsp;3&nbsp;</span> 빛내미</li>
         </ul>
       </div>
       <div id="m6">
         <ul>
-          <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[4] 유아교육학과</a></li>
-          <li><a class="maplink" href="#">[5] 생활체육학과</a></li>
+          <li onclick="lightbox_open('dong_u.jpg')">
+          <span class="yg">&nbsp;4&nbsp;</span> 유아교육학과</li>
+          <li>
+          <span class="yg">&nbsp;5&nbsp;</span> 생활체육학과</li>
           <li>&nbsp;</li>
         </ul>
       </div>
-    </div>
-  </div>
     <hr>
-    <div class="district">
-        <h1 class="district_title"><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
-        <div class="m row">
+        <h1><span style="background-color:#a365d1">&nbsp;&nbsp;</span> 학생회관</h1>
         <div id="m7">
           <ul>
-            <li><a class="maplink" href="#">[1] 한빛</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[2] 아미공 내부자들</a></li>
+            <li>
+            <span class="hk">&nbsp;1&nbsp;</span> 한빛</li>
+            <li onclick="lightbox_open('amg.jpg')">
+            <span class="hk">&nbsp;2&nbsp;</span> 아미공 내부자들</li>
           </ul>
         </div>
-        </div>
       </div>
       </div>
-  </div>
+
   <!-- 23일 낮지도 -->
   <div id="23d" class="tabcontent">
-    <img src="{% static 'img/map23d.png'%}" class="map_images">
+    <img src="{% static 'img/map23d.png'%}">
     <div id="maplist">
       <!-- 민주동산-->
-      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-      <div class="m row">
-      <div id="m1">
+      <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+        <div id="m1">
           <ul>
-            <li><a class="maplink" href="#">[1] 총학 휴식존</a></li>
-            <li><a class="maplink" href="#">[2] 수협</a></li>
-            <li><a class="maplink" href="#">[3] 덕냥당</a></li>
-            <li><a class="maplink" href="#">[4] 국어국문학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('chf.png')">[5] 아동가족학과</a></li>
+            <li><span class="mj">&nbsp;1&nbsp;</span> 총학 휴식존</li>
+            <li><span class="mj">&nbsp;2&nbsp;</span> 수협</li>
+            <li onclick="lightbox_open('cat.jpg')">
+            <span class="mj">&nbsp;3&nbsp;</span> 덕냥당</li>
+            <li>
+            <span class="mj">&nbsp;4&nbsp;</span> 국어국문학과</li>
+            <li onclick="lightbox_open('chf.png')">
+            <span class="mj">&nbsp;5&nbsp;</span> 아동가족학과</li>
           </ul>
         </div>
         <div id="m2">
           <ul>
-           <li><a class="maplink" href="#" onclick="lightbox_open('kusa.jpg')">[6] 쿠사</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('his_d.jpg')">[7] 사회학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[8] 우푸</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('ye.jpg')">[9] 예운</a></li>
+           <li onclick="lightbox_open('kusa.jpg')">
+           <span class="mj">&nbsp;6&nbsp;</span> 쿠사</li>
+            <li onclick="lightbox_open('his_d.jpg')">
+            <span class="mj">&nbsp;7&nbsp;</span> 사회학과</li>
+            <li onclick="lightbox_open('upu.jpg')">
+            <span class="mj">&nbsp;8&nbsp;</span> 우푸</li>
+            <li onclick="lightbox_open('ye.jpg')">
+            <span class="mj">&nbsp;9&nbsp;</span> 예운</li>
             <li>&nbsp;</li>
           </ul>
-          </div>
         </div>
     <hr>
       <!-- 소영근터 -->
-      <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-      <div class="m row">
-      <div id="m3">
+      <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
+        <div id="m3">
           <ul>
-              <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
-              <li><a class="maplink" href="#">[2] 지음</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[3] 경영학과</a></li>
-              <li><a class="maplink" href="#">[4] 열음</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('dukong.jpg')">[5] 두콩이공방 </a></li>
+              <li>
+              <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+              <li>
+              <span class="sy">&nbsp;2&nbsp;</span> 지음</li>
+              <li onclick="lightbox_open('ky.jpg')">
+              <span class="sy">&nbsp;3&nbsp;</span> 경영학과</li>
+              <li>
+                <span class="sy">&nbsp;4&nbsp;</span> 열음</li>
+              <li onclick="lightbox_open('dukong.jpg')">
+              <span class="sy">&nbsp;5&nbsp;</span> 두콩이공방</li>
             </ul>
           </div>
         <div id="m4">
             <ul>
-              <li><a class="maplink" href="#" onclick="lightbox_open('sch.jpg')">[6] 사회대 학생회</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ll.jpg')">[7] 멋쟁이사자처럼 </a></li>
-              <li><a class="maplink" href="#">[8] 총학게임판 </a></li>
-              <li><a class="maplink" href="#">[9] 타투 </a></li>
+              <li onclick="lightbox_open('sch.jpg')">
+              <span class="sy">&nbsp;6&nbsp;</span> 사회대 학생회</li>
+              <li onclick="lightbox_open('lion.jpg')">
+              <span class="sy">&nbsp;7&nbsp;</span> 멋쟁이사자처럼</li>
+              <li>
+              <span class="sy">&nbsp;8&nbsp;</span> 총학게임판</li>
+              <li>
+              <span class="sy">&nbsp;9&nbsp;</span> 타투 </li>
             </ul>
         </div>
-      </div>
         
     <hr>
       <!-- 영근터 -->
-      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-      <div class="m row"> 
-      <div id="m5">
+      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+        <div id="m5">
           <ul>
-              <li><a class="maplink" href="#">[1] 피스</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</a></li>
-              <li><a class="maplink" href="#">[3] 동천</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[4] 운지문학회</a>
+              <li>
+              <span class="yg">&nbsp;1&nbsp;</span> 피스</li>
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;2&nbsp;</span> 유아교육학과</li>
+              <li onclick="lightbox_open('dch.jpg')">
+              <span class="yg">&nbsp;3&nbsp;</span> 동천</li>
+              <li onclick="lightbox_open('ung.jpg')">
+              <span class="yg">&nbsp;4&nbsp;</span> 운지문학회
               </li>
-              <li><a class="maplink" href="#">[5] 텍스트디자인학과</a>
+              <li>
+              <span class="yg">&nbsp;5&nbsp;</span> 텍스트디자인학과
               </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('bit.jpg')">[6] 빛내미</a>
+              <li onclick="lightbox_open('bit.jpg')">
+              <span class="yg">&nbsp;6&nbsp;</span> 빛내미
               </li>
-              <li><a class="maplink" href="#">[7] 파동</a>
-              </li>
-              
+              <li onclick="lightbox_open('padong.png')">
+              <span class="yg">&nbsp;7&nbsp;</span> 파동
+              </li> 
         </div>
         <div id="m6">
           <ul>
-              <li><a class="maplink" href="#">[8] 생활체육학과</a>
+              <li>
+              <span class="yg">&nbsp;8&nbsp;</span> 생활체육학과
               </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[9] 회계학과</a>
+              <li onclick="lightbox_open('acc.jpg')">
+              <span class="yg">&nbsp;9&nbsp;</span> 회계학과
               </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('na.jpg')">[10] 자연대 학생회</a>
+              <li onclick="lightbox_open('na.jpg')">
+              <span class="yg">&nbsp;10&nbsp;</span> 자연대 학생회
               </li>
-              <li><a class="maplink" href="#">[11] 포크</a>
+              <li>
+              <span class="yg">&nbsp;11&nbsp;</span> 포크
               </li>   
-              <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[12] 유아교육학과</a></li>
-              <li><a class="maplink" href="#">[13] 생활체육학과</a></li>
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;12&nbsp;</span> 유아교육학과</li>
+              <li>
+              <span class="yg">&nbsp;13&nbsp;</span> 생활체육학과</li>
               <li>&nbsp;</li>
           </ul>
         </div>
-      </div>
-
       <hr>
-     
      </div>
-  
   </div>
 
   <!-- 23일 밤지도 -->
   <div id="23n" class="tabcontent">
-    <img src="{% static 'img/map23n.png'%}" class="map_images">
+    <img src="{% static 'img/map23n.png'%}">
       <!-- 민주동산-->
       <h1 style="margin-left:0.5em"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-      <div class="m row"> 
-      <div id="m1">
+        <div id="m1">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[1] 사회학과</a></li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="mj">&nbsp;1&nbsp;</span> 사회학과</li>
           </ul>
         </div>
         <div id="m2">  
           <ul>
-              <li><a class="maplink" href="#">[2] 생활체육학과</a></li>
+              <li>
+              <span class="mj">&nbsp;2&nbsp;</span> 생활체육학과</li>
           </ul>
         </div>
-      </div>
+    
     <hr>
       <!-- 영근터 -->
       <h1 style="margin-left:0.5em"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-      <div class="m row">
-      <div id="m3">
+        <div id="m3">
           <ul>
-              <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[1] 회계학과</a></li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('eng.jpg')">[2] 영어영문학과</a></li>
-              <li><a class="maplink" href="#">[3] 국어국문학과</a>
+              <li onclick="lightbox_open('acc.jpg')">
+              <span class="yg">&nbsp;1&nbsp;</span> 회계학과</li>
+              <li onclick="lightbox_open('eng.jpg')">
+              <span class="yg">&nbsp;2&nbsp;</span> 영어영문학과</li>
+              <li>
+              <span class="yg">&nbsp;3&nbsp;</span> 국어국문학과
               </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[4] 경영학과</a>
+              <li onclick="lightbox_open('ky.jpg')">
+              <span class="yg">&nbsp;4&nbsp;</span> 경영학과
               </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[5] 아미공 내부자들</a>
+              <li onclick="lightbox_open('amg.jpg')">
+              <span class="yg">&nbsp;5&nbsp;</span> 아미공 내부자들
               </li>  
            </ul>
         </div> 
         <div id="m4"> 
            <ul>
-              <li><a class="maplink" href="#" onclick="lightbox_open('his_n.jpg')">[6] 사학과</a>
-              </li>
-              <li><a class="maplink" href="#">[7] 국제통상학과</a>
-              </li>
-              <li><a class="maplink" href="#" onclick="lightbox_open('psy.jpg')">[8] 심리학과</a>
+              <li onclick="lightbox_open('his_n.jpg')">
+              <span class="yg">&nbsp;6&nbsp;</span> 사학과
               </li>
               <li>
-                  <a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[9] 유아교육학과</a>
+              <span class="yg">&nbsp;7&nbsp;</span> 국제통상학과
+              </li>
+              <li onclick="lightbox_open('psy.jpg')">
+              <span class="yg">&nbsp;8&nbsp;</span> 심리학과
+              </li>
+              <li onclick="lightbox_open('dong_u.jpg')">
+              <span class="yg">&nbsp;9&nbsp;</span> 유아교육학과
               </li>
               <li>&nbsp;</li>
            </ul>   
         </div> 
-      </div>
       <hr>
     </div>
   
 
    <!-- 24일 낮지도 -->
   <div id="24d" class="tabcontent">
-    <img src="{% static 'img/map24d.png'%}" class="map_images">
+    <img src="{% static 'img/map24d.png'%}">
     <div id="maplist">
       <!-- 민주동산-->
-      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-        <div id="m1"><ul><li><a class="maplink" href="#" onclick="lightbox_open('ung.jpg')">[1] 운지문학회</a><li></ul></div>
+      <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+        <div id="m1"><ul><li onclick="lightbox_open('ung.jpg')">
+        <span class="mj">&nbsp;1&nbsp;</span> 운지문학회<li></ul></div>
       <hr>
       <!-- 소영근터 -->
-      <h1 class="district_title"><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
-      <div class="m row">
+      <h1><span style="background-color:#ffd966">&nbsp;&nbsp;</span> 소영근터</h1>
       <div id="m2">
         <ul>
-          <li><a class="maplink" href="#">[1] 총학 만들기</a></li>
-          <li><a class="maplink" href="#">[2] 타투</a></li>
+          <li>
+          <span class="sy">&nbsp;1&nbsp;</span> 총학 만들기</li>
+          <li>
+          <span class="sy">&nbsp;2&nbsp;</span> 타투</li>
         </ul>
       </div>
-    </div>
       <hr>
         <!-- 영근터 -->
-      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-      <div class="m row">
-      <div id="m3">
+      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+        <div id="m3">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('his_d.jpg')">[1] 사학과</a></li>
-            <li><a class="maplink" href="#">[2] 열음</a></li>
-            <li><a class="maplink" href="#">[3] 듈립</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('fr.jpg')">[4] 불어불문학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('upu.jpg')">[5] 우푸</a></li>
-            <li><a class="maplink" href="#">[6] 국제통상학과</a></li>
+            <li onclick="lightbox_open('his_d.jpg')">
+            <span class="yg">&nbsp;1&nbsp;</span> 사학과</li>
+            <li>
+            <span class="yg">&nbsp;2&nbsp;</span> 열음</li>
+            <li onclick="lightbox_open('dwulip.jpg')">
+            <span class="yg">&nbsp;3&nbsp;</span> 듈립</li>
+            <li onclick="lightbox_open('fr.jpg')">
+            <span class="yg">&nbsp;4&nbsp;</span> 불어불문학과</li>
+            <li onclick="lightbox_open('upu.jpg')">
+            <span class="yg">&nbsp;5&nbsp;</span> 우푸</li>
+            <li>
+            <span class="yg">&nbsp;6&nbsp;</span> 국제통상학과</li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('chf.png')">[7] 아동가족학과</a><li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[8] 사회학과</a><li>
-            <li><a class="maplink" href="#">[9] 국어국문학과</a><li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('en.jpg')">[10] 공과대 학생회</a><li>
-            <li><a class="maplink" href="#">[11] 국민은행</a><li>
+            <li onclick="lightbox_open('chf.png')">
+            <span class="yg">&nbsp;7&nbsp;</span> 아동가족학과<li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="yg">&nbsp;8&nbsp;</span> 사회학과<li>
+            <li>
+            <span class="yg">&nbsp;9&nbsp;</span> 국어국문학과<li>
+            <li onclick="lightbox_open('en.jpg')">
+            <span class="yg">&nbsp;10&nbsp;</span> 공과대 학생회<li>
+            <li>
+            <span class="yg">&nbsp;11&nbsp;</span> 국민은행<li>
             <li>&nbsp;<li>
           </ul>
         </div>
-        </div>
-
     </div>
   </div>
 
   <!-- 24일 밤지도 -->
   <div id="24n" class="tabcontent">
-    <img src="{% static 'img/map24nt.png'%}" class="map_images">
+    <img src="{% static 'img/map24nt.png'%}">
     <div id="maplist"> 
       <!-- 민주동산-->
-      <h1 class="district_title"><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
-      <div class="m row">
-      <div id="m1">
+      <h1><span style="background-color:#2e75b6">&nbsp;&nbsp;</span> 민주동산</h1>
+        <div id="m1">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('soc.jpg')">[1] 사회학과</a><li>
-            <li><a class="maplink" href="#">[2] 생활체육학과</a><li>
+            <li onclick="lightbox_open('soc.jpg')">
+            <span class="mj">&nbsp;1&nbsp;</span> 사회학과<li>
+            <li>
+            <span class="mj">&nbsp;2&nbsp;</span> 생활체육학과<li>
           </ul>
         </div>
-      </div>
       <hr>
         <!-- 영근터 -->
-      <h1 class="district_title"><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
-      <div class="m row">  
-      <div id="m3">
+      <h1><span style="background-color:#70ad47">&nbsp;&nbsp;</span> 영근터</h1>
+        <div id="m3">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('acc.jpg')">[1] 회계학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('dong_u.jpg')">[2] 유아교육학과</a></li>
-            <li><a class="maplink" href="#">[3] 국어국문학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('amg.jpg')">[4] 아미공 내부자들</a></li>
-            <li><a class="maplink" href="#">[5] 국제통상학과</a></li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('food.jpg')">[6] 식품영양학과</a></li>
+            <li onclick="lightbox_open('acc.jpg')">
+             <span class="yg">&nbsp;1&nbsp;</span> 회계학과</li>
+            <li onclick="lightbox_open('dong_u.jpg')">
+             <span class="yg">&nbsp;2&nbsp;</span> 유아교육학과</li>
+            <li>
+             <span class="yg">&nbsp;3&nbsp;</span> 국어국문학과</a></li>
+            <li onclick="lightbox_open('amg.jpg')">
+             <span class="yg">&nbsp;4&nbsp;</span> 아미공 내부자들</li>
+            <li>
+             <span class="yg">&nbsp;5&nbsp;</span> 국제통상학과</li>
+            <li onclick="lightbox_open('food.jpg')">
+             <span class="yg">&nbsp;6&nbsp;</span> 식품영양학과</li>
           </ul>
         </div>
         <div id="m4">
           <ul>
-            <li><a class="maplink" href="#" onclick="lightbox_open('food.jpg')">[7] 식품영양학과</a><li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('psy.jpg')">[8] 심리학과</a><li>
-            <li><a class="maplink" href="#" onclick="lightbox_open('ky.jpg')">[9] 경영학과</a><li>
+            <li onclick="lightbox_open('food.jpg')">
+             <span class="yg">&nbsp;7&nbsp;</span> 식품영양학과<li>
+            <li onclick="lightbox_open('psy.jpg')">
+             <span class="yg">&nbsp;8&nbsp;</span> 심리학과<li>
+            <li onclick="lightbox_open('ky.jpg')">
+             <span class="yg">&nbsp;9&nbsp;</span> 경영학과<li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
             <li>&nbsp;<li>
           </ul>
         </div>
-        </div>
       </div>
   </div>
-
-
+</div>
 
 <!-- 라이트 박스 배경-->
 <div id="block"></div>
@@ -480,15 +521,12 @@
     <div class="btn-close" onclick="lightbox_close()">X</div>
    <figure>
         <img style="width:100%" id="fid" src="" alt="" class="active"/>
-        
     </figure>
         
     </div>
     <!-- end lightbox -->
+</div>
 
-</div>    
-</div>
-</div>
 <script>
   function change(elmnt, day,j){
     // click image
@@ -539,7 +577,7 @@
       block.setAttribute('class', 'active');
       var fid=document.getElementById('fid');
       fid.setAttribute('src', "/static/img/"+name);
-      indicator[0].focus();
+      //indicator[0].focus();
     }
 
     function lightbox_close() {
