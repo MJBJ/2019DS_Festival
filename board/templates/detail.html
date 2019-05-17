@@ -99,14 +99,17 @@
             <div id="b">
                     <div id="btitle">{{ board.Title }}</div>
                     <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
-            
                     <div id="bimg">
+                        {% if board.file %}
                         <img id="imgtag" style="width:100%;" src="{{ board.file.url }}" alt=".">
                         <video id="vdtag" style="width:100%" controls>
                             <source src="{{ board.file.url }}" type='video/ogg'>
                             <source src="{{ board.file.url }}" type='video/mp4'>
                             <source src="{{ board.file.url }}" type='video/webm'>
-                        </video>    
+                        </video>
+                        {% else %}
+                        <img id="default" style="width:100%;" src="{% static 'default.jpg' %}" alt=".">
+                        {% endif %}
                     </div>
                     <div id="bbody">
                         {{board.Text}}
