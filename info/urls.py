@@ -4,7 +4,7 @@ from . import views
 import board.views
 import stamp.views 
 urlpatterns = [
-    #path('', views.main, name='main'),
+    path('main', views.main, name='main'),
     path('map', views.map, name='map'),
     path('notice', views.notice, name='notice'),
     path('timetable', views.timetable, name='timetable'),
