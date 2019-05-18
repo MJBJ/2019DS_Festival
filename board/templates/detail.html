@@ -90,52 +90,52 @@
 </style>
 
 <div id="back">
-    <div id="bcontent">
-        <div id="b">
-                <div id="btitle">{{ board.Title }}</div>
-                <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
-                <!-- 이미지인지 동영상인지 구분해야 함-->
-                <div id="bimg">
-                    <img style="width:100%;" id="board_img" src="{{ board.file.url }}" alt=".">
-                    <video style="width:100%" controls>
-                        <source src="{{ board.file.url }}" type='video/ogg'>
-                        <source src="{{ board.file.url }}" type='video/mp4'>
-                        <source src="{{ board.file.url }}" type='video/webm'>
-                    </video>
-                </div>
-        
-                <div id="bbody">
-                    {{board.Text}}
-                </div>
-                <div id="bcontent2">
-                    <div id="bpwd">
-                        <form method="get" action="{% url 'delete' board.id %}">
-                            {% comment %} {% csrf_token %}  {% endcomment %}
-                            <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
-                            <input type="submit" value="게시글 삭제" class="dbtn">
-                        </form>
+        <div id="bcontent">
+            <div id="b">
+                    <div id="btitle">{{ board.Title }}</div>
+                    <div id="bdate">{{ board.updated_at|date:"m/d H:i"}}</div>
+                    <!-- 이미지인지 동영상인지 구분해야 함-->
+                    <div id="bimg">
+                        <img style="width:100%;" id="board_img" src="{{ board.file.url }}" alt=".">
+                        <video style="width:100%" controls>
+                            <source src="{{ board.file.url }}" type='video/ogg'>
+                            <source src="{{ board.file.url }}" type='video/mp4'>
+                            <source src="{{ board.file.url }}" type='video/webm'>
+                        </video>
                     </div>
-                    <br>
-                    <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
-                </div>
+            
+                    <div id="bbody">
+                        {{board.Text}}
+                    </div>
+                    <div id="bcontent2">
+                        <div id="bpwd">
+                            <form method="get" action="{% url 'delete' board.id %}">
+                                {% comment %} {% csrf_token %}  {% endcomment %}
+                                <input type="password" clss="pwdinput" name="passwd" required placeholder="비밀번호">
+                                <input type="submit" value="게시글 삭제" class="dbtn">
+                            </form>
+                        </div>
+                        <br>
+                        <a class="ba"  id="id_uploaded_file" href="{{ board.file.url }}" download>다운로드하기</a>
+                    </div>
+            </div>
         </div>
     </div>
-</div>
-<script>
-// img, video 태그
-var img=document.getElementById('board_img');
-var video=document.getElementsByTagName('video')[0];
-// url 받아옴
-var url=img.getAttribute('src');
-if(url.match('.png')||url.match('.jpg')||url.match(".gif")){
-    video.remove();
-}
-else if(url.match(".mp4")||url.match(".webm")||url.match(".ogg")){
-    img.remove();
-}
-else{
-    video.remove();
-    img.remove();
-}
-</script>
-{% endblock %}
+    <script>
+    // img, video 태그
+    var img=document.getElementById('board_img');
+    var video=document.getElementsByTagName('video')[0];
+    // url 받아옴
+    var url=img.getAttribute('src');
+    if(url.match('.png')||url.match('.jpg')||url.match(".gif")){
+        video.remove();
+    }
+    else if(url.match(".mp4")||url.match(".webm")||url.match(".ogg")){
+        img.remove();
+    }
+    else{
+        video.remove();
+        img.remove();
+    }
+    </script>
+    {% endblock %}
