@@ -227,34 +227,7 @@ var board_cnt=0;
                     }
                    
                 </script>
-                <!-- <input type="hidden" id="{{board.id}}" value="">
-                <script>
-                        var url = string.split('.',"{{board.file.url}}");
-                        var hid=document.getElementById("{{board.id}}");
-                        hid.value=url[1];
-                        var x = hid.value;
-                </script>
-                {% if x=="jpg" or "png" or "gif" or "bmp" or "tif" or "ai" %}
-                <img class="s_img" id="s_img" src="{{board.file.url}}" alt="">
-               
-                {% elif x=="mp4" or "m4r" or "hevc" or "webm" or "ogg" or "avi" or "mpg" or "mpeg" or "mpe" or "wmv" or "mov" or "dat" or "flv"  %}
-                <video class="videotag" style="width:100%" controls>
-                    <source src="{{ board.file.url }}" type='video/ogg'>
-                    <source src="{{ board.file.url }}" type='video/mp4'>
-                    <source src="{{ board.file.url }}" type='video/webm'>
-                    <source src="{{ board.file.url }}" type='video/hevc'>
-                    <source src="{{ board.file.url }}" type='video/m4r'>
-                    <source src="{{ board.file.url }}" type='video/avi'>
-                    <source src="{{ board.file.url }}" type='video/mpg'>
-                    <source src="{{ board.file.url }}" type='video/mpeg'>
-                    <source src="{{ board.file.url }}" type='video/mov'>
-                    <source src="{{ board.file.url }}" type='video/wmv'>
-                    <source src="{{ board.file.url }}" type='video/mpeg'>
-                    <source src="{{ board.file.url }}" type='video/mpeg'>
-                </video>
-                {%else%}
-                <img class="s_img" id="s_img" src="{% static 'default.jpg' %}" alt="">
-                {%endif%} -->
+
         </div>        
     </div>
     </a>
