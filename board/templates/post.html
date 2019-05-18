@@ -62,10 +62,7 @@ div.POSTcontainer {
                 font-family: 'Nanum Square';}
 }
 </style>
-<div class="back">
 <div class="POSTcontainer">
-    <h4 style="text-align:center";>※ 회원가입 없이 외부에 노출되는 게시판입니다 ※<br>바르고 고운말만 사용해주세요.</h4>
-    <br>
     <form method="post" enctype="multipart/form-data">
     {% csrf_token %} 
     <table id="ptable" class="table stripe" style="font-size:1.2em;">
@@ -82,7 +79,6 @@ div.POSTcontainer {
         f[1].innerHTML="제목";  f[1].style.color="#ff3300";  
         f[2].innerHTML="내용";  f[2].style.color="#ff3300";  
         f[3].innerHTML="비밀번호";  f[3].style.color="#ff3300";  
-
         var t = document.getElementById("id_Title");
         t.setAttribute('placeholder',"제목을 입력하세요");
 </script>
