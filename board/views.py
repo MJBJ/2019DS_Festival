@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 from .models import Board
 from .forms import BoardForm
 from django.http import HttpResponseRedirect
+import os
 
 def show(request):
 	boards = Board.objects.order_by('-id')
