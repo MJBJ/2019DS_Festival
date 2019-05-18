@@ -163,6 +163,22 @@ var board_cnt=0;
                         source9.setAttribute('src',"{{ board.file.url }}");
                         source9.setAttribute('type',"video/mpeg");
 
+                        var source10=document.createElement('source');
+                        source10.setAttribute('src',"{{ board.file.url }}");
+                        source10.setAttribute('type',"video/m4r");
+
+                        var source11=document.createElement('source');
+                        source11.setAttribute('src',"{{ board.file.url }}");
+                        source11.setAttribute('type',"video/mpg");
+
+                        var source12=document.createElement('source');
+                        source12.setAttribute('src',"{{ board.file.url }}");
+                        source12.setAttribute('type',"video/mpe");
+
+                        var source13=document.createElement('source');
+                        source13.setAttribute('src',"{{ board.file.url }}");
+                        source13.setAttribute('type',"video/wmv");
+
                         var video=document.createElement('video');
                         video.setAttribute('controls',null);
                         video.setAttribute('autoplay',null);
@@ -173,7 +189,17 @@ var board_cnt=0;
                         //width:18em; height:18em;margin:0 0;
                         video.append(source1);
                         video.append(source2);
+                        video.append(source4);
+                        video.append(source5);
                         video.append(source3);
+                        video.append(source6);
+                        video.append(source7);
+                        video.append(source8);
+                        video.append(source9);
+                        video.append(source10);
+                        video.append(source11);
+                        video.append(source12);
+                        video.append(source13);
                         var hv=document.getElementById("{{board.id}}");
                         var ppv=hv.parentNode;
                         //var p=document.getElementsByClassName('{{board.id}}');
