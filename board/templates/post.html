@@ -38,7 +38,7 @@
 
 <div class="POSTcontainer">
         <h3 style="text-align: center">※ 외부에 노출되는 게시판입니다 ※<br>바르고 고운말만 사용해주세요.</h3>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" data-ajax="false">
     {% csrf_token %} 
     <table id="ptable" class="table stripe" style="font-size:1.2em;">
         {{form.as_table}}
