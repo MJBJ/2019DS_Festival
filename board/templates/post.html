@@ -1,35 +1,9 @@
 {% extends 'base.html' %}
-{%load static%}
 {% block content %}
 
 <style>
 @import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
-
-@media (min-width: 1025px){
-    body{background-color: #f5f5f5; width: 100%;
-    }
-    .back{margin-right: 25%; margin-left: 25%;}
-
-textarea{width:100%}
-div.POSTcontainer {
-        width:100%;
-        background-color: #ffffff;
-        margin: 2%;
-        box-shadow: 2px 2px 5px grey;
-        padding :4em;
-    }
-    input[type=submit] {
-        width:7.2em;
-        height:3em;
-        margin-left: 13em;
-        background-image:url("{% static 'post.png' %}");
-        background-size:100%;
-        background-repeat: no-repeat;
-        font-family: 'S-CoreDream-3Light';
-    }
-    }
-@media (max-width: 1025px)  {
     body{background-color: #f5f5f5; width: 61em;
     }
     textarea{width:30em;}
@@ -52,7 +26,7 @@ div.POSTcontainer {
         width:8em;
         height:3em;
         margin-left: 20em;
-        background-image:url("{% static 'post.png' %}");
+        background-image:url("../../static/post.png");
         background-size:100%;
         background-repeat: no-repeat;
         font-family: 'S-CoreDream-3Light';
@@ -60,11 +34,10 @@ div.POSTcontainer {
     label{font-size: 1.5em; text-align: center;font-family: 'S-CoreDream-3Light';}
     div#footer{ 
                 font-family: 'Nanum Square';}
-}
 </style>
+
 <div class="POSTcontainer">
-    <h3 style="text-align: center">※ 외부에 노출되는 게시판입니다 ※<br>바르고 고운말만 사용해주세요.</h3>
-    <br>
+        <h3 style="text-align: center">※ 외부에 노출되는 게시판입니다 ※<br>바르고 고운말만 사용해주세요.</h3>
     <form method="post" enctype="multipart/form-data">
     {% csrf_token %} 
     <table id="ptable" class="table stripe" style="font-size:1.2em;">
