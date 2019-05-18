@@ -1,68 +1,9 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
 <style>
 @font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight:normal; font-style: normal; }
-@media (min-width: 1025px){
-    #back {
-        width: 100%;
-        min-height: 120;
-        padding-left: 25%;
-        padding-right: 25%;
-        background-color: #ffffff;
-        box-shadow: 2px 2px 5px grey;
-        }
-        #btitle, #bdate{ margin-right: 0;width: 10em;}
-        #btitle {
-        font-family:'S-CoreDream-3Light'; 
-        font-style:bold; 
-        color:#ff3300;
-        font-size:2em;
-        margin-bottom: 0;
-        padding-top: 0.3em;
-    }
-    #bimg{
-        width: 100%;
-        height: auto;
-        align-items: center;
-        margin-left: 1em;
-        margin-top: 2em;
-    }
-    #bbody {
-        font-family: 'S-CoreDream-3Light';
-        font-size: 1em; 
-        color:#505050;
-        padding: 3em;
-    }
-    #bpwd input[type=password] {
-        width: 10em;
-        height: 2em;
-        border-top: thick solid #ffffff;
-        border-right: thick solid #ffffff;
-        border-left: thick solid #ffffff;
-        border-bottom: thick solid #ff3300;
-        }
-        input.dbtn{ 
-        background-color:#362f2d;
-        border-radius:0.5em;
-        padding:0.2em;
-        color: #f5f5f5;
-        width: 6em;
-        height: 2em;
-        font-size: 1em;
-    }
-    #id_uploaded_file{
-        background-color:#362f2d;
-        border-radius:0.2em;
-        padding:0.5em;
-        color: #f5f5f5;
-        width: 4em;
-        height: 2em;
-    }
-}
-@media (max-width: 1025px)  {
     div#header{
         width: 61.5em;
     }
@@ -78,7 +19,6 @@
         background-color: #ffffff;
         box-shadow: 2px 2px 5px grey;
         }
-
     /* contents */
     #btitle, #bdate{display:inline-block;margin-left:2em;margin-top: 1em; margin-right: 0;width: 10em;}
     #btitle {
@@ -106,7 +46,7 @@
     }
     #bbody {
         font-family: 'S-CoreDream-3Light';
-        font-size: 2em; 
+        font-size: 3em; 
         color:#505050;
         margin: 2em;
         margin-top: 1em;
@@ -137,7 +77,6 @@
     .pwdinput#passwd{ width: 2em;}
     .ba:link,.ba:visited,.ba.active,.ba.hover 
     { text-decoration: none; color:#362f2d;font-size:1.5em; padding-right:auto; background-color: #362f2d}
-
     #s_row{
         width: 55em;
     }
