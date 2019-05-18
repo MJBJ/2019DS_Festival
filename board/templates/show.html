@@ -98,7 +98,7 @@ var board_cnt=0;
             <div class="s_body">{{board.summary}} [...]</div>
         </div>
         <div class="parent" class="col-md-4" id="s_col-md-4" >
-            <input type="hidden" id="{{board.id}}" value="{{board.id}}">
+            <!-- <input type="hidden" id="{{board.id}}" value="{{board.id}}">
                 <script type="text/javascript">
                     board_cnt++;
                     
@@ -216,17 +216,17 @@ var board_cnt=0;
                         pp.append(img);
                     }
                    
-                </script>
-                <!--                  
+                </script> -->
+                                 
                 <img class="s_img" id="s_img" src="{{board.file.url}}" alt="">
-                -->
-                <!--
+               
+                
                 <video class="videotag" style="width:100%" controls>
                     <source src="{{ board.file.url }}" type='video/ogg'>
                     <source src="{{ board.file.url }}" type='video/mp4'>
                     <source src="{{ board.file.url }}" type='video/webm'>
                 </video>
-                -->
+               
         </div>        
     </div>
     </a>
