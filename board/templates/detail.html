@@ -126,10 +126,10 @@ var img=document.getElementById('board_img');
 var video=document.getElementsByTagName('video')[0];
 // url 받아옴
 var url=img.getAttribute('src');
-if(url.match('.png')||url.match('.jpg')||url.match(".gif")){
+if(url.match(".jpg")||url.match(".png")||url.match(".gif")||url.match(".bmp")||url.match(".tif")||url.match(".svg")||url.match(".ai")||url.match(".jpeg")||url.match(".jpe")||url.match(".jfif")||url.match(".tiff")){
     video.remove();
 }
-else if(url.match(".mp4")||url.match(".webm")||url.match(".ogg")){
+else if(url.match(".mp4")||url.match(".m4r")||url.match(".hevc")||url.match(".webm")||url.match(".ogg")||url.match(".avi")||url.match(".mpg")||url.match(".mpeg")||url.match(".mpe")||url.match(".wmv")||url.match(".mov")||url.match(".dat")||url.match(".flv")){
     img.remove();
 }
 else{
