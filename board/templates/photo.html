@@ -73,7 +73,7 @@ while(i<treasure_ids.length){
     
     // (2) div 요소의 background image를 db 이미지로 지정
     // url이 이미지인가 동영상인가 구분
-    if(treasure_urls[i].value.match('.jpg')||treasure_urls[i].value.match('.png')||treasure_urls[i].value.match(".png")){
+    if(treasure_urls[i].value.match('.jpg')||treasure_urls[i].value.match('.gif')||treasure_urls[i].value.match(".png")||treasure_urls[i].value.match('.bmp')||treasure_urls[i].value.match('.tif')||treasure_urls[i].value.match('.svg')||treasure_urls[i].value.match('.ai')||treasure_urls[i].value.match('.jpeg')||treasure_urls[i].value.match('.jpe')||treasure_urls[i].value.match('.jjfif')||treasure_urls[i].value.match('.tiff')){
         // 그림이라면
         x[i].style.backgroundImage ="url('"+treasure_urls[i].value+"')";
         //x[i].style.padding="0px";
@@ -82,7 +82,7 @@ while(i<treasure_ids.length){
         x[i].style.backgroundSize= "27em";
         x[i].style.backgroundRepeat ="no-repeat";
     }
-    else if(treasure_urls[i].value.match('.mp4')||treasure_urls[i].value.match('.webm')||treasure_urls[i].value.match(".ogg")){
+    else if(treasure_urls[i].value.match('.mp4')||treasure_urls[i].value.match('.webm')||treasure_urls[i].value.match(".ogg")||treasure_urls[i].value.match('.m4r')||treasure_urls[i].value.match('.hevc')||treasure_urls[i].value.match('.avi')||treasure_urls[i].value.match('.mpg')||treasure_urls[i].value.match('.mpeg')||treasure_urls[i].value.match('.mpe')||treasure_urls[i].value.match('.wmv')||treasure_urls[i].value.match('.mov')||treasure_urls[i].value.match('.dat')||treasure_urls[i].value.match('.flv')){
         // 동영상이라면
         var source1=document.createElement('source');
         source1.setAttribute('src',treasure_urls[i].value);
@@ -96,9 +96,52 @@ while(i<treasure_ids.length){
         source3.setAttribute('src',treasure_urls[i].value);
         source3.setAttribute('type', "video/webm");
 
+        var source4=document.createElement('source');
+        source4.setAttribute('src',"{{ board.file.url }}");
+        source4.setAttribute('type',"video/mov");
+
+        var source5=document.createElement('source');
+        source5.setAttribute('src',"{{ board.file.url }}");
+        source5.setAttribute('type',"video/mkv");
+        
+        var source6=document.createElement('source');
+        source6.setAttribute('src',"{{ board.file.url }}");
+        source6.setAttribute('type',"video/3gp");
+
+        var source7=document.createElement('source');
+        source7.setAttribute('src',"{{ board.file.url }}");
+        source7.setAttribute('type',"video/ts");
+
+        var source8=document.createElement('source');
+        source8.setAttribute('src',"{{ board.file.url }}");
+        source8.setAttribute('type',"video/avi");
+
+        var source9=document.createElement('source');
+        source9.setAttribute('src',"{{ board.file.url }}");
+        source9.setAttribute('type',"video/mpeg");
+
+        var source10=document.createElement('source');
+        source10.setAttribute('src',"{{ board.file.url }}");
+        source10.setAttribute('type',"video/m4r");
+
+        var source11=document.createElement('source');
+        source11.setAttribute('src',"{{ board.file.url }}");
+        source11.setAttribute('type',"video/mpg");
+
+        var source12=document.createElement('source');
+        source12.setAttribute('src',"{{ board.file.url }}");
+        source12.setAttribute('type',"video/mpe");
+
+        var source13=document.createElement('source');
+        source13.setAttribute('src',"{{ board.file.url }}");
+        source13.setAttribute('type',"video/wmv");
+
+        var source14=document.createElement('source');
+        source14.setAttribute('src',"{{ board.file.url }}");
+        source14.setAttribute('type',"video/hevc");
+
         var video = document.createElement('video');
         video.setAttribute('controls', null);
-        video.setAttribute('autoplay', null);
         video.setAttribute('loop', null);
         video.style.width="100%";
         video.style.maxHeight="27em";
@@ -107,7 +150,18 @@ while(i<treasure_ids.length){
 
         video.append(source1);
         video.append(source2);
+        video.append(source4);
+        video.append(source5);
         video.append(source3);
+        video.append(source6);
+        video.append(source7);
+        video.append(source8);
+        video.append(source9);
+        video.append(source10);
+        video.append(source11);
+        video.append(source12);
+        video.append(source13);
+        video.append(source14);
 
         x[i].append(video);
         

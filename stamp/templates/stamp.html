@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-image: url('../static/eventbg.png');
     background-size:100%;
-    padding-top:5em;   
+    padding-top:15%;   
 }
 .vcontainer{
   width:100%;
@@ -29,9 +29,6 @@
   margin-bottom:15em;
 }
 
-.stamp_title10{
-  margin-bottom:5em;
-}
 .h1style{
   font-size:2em;
  font-family: 'S-CoreDream-5Medium';
@@ -41,8 +38,8 @@ color:#ff3300;
 .h3style{
   font-family:'S-CoreDream-3Light';
   text-align:center;
-color:#362f2d;
-font-size:1.0em;
+  color:#362f2d;
+  font-size:1.0em;
 }
 #not{
   font-family: 'S-CoreDream-5Medium';
@@ -57,16 +54,15 @@ font-size: 1em;
     color: black;
 }
 #stst{
-  margin-top: 4em;
-  margin-left: 5em;
-  padding-top: 2em;
+  margin-top: 15%;
+  margin-left: 15%;
 }
 #stststamp{
   margin-right: 2em;
   text-align: center;
 }
 #stst2{
-  margin-left: 10em;
+  margin-left: 25%;
   padding-top: 2em;
 }
 .subbtn{
@@ -179,7 +175,7 @@ font-size:2.1em;
         <h1 class="h1style">백일화 100배 즐기기!</h1>
         <h3 class="h3style">숨겨진 다섯개의 스탬프 찾고 선물받자!</h3>
 
-        <h3 id="not">※'수령완료'버튼은 총학생회 확인용입니다. 미리 누르지 않게 유의하세요!</h3>
+        <h3 id="not">※'미션완료'버튼은 총학생회 확인용입니다. 미리 누르지 않게 유의하세요!</h3>
       </div>
     <!-- 지연 : hidden 속성으로 바꿀 예정 -->
     <input type="hidden" value={{photo}} id="st1">
@@ -212,7 +208,7 @@ font-size:2.1em;
             <img id="st4_img" src="{% static 'st4r.png'%}" alt="스탬프 찍기전4">
           </div>
           <div id="stststamp">
-            <a href="{%url 'quest5' %}" class="stamp_a">STEP5 팝콘</a><br/><br/>
+            <a href="{%url 'quest5' %}" class="stamp_a">STEP5 팝콘 or 아이스크림</a><br/><br/>
             <img id="st5_img" src="{% static 'st5r.png'%}" alt="스탬프 찍기전5">
           </div>
         </div>

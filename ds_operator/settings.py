@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+# DEBUG = False
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 ALLOWED_HOSTS = ['*']
 
@@ -133,6 +133,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 # 지연 : 세션
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False 
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 5
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 5 
 # 지연 : 20초 동안 유지
 
