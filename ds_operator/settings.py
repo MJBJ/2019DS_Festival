@@ -123,9 +123,9 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68.s3.amazonaws.com/public/static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'https://bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68.s3.amazonaws.com/public/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Heroku: Update database configuration from $DATABASE_URL.
