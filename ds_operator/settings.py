@@ -123,9 +123,6 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
 STATIC_URL = 'http://bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68.s3.amazonaws.com/'
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
