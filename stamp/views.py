@@ -9,7 +9,6 @@ def home(request):
     bangbang=request.session.get('bangbang')
     viking=request.session.get('viking')
     popcorn=request.session.get('popcorn')
-
     finishbtn=request.session.get('finishbtn')
     
     return render(request,'stamp.html', {
@@ -18,8 +17,7 @@ def home(request):
                                                 'bangbang':bangbang,
                                                 'viking':viking,
                                                 'popcorn':popcorn, 
-                                                
-                                                'finishbtn':finishbtn,
+                                                'btn':finishbtn,
                                                 })
 def quest1(request):
     #quest_id=get_object_or_404(Quest,pk=quest_id)
@@ -38,12 +36,14 @@ def quest5(request):
     return render(request,'q5.html')     
 
 def clear(request):
-    finishbtn=request.GET['goinit']
-    if finishbtn=="goinit":
-        request.session['finishbtn']="goinit"
+    print("abc")
+    finishbtn=request.GET['btn']
+    print(finishbtn)
+    if finishbtn=="go":
+        print("ok")
+        request.session['finishbtn']="go"
     return redirect('/stamp')
 
-    return redirect('/stamp')
 # 비밀번호가 맞는 지 처리하고 세션 설정을 할 함수
 def check(request):
     # form에서 사용자가 입력한 내용 받아옴
