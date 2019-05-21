@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'stamp.apps.StampConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'board.apps.BoardConfig',
-    'info.apps.InfoConfig',
-    'corsheaders',
+    'info.apps.InfoConfig',   
 ]
 
 MIDDLEWARE = [
@@ -126,7 +126,7 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = 'https://bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68.s3.amazonaws.com/public/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Heroku: Update database configuration from $DATABASE_URL.
