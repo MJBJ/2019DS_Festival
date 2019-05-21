@@ -32,7 +32,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'corsheaders',
     'stamp.apps.StampConfig',
     'django.contrib.admin',
     'django.contrib.auth',
