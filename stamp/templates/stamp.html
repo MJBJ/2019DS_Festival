@@ -45,7 +45,7 @@ color:#ff3300;
   font-family: 'S-CoreDream-5Medium';
   text-align:center;
 color:#ff3300;
-margin-top: 3em;
+margin-top: 7%;
 font-size: 1em;
 }
 #st1_img,#st2_img,#st3_img,#st4_img,#st5_img { 
@@ -214,9 +214,9 @@ font-size:2.1em;
         </div>
         <div class="row" >   
           <div class="btn-scs">      
-          <form id="fform" action="{%url 'clear' %}">
-            <input type="hidden" id="goinit" value={{finishbtn}} name="goinit"/>
-            <input class="subbtn" type="submit" value="" id="fbtn" onclick="finish();"/>
+          <form id="fform" action="{%url 'clear' %}">   
+            <input type="hidden" value={{btn}} id="btn" name="btn" />
+            <input class="subbtn" type="submit" value="" id="btn_image" onclick="finish();"/>
           </form>
         </div> 
         </div>
@@ -229,25 +229,27 @@ font-size:2.1em;
   <script>
     function finish(){
 
-// 미션버튼도 세션에 저장되어 있나 확인한다.
-      //var finishbtn=document.getElementById('goinit').getAttribute('value');
       var st1=document.getElementById('st1').getAttribute('value');
       var st2=document.getElementById('st2').getAttribute('value');
       var st3=document.getElementById('st3').getAttribute('value');
       var st4=document.getElementById('st4').getAttribute('value');
       var st5=document.getElementById('st5').getAttribute('value');
+      var btn = document.getElementById('btn')
+
+      var fbtn = document.getElementById('btn_image')
       // 완료 버튼을 누르면 
       // 그제서야 세션을 만든다.
-      var btn = document.getElementById('fbtn');
       if(st1=="1"&&st2=="2"&&st3=="3"&&st4=="4"&&st5=="5"){ 
-        alert("미션 성공!");
-         
-        btn.style.backgroundImage="url('../static/mclear2.png')";
-        
-        document.getElementById('goinit').setAttribute('value',"goinit");
-        
-        btn.disabled = 'disabled';
-    } 
+          alert("미션 성공!");
+          
+          fbtn.style.backgroundImage="url('../static/mclear2.png')";
+          
+          btn.setAttribute('value',"go");
+          
+          fbtn.disabled = 'disabled';
+          
+          document.forms["fform"].submit();
+      } 
     
     }
     // 지연 : 페이지가 로드 될때마다 
@@ -261,18 +263,17 @@ font-size:2.1em;
       var st3=document.getElementById('st3').getAttribute('value');
       var st4=document.getElementById('st4').getAttribute('value');
       var st5=document.getElementById('st5').getAttribute('value');
-      var goinit=document.getElementById('goinit').getAttribute('value');
-      var btn = document.getElementById('fbtn'); 
+      var btn=document.getElementById('btn').getAttribute('value');
+      var fbtn = document.getElementById('btn_image'); 
       // 페이지가 로드 될떄마다 완료버튼의 세션값을 확인한다.
       // 만약 세션이 저장되어 있으면 완료라고 써놓고
-      if(goinit=="goinit"){
-        //btn.setAttribute('value',"완료");
-        //btn.style.backgroundImage=url('../static/mclear2.png');
+      if(btn=="go"){
+        fbtn.style.backgroundImage ="url('../static/mclear2.png')";
         btn.disabled = 'disabled';
       }
       // 안 저장되어 있으면 그대로 유지시킨다.
-      var parent = document.getElementById('fform');
-      var child = document.getElementById("fbtn");
+      //var parent = document.getElementById('fform');
+      //var child = document.getElementById("fbtn");
         //parent.removeChild(child);
    
     
