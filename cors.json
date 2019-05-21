@@ -11,7 +11,7 @@
                 "DELETE"
             ],
             "AllowedOrigins": [
-                "*"
+                "https://bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68.s3.amazonaws.com/public/"
             ]
         }
     ]
