@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'stamp.apps.StampConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -136,7 +137,3 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 5 
 # 지연 : 20초 동안 유지
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_WHITELIST = [
-    'https://dsfestival2019.herokuapp.com/'
-]

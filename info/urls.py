@@ -13,5 +13,6 @@ urlpatterns = [
     path('develop', views.develop, name='develop'),
     path('board/', include('board.urls')),
     path('stamp/', include('stamp.urls')),
-    path('',views.dday, name='dday'),
+    path('', views.server, name='server'),
+    #path('dday',views.dday, name='dday'),
 ]

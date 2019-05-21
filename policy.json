@@ -1,0 +1,15 @@
+{
+  "Id": "Policy1558441518452",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1558441513813",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucketeer-248a8d9f-1622-4c2b-882c-ac51decd1d68/public/media/*",
+      "Principal": "*"
+    }
+  ]
+}

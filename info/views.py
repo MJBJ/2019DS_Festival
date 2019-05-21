@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.http import HttpResponseRedirect
 
 # d-day
 def dday(request):
@@ -29,3 +30,6 @@ def timetable(request):
 def develop(request):
      return render(request,'develop.html')
 
+# url 넘기기
+def server(request):
+     return redirect('http://hci.expertly.info:8000/')
